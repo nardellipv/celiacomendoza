@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace celiacomendoza\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
