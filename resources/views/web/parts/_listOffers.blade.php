@@ -7,10 +7,10 @@
                         <p class="mb-0">¿Estás buscando ofertas?</p>
                         <h2>Nuestras Ofertas</h2>
                     </div>
-                </div><!-- .heading end -->
-            </div><!-- .col-md-8 end -->
-        </div><!-- .row end -->
-    </div><!-- .container end -->
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section id="shop-banner" class="shop-banner bg-gray pb-1">
     <div class="container">
@@ -23,7 +23,7 @@
                         <div class="banner-hover">
                             <div class="banner-bio">
                                 <div class="banner-dicount">$ {{ $offer->price }}</div>
-                                <h5><a href="#">{{ $offer->name }}</a></h5>
+                                <h5><a href="{{ url('producto', array($commerce->id, $offer->id)) }}">{{ $offer->name }}</a></h5>
                             </div>
                         </div>
                     </div>

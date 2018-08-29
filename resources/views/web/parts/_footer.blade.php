@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-xs-12  col-sm-12  col-md-12">
                     <div class="footer-widget-title">
-                        <h5>Sobre Nosotros</h5>
+                        <h5>Sobre celiacomendoza.com</h5>
                     </div>
                 </div><!-- .col-md-12 end -->
                 <div class="col-xs-12  col-sm-12  col-md-4">

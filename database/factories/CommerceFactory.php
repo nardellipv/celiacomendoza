@@ -9,8 +9,8 @@ $factory->define(\celiacomendoza\Commerce::class, function (Faker $faker) {
         'location' => $faker->city,
         'phone' => $faker->phoneNumber,
         'web' => $faker->url,
-        'twitter' => $faker->url,
-        'facebook' => $faker->url,
+        'twitter' => 'nardellip',
+        'facebook' => 'todofraseslive',
         'logo' => $faker->imageUrl(),
         'user_id' => rand(1, 10),
     ];

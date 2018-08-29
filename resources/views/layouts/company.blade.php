@@ -41,7 +41,16 @@
     <title>{{ $commerce->name }}</title>
 </head>
 <body>
-
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id))
+            return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 <div class="preloader">
     <div class="spinner">
         <div class="bounce1"></div>
@@ -74,6 +83,18 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li class="has-dropdown">
                             <a href="{{ url('/') }}" class="dropdown-toggle link-hover" data-hover="home">Home</a>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="{{url('catalogo', $commerce->id)}}#highlight" data-scroll="scrollTo" class="dropdown-toggle link-hover" data-hover="Destacados">Destacados</a>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="{{ url('listado', $commerce->id) }}" data-scroll="scrollTo" class="dropdown-toggle link-hover" data-hover="Productos">Productos</a>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="{{ url('contacto', $commerce->id) }}" data-scroll="scrollTo" class="dropdown-toggle link-hover" data-hover="Contacto">Contacto</a>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="{{url('catalogo', $commerce->id)}}#social" data-scroll="scrollTo" class="dropdown-toggle link-hover" data-hover="Social">Social</a>
                         </li>
                     </ul>
                     <div class="module module-cart pull-left">

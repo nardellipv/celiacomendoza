@@ -551,7 +551,6 @@ text-center-sm {
 	border-radius: 2px;
 	box-shadow: 0 1px 3px rgba(39, 41, 48, 0.2);
 	padding: 20px;
-	margin-bottom: 70px
 }
 
 .alerts .alert-icon {
@@ -1535,7 +1534,8 @@ section {
 .btn-primary {
 	background-color: #46a1f0;
 	color: #ffffff;
-	border: 2px solid transparent
+	border: 2px solid transparent;
+	margin-right: -45%;
 }
 
 .btn-primary:hover,
@@ -2253,7 +2253,7 @@ nav .link-hover:hover {
 /* Gray Pagination */
 .bg-gray .pagination > li > a,
 .bg-gray .pagination > li > span {
-	background-color: white;
+	/*background-color: white;*/
 	box-shadow: 0 2px 3px rgba(39, 41, 48, 0.05);
 }
 
@@ -7952,8 +7952,10 @@ li.dropdown-submenu > ul.dropdown-menu > li.has-dropdown > ul.dropdown-menu.left
 	-moz-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
 	transition: all 0.2s linear;
-	width: 100%;
+	width: 55%;
 	height: auto;
+	margin-left: 25%;
+	margin-bottom: 3%;
 }
 
 .product .product-price {
@@ -7963,12 +7965,12 @@ li.dropdown-submenu > ul.dropdown-menu > li.has-dropdown > ul.dropdown-menu.left
 	line-height: 80px;
 	top: 30px;
 	left: 30px;
-	background-color: rgba(246,246,247,09);
+	/*background-color: rgba(246,246,247,09);*/
 	border-radius: 2px;
-	color: #333333;
 	font-family: 'Lora', sans-serif;
 	font-weight: 400;
-	font-size: 40px;
+	font-size: 20px;
+	color: white;
 	text-align: center;
 }
 
@@ -8621,7 +8623,7 @@ td.cart-product-quantity .product-quantity i {
 .shop-product .product-quantity .qua {
 	color: #333333;
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 13px;
+	font-size: 20px;
 	font-weight: 700;
 	line-height: 20px;
 	margin-right: 10px
@@ -8639,12 +8641,12 @@ td.cart-product-quantity .product-quantity i {
 }
 
 .shop-product .product-quantity input {
-	width: 30px;
-	height: 25px;
+	width: 50px;
+	height: 36px;
 	border: 1px solid rgba(119, 119, 119, 0.5);
 	border-radius: 2px;
 	color: #818181;
-	font-size: 14px;
+	font-size: 19px;
 	font-weight: 400;
 	line-height: 22px;
 	text-align: center;
@@ -8653,11 +8655,11 @@ td.cart-product-quantity .product-quantity i {
 
 .shop-product .product-cta .btn {
 	margin-left: 20px;
-	width: 95px;
+	/* width: 95px; */
 	height: 33px;
 	line-height: 29px;
 	border-radius: 2px;
-	font-size: 13px;
+	font-size: 15px;
 }
 
 .shop-product .product-share {

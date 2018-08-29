@@ -21,7 +21,9 @@ class CreateProductsTable extends Migration
             $table->decimal('price', 6, 2);
             $table->decimal('offer', 6, 2);
             $table->enum('in_offer', ['YES', 'NO'])->default('NO');
+            $table->enum('highlight', ['YES', 'NO'])->default('NO');
             $table->integer('quantity');
+            $table->string('photo')->nullable();
 
             $table->integer('commerce_id')->unsigned();
             $table->integer('category_id')->unsigned();
