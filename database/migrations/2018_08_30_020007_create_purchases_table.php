@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductsTable extends Migration
+class CreatePurchasesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,17 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('purchases', function (Blueprint $table) {
             $table->increments('id');
 
+            $table->string('num_invoice');
             $table->string('name');
-            $table->mediumText('description');
             $table->decimal('price', 6, 0);
-            $table->decimal('offer', 6, 0);
-            $table->enum('in_offer', ['YES', 'NO'])->default('NO');
-            $table->enum('highlight', ['YES', 'NO'])->default('NO');
             $table->integer('quantity');
             $table->string('photo')->nullable();
 
             $table->integer('commerce_id')->unsigned();
-            $table->integer('category_id')->unsigned();
+            $table->integer('product_id')->unsigned();
 
             $table->timestamps();
 
@@ -36,7 +33,7 @@ class CreateProductsTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('category_id')->references('id')->on('categories')
+            $table->foreign('product_id')->references('id')->on('products')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
@@ -49,6 +46,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('purchases');
     }
 }

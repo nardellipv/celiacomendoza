@@ -14,4 +14,9 @@ class Commerce extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function Purchases()
+    {
+        return $this->hasMany(Purchase::class);
+    }
 }

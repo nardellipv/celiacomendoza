@@ -24,4 +24,9 @@ class Product extends Model
     {
         return $this->hasMany(Picture::class);
     }
+
+    public function Purchase()
+    {
+        return $this->belongsTo(Purchase::class);
+    }
 }

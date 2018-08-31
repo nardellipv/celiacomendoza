@@ -7952,7 +7952,7 @@ li.dropdown-submenu > ul.dropdown-menu > li.has-dropdown > ul.dropdown-menu.left
 	-moz-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
 	transition: all 0.2s linear;
-	width: 55%;
+	width: 50%;
 	height: auto;
 	margin-left: 25%;
 	margin-bottom: 3%;
@@ -8426,7 +8426,8 @@ td.cart-product-quantity .product-quantity i {
 
 .cart-product-img {
 	float: left;
-	padding-right: 20px;
+	padding-right: 1px;
+	margin-right: -500px;
 }
 
 .cart-product-name h6 {

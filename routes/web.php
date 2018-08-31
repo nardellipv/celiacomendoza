@@ -13,6 +13,8 @@ Route::get('contacto/{id}', 'CommerceController@contact');
 Route::get('listado/{id}', 'CommerceController@shop');
 Route::get('listado-categoria/{id}/{category_id}', 'CommerceController@shopCategory');
 Route::get('producto/{id}/{product_id}', 'ProductController@product');
+Route::post('add/{product_id}', 'ProductController@addcart');
+Route::get('compra/{id}', 'ProductController@cart');
 
 Route::post('mailcustomers', 'CommerceController@MailCustomer')->name('mailcustomers');
 

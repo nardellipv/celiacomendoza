@@ -152,6 +152,7 @@ return [
          */
         Collective\Html\HtmlServiceProvider::class,
         'Jenssegers\Date\DateServiceProvider',
+        celiacomendoza\Providers\ComposerServiceProvider::class,
         /*
          * Application Service Providers...
          */
