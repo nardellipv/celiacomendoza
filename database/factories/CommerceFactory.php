@@ -9,6 +9,7 @@ $factory->define(\celiacomendoza\Commerce::class, function (Faker $faker) {
         'location' => $faker->city,
         'phone' => $faker->phoneNumber,
         'web' => $faker->url,
+        'about' => $faker->text($maxNbChars = 500),
         'twitter' => 'nardellip',
         'facebook' => 'todofraseslive',
         'logo' => $faker->imageUrl(),

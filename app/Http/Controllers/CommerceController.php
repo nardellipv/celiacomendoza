@@ -17,10 +17,12 @@ class CommerceController extends Controller
         $commerce = Commerce::find($id);
 
         $offers = Product::where('commerce_id', $id)
+            ->where('available', 'YES')
             ->where('in_offer', 'YES')
             ->get();
 
         $highlights = Product::where('highlight', 'YES')
+            ->where('available', 'YES')
             ->Limit(4)
             ->get();
 

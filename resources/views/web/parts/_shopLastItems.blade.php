@@ -11,7 +11,12 @@
                         <a href="{{ url('producto', array($commerce->id, $lastProduct->id)) }}">{{ $lastProduct->name }}</a>
                     </div>
                     <div class="product-meta">
-                        <span class="color-theme">${{ $lastProduct->price }}</span>
+                        @if(!$lastProduct->offer)
+                            <span class="color-theme">${{ $lastProduct->price }}</span>
+                        @else
+                            <span class="color-theme">$<strike>{{ $lastProduct->price }}</strike></span>
+                            <span class="color-theme">${{ $lastProduct->offer }}</span>
+                        @endif
                     </div>
                 </div>
             </div>

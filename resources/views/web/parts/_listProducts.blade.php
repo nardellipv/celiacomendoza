@@ -14,7 +14,11 @@
                     <div class="product-img">
                         <img src="{{ $highlight->photo }}" alt="Product"/>
                         <div class="product-price" style="background-color: #00000099;">
-                            <span>$</span><span class="symbole">{{ $highlight->price }}</span>
+                            @if(!$highlight->offer)
+                                <span>$</span><span class="symbole">{{ $highlight->price }}</span>
+                            @else
+                                <span>$</span><span class="symbole">{{ $highlight->offer }}</span>
+                            @endif
                         </div>
                     </div>
                     <div class="product-bio">
@@ -22,7 +26,9 @@
                             <p>{{ $highlight->category->name }}</p>
                         </div>
                         <div class="prodcut-title">
-                            <h3><a href="{{ url('producto', array($commerce->id, $highlight->id)) }}">{{ substr($highlight->name, 0, 20) }}</a></h3>
+                            <h3>
+                                <a href="{{ url('producto', array($commerce->id, $highlight->id)) }}">{{ substr($highlight->name, 0, 20) }}</a>
+                            </h3>
                         </div>
                     </div>
                 </div>

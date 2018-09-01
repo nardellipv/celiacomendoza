@@ -10,6 +10,10 @@
                         <a href="{{ url('/') }}" class="dropdown-toggle link-hover" data-hover="home">Home</a>
                     </li>
                     <li class="has-dropdown">
+                        <a href="{{ url('catalogo', $commerce->id) }}#listOffers" class="dropdown-toggle link-hover"
+                           data-hover="Ofertas">Ofertas</a>
+                    </li>
+                    <li class="has-dropdown">
                         <a href="{{ url('catalogo', $commerce->id) }}#highlight" class="dropdown-toggle link-hover"
                            data-hover="Destacados">Destacados</a>
                     </li>

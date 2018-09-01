@@ -1,4 +1,4 @@
-<section style="background-color: #af5316 !important; padding-top: 30px; padding-bottom: 35px;">
+<section id="listOffers" style="background-color: #af5316 !important; padding-top: 30px; padding-bottom: 35px;">
     <div class="container">
         <div class="row">
             <div class="col-xs-12  col-sm-12  col-md-8 col-md-offset-2">
@@ -22,8 +22,15 @@
                              alt="shop banner">
                         <div class="banner-hover">
                             <div class="banner-bio">
-                                <div class="banner-dicount">$ {{ $offer->price }}</div>
-                                <h5><a href="{{ url('producto', array($commerce->id, $offer->id)) }}">{{ $offer->name }}</a></h5>
+                                <h5>
+                                    <a href="{{ url('producto', array($commerce->id, $offer->id)) }}">{{ $offer->name }}</a>
+                                </h5>
+                                @if(!$offer->offer)
+                                    <div class="banner-dicount">$ {{ $offer->price }}</div>
+                                @else
+                                    <div class="banner-dicount"><strike>$ {{ $offer->price }}</strike></div>
+                                    <div class="banner-dicount">$ {{ $offer->price }}</div>
+                                @endif
                             </div>
                         </div>
                     </div>

@@ -21,6 +21,7 @@ class CreateCommercesTable extends Migration
             $table->string('location');
             $table->string('phone');
             $table->string('web');
+            $table->mediumText('about');
             $table->string('twitter');
             $table->string('facebook');
             $table->string('logo')->nullable();

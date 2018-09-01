@@ -16,7 +16,12 @@
                     <h3 style="text-align:  center;">{{ $product->name }}</h3>
                 </div>
                 <div class="product-price-total" style="text-align:  center;">
-                    <span class="symbole">$</span><span> {{ $product->price }}</span>
+                    @if(!$product->offer)
+                        <span class="symbole">$</span><span> {{ $product->price }}</span>
+                    @else
+                        <span class="symbole">$</span><span> <strike>{{ $product->price }}</strike></span><br>
+                        <span class="symbole">$</span><span> {{ $product->offer }}</span>
+                    @endif
                 </div>
 
                 {!! Form::open(['method' => 'POST','url' => ['add', $product->id],'class'=>'domain_form']) !!}
@@ -25,7 +30,8 @@
                     <div class="product-quantity pull-left pull-none-xs">
                         <span class="qua">Cantidad:</span>
                         <span><input type="number" name="quantity" id="pro-qunt" placeholder="0" required></span>
-                        <input type="text" name="product_id" value="{{ $product->id }}" id="pro-qunt" hidden readonly required>
+                        <input type="text" name="product_id" value="{{ $product->id }}" id="pro-qunt" hidden readonly
+                               required>
                     </div>
                     <div class="text-right text-center">
                         <button type="submit" class="btn btn-primary">Agregar al Carrito</button>

@@ -21,14 +21,17 @@ class ProductController extends Controller
         $listCategories = Category::all();
 
         $product = Product::where('id', $product_id)
+            ->where('available', 'YES')
             ->first();
 
         $lastProducts = Product::where('commerce_id', $id)
+            ->where('available', 'YES')
             ->orderBy('updated_at', 'DESC')
             ->take(3)
             ->get();
 
         $relationItems = Product::where('category_id', $product->category_id)
+            ->where('available', 'YES')
             ->where('commerce_id', $id)
             ->where('id', '!=', $product_id)
             ->get();
@@ -46,7 +49,11 @@ class ProductController extends Controller
             ->first();
 
         //calculo precio
-        $priceTotal = $product->price * $request['quantity'];
+        if(!$product->offer) {
+            $priceTotal = $product->price * $request['quantity'];
+        }else{
+            $priceTotal = $product->offer * $request['quantity'];
+        }
 
         if ($buyProduct != NULL) {
             if (Cookie::get('id-recibo') AND $buyProduct->product_id == $product_id) {
