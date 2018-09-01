@@ -21,53 +21,6 @@
                         <a href="#footer" data-scroll="scrollTo" data-hover="Contactenos">Contactenos</a>
                     </li>
                 </ul>
-                <div class="module module-cart pull-left">
-                    <div class="module-icon cart-icon">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span class="title">shop cart</span>
-                        <span class="cart-label">2</span>
-                    </div>
-                    <div class="module-content cart-box">
-                        <div class="cart-overview">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <img class="img-responsive" src="{{asset('webStyle/images/shop/thumb/7.jpg')}}"
-                                         alt="product"/>
-                                    <div class="product-meta">
-                                        <h5 class="product-title">Flasks Bottle</h5>
-                                        <p class="product-price">Price: $20.00 </p>
-                                        <p class="product-quantity">Quantity: 2</p>
-                                    </div>
-                                    <a class="cancel" href="#">cancel</a>
-                                </li>
-                                <li>
-                                    <img class="img-responsive" src="{{asset('webStyle/images/shop/thumb/8.jpg')}}"
-                                         alt="product"/>
-                                    <div class="product-meta">
-                                        <h5 class="product-title">old sketch book</h5>
-                                        <p class="product-price">Price: $120.00 </p>
-                                        <p class="product-quantity">Quantity: 3</p>
-                                    </div>
-                                    <a class="cancel" href="#">cancel</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="cart-total">
-                            <div class="total-desc">
-                                <h5>CART SUBTOTAL :</h5>
-                            </div>
-                            <div class="total-price">
-                                <h5>$248.00</h5>
-                            </div>
-                        </div>
-                        <div class="clearfix">
-                        </div>
-                        <div class="cart-control">
-                            <a class="btn btn-secondary btn-block" href="#">view cart</a>
-                            <a class="btn b btn-primary btn-block" href="#">Proceed To Checkout</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="module module-search pull-left">
                     <div class="module-icon search-icon">
                         <i class="fa fa-search"></i>

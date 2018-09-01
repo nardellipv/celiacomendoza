@@ -15,7 +15,7 @@ class Purchase extends Model
         return $this->belongsTo(Commerce::class);
     }
 
-    public function Product()
+    public function Products()
     {
         return $this->hasMany(Product::class);
     }

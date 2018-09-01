@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-xs-12  col-sm-12  col-md-12">
                     <div class="footer-widget-title">
-                        <h5>Sobre celiacomendoza.com</h5>
+                        <h5>Sobre celiacosmendoza.com</h5>
                     </div>
                 </div><!-- .col-md-12 end -->
                 <div class="col-xs-12  col-sm-12  col-md-4">
@@ -22,7 +22,7 @@
                             </div>--}}
                             <div class="col-xs-12  col-sm-12  col-md-6">
                                 <h6>Email :</h6>
-                                <p class="mb-0"><i class="fa fa-envelope"></i>info@celiacomendoza.com</p>
+                                <p class="mb-0"><i class="fa fa-envelope"></i>info@celiacosmendoza.com</p>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
             <div class="row">
                 <div class="col-xs-12  col-sm-12  col-md-12">
                     <div class="powered text-uppercase pull-left pull-none-xs mb-15-xs">
-                        <p><span class="text-white">CeliacoMendoza</span> Design by <a href="https://mikant.com" target="_blank">MikAnt</a></p>
+                        <p><span class="text-white">CeliacosMendoza</span> Design by <a href="https://mikant.com" target="_blank">MikAnt</a></p>
                     </div>
                     <div class="copyright pull-right pull-none-xs">
                         <p class="text-capitalize">

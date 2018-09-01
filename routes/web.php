@@ -15,6 +15,8 @@ Route::get('listado-categoria/{id}/{category_id}', 'CommerceController@shopCateg
 Route::get('producto/{id}/{product_id}', 'ProductController@product');
 Route::post('add/{product_id}', 'ProductController@addcart');
 Route::get('compra/{id}', 'ProductController@cart');
+Route::get('borrar/{id}/{idProduct}', 'ProductController@delItems');
+Route::post('checkout', 'ProductController@checkout');
 
 Route::post('mailcustomers', 'CommerceController@MailCustomer')->name('mailcustomers');
 

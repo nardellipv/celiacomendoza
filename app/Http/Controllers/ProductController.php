@@ -6,6 +6,7 @@ use celiacomendoza\Category;
 use celiacomendoza\Commerce;
 use celiacomendoza\Product;
 use celiacomendoza\Purchase;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
@@ -46,17 +47,18 @@ class ProductController extends Controller
         //calculo precio
         $priceTotal = $product->price * $request['quantity'];
 
-        if($buyProduct!= NULL) {
+        if ($buyProduct != NULL) {
             if (Cookie::get('id-recibo') AND $buyProduct->product_id == $product_id) {
+                $cantTotal = $request['quantity'] + $buyProduct->quantity;
+                $updatePriceTotal = $product->price * $cantTotal;
                 Purchase::where('product_id', $buyProduct->product_id)
                     ->update([
                         'quantity' => $buyProduct->quantity + $request['quantity'],
+                        'price' => $updatePriceTotal,
                     ]);
 
             }
-        }
-
-        else {
+        } else {
 
             //inserto factura provisoria
             if (Cookie::get('id-recibo')) {
@@ -100,6 +102,64 @@ class ProductController extends Controller
         $listProducts = Purchase::where('num_invoice', $numInvoice)
             ->get();
 
-        return view('web.cart', compact('commerce', 'listProducts'));
+        $sumTotal = Purchase::where('num_invoice', $numInvoice)
+            ->sum('price');
+
+        $sumQuantity = Purchase::where('num_invoice', $numInvoice)
+            ->sum('quantity');
+
+        return view('web.cart', compact('commerce', 'listProducts', 'sumTotal','sumQuantity'));
+    }
+
+    public function delItems($id, $idProduct)
+    {
+        $delProd = Purchase::find($idProduct);
+        $delProd->delete();
+
+        $commerce = Commerce::find($id);
+
+        $numInvoice = Cookie::get('id-recibo');
+
+        $listProducts = Purchase::where('num_invoice', $numInvoice)
+            ->get();
+
+        $sumTotal = Purchase::where('num_invoice', $numInvoice)
+            ->sum('price');
+
+        $sumQuantity = Purchase::where('num_invoice', $numInvoice)
+            ->sum('quantity');
+
+        return back()->with('commerce','listProducts', 'sumTotal','sumQuantity');
+
+    }
+
+    public function checkout(Request $request)
+    {
+        $nameCommerce[] = $request->nameCommerce;
+        $mailCommerce[] = $request->mailCommerce;
+        $phoneCommerce[] = $request->phoneCommerce;
+        $addressCommerce[] = $request->addressCommerce;
+        $productsPrice[] = $request->productsPrice;
+        $productsPhoto[] = $request->productsPhoto;
+        $listproduct[] = $request->products;
+        $numInvoice = $request->numInvoice;
+
+
+        Mail::send('web.mails.MailBuy', $request->all(), function ($msj) use ($request) {
+            $msj->from('no-respond@celiacosmendoza.com', 'CeliacosMendoza');
+            $msj->subject('Compra de productos');
+            $msj->to($request->mailCommerce, $request->name);
+        });
+
+        Mail::send('web.mails.MailBuyer', $request->all(), function ($msj) use ($request, $numInvoice) {
+            $msj->from('no-respond@celiacosmendoza.com', 'CeliacosMendoza');
+            $msj->subject('Compra de productos');
+            $msj->to($request->email, $request->name);
+        });
+
+        $commerces = Commerce::all();
+
+        Session::flash('message', 'Su compra fue realizada, por favor revise su mail para saber como sigue el proceso de compra.');
+        return view('layouts.main', compact('commerces'));
     }
 }

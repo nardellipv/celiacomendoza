@@ -56,7 +56,10 @@
         <i class="fa fa-angle-up" aria-hidden="true"></i>
     </div>
 
+
     @include('web.parts._header')
+
+    @include('web.parts.alerts.successCheckout')
 
     @include('web.parts._features')
 
