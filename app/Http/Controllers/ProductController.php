@@ -4,6 +4,7 @@ namespace celiacomendoza\Http\Controllers;
 
 use celiacomendoza\Category;
 use celiacomendoza\Commerce;
+use celiacomendoza\Http\Requests\FormCartRequest;
 use celiacomendoza\Product;
 use celiacomendoza\Purchase;
 use Illuminate\Support\Facades\Mail;
@@ -133,8 +134,12 @@ class ProductController extends Controller
 
     }
 
-    public function checkout(Request $request)
+    public function checkout(FormCartRequest $request)
     {
+        Cookie::queue(
+            Cookie::forget('id-recibo')
+        );
+
         $nameCommerce[] = $request->nameCommerce;
         $mailCommerce[] = $request->mailCommerce;
         $phoneCommerce[] = $request->phoneCommerce;

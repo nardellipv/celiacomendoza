@@ -19,6 +19,7 @@ Route::get('borrar/{id}/{idProduct}', 'ProductController@delItems');
 Route::post('checkout', 'ProductController@checkout');
 
 Route::post('mailcustomers', 'CommerceController@MailCustomer')->name('mailcustomers');
+Route::post('mailclient', 'HomeController@MailClient')->name('mailclient');
 
 //---------------------
 

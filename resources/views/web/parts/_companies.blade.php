@@ -24,12 +24,12 @@
                             <h6>{{ $commerce->phone }}</h6>
                             <div class="member-social">
                                 @if($commerce->facebook)
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="http://www.facebook.com/{{ $commerce->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
                                 @endif
                                 @if($commerce->twitter)
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="https://twitter.com/{{ $commerce->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
                                 @endif
-                                <a href="{{url('catalogo', $commerce->id)}}"><i class="fa fa-arrow-right"></i></a>
+                                <a href="{{url('catalogo', $commerce->id)}}"><i class="fa fa-arrow-right" style="color: black"></i></a>
                             </div>
                         </div>
                     </div>

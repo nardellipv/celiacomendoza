@@ -52,6 +52,7 @@
                     </table>
                 </div>
             </div>
+
             <div class="col-xs-12  col-sm-12  col-md-12 mb-30-xs mb-30-sm">
                 <div class="cart-shiping">
                     <h4>Nota:</h4>
@@ -60,46 +61,51 @@
                         comuniquese con el local de la compra.</p>
                 </div>
             </div>
+
             <div id="checkout" class="col-xs-12  col-sm-12  col-md-12 mb-30-xs mb-30-sm">
                 <div class="cart-total-amount">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12  col-sm-12  col-md-8 col-md-offset-2 widget-contact">
+                                @include('web.parts.alerts.error')
                                 {!! Form::open(['method' => 'POST','url' => ['checkout'],'style'=>'display:inline']) !!}
                                 {{ csrf_field() }}
-                                @foreach($listProducts as $key=>$listProduct)
-                                    {{--nombre de comercios--}}
-                                    <input type="text" name="nameCommerce[{{$key}}]"
-                                           value="{{ $listProduct->commerce->name }}" id="name" readonly required
-                                           hidden/>
-                                    {{--email de comercios--}}
-                                    <input type="text" name="mailCommerce[{{$key}}]"
-                                           value="{{ $listProduct->commerce->user->email }}" id="name" readonly required
-                                           hidden/>
-                                    {{--tel de comercios--}}
-                                    <input type="text" name="phoneCommerce[{{$key}}]"
-                                           value="{{ $listProduct->commerce->phone }}" id="name" readonly required
-                                           hidden/>
-                                    {{--direccion de comercios--}}
-                                    <input type="text" name="addressCommerce[{{$key}}]"
-                                           value="{{ $listProduct->commerce->address }}" id="name" readonly required
-                                           hidden/>
-                                    {{--listado de los productos--}}
-                                    <input type="text" name="products[]"
-                                           value="{{ $listProduct->name }}" id="name" readonly required hidden/>
-                                    {{--imagenes de los productos--}}
-                                    <input type="text" name="productsPhoto[]"
-                                           value="{{ $listProduct->photo }}" id="name" readonly required hidden/>
-                                    {{--precio productos--}}
-                                    <input type="text" name="productsPrice[]"
-                                           value="{{ $listProduct->price }}" id="name" readonly required hidden/>
-                                    {{--precio total--}}
-                                    <input type="text" name="total"
-                                           value="{{ $sumTotal }}" id="name" readonly required hidden/>
-                                @endforeach
-                                {{--num invoice--}}
-                                <input type="text" name="numInvoice"
-                                       value="{{ $listProduct->num_invoice }}" id="name" readonly required hidden/>
+                                @if($cartCount > 0)
+                                    @foreach($listProducts as $key=>$listProduct)
+                                        {{--nombre de comercios--}}
+                                        <input type="text" name="nameCommerce[{{$key}}]"
+                                               value="{{ $listProduct->commerce->name }}" id="name" readonly required
+                                               hidden/>
+                                        {{--email de comercios--}}
+                                        <input type="text" name="mailCommerce[{{$key}}]"
+                                               value="{{ $listProduct->commerce->user->email }}" id="name" readonly
+                                               required
+                                               hidden/>
+                                        {{--tel de comercios--}}
+                                        <input type="text" name="phoneCommerce[{{$key}}]"
+                                               value="{{ $listProduct->commerce->phone }}" id="name" readonly required
+                                               hidden/>
+                                        {{--direccion de comercios--}}
+                                        <input type="text" name="addressCommerce[{{$key}}]"
+                                               value="{{ $listProduct->commerce->address }}" id="name" readonly required
+                                               hidden/>
+                                        {{--listado de los productos--}}
+                                        <input type="text" name="products[]"
+                                               value="{{ $listProduct->name }}" id="name" readonly required hidden/>
+                                        {{--imagenes de los productos--}}
+                                        <input type="text" name="productsPhoto[]"
+                                               value="{{ $listProduct->photo }}" id="name" readonly required hidden/>
+                                        {{--precio productos--}}
+                                        <input type="text" name="productsPrice[]"
+                                               value="{{ $listProduct->price }}" id="name" readonly required hidden/>
+                                        {{--precio total--}}
+                                        <input type="text" name="total"
+                                               value="{{ $sumTotal }}" id="name" readonly required hidden/>
+                                    @endforeach
+                                    {{--num invoice--}}
+                                    <input type="text" name="numInvoice"
+                                           value="{{ $listProduct->num_invoice }}" id="name" readonly required hidden/>
+                                @endif
 
                                 <div class="col-md-6">
                                     <input type="text" class="form-control mb-30" name="name" id="name"
@@ -115,16 +121,23 @@
                                 </div>
                                 <div class="col-md-6">
                                     <input type="email" class="form-control mb-30" name="email" id="email"
-                                           placeholder="Email :" required/>
+                                           placeholder="Email" required/>
                                 </div>
                                 <div class="col-md-12">
                                         <textarea class="form-control mb-30" name="contact-message" id="message"
-                                                  rows="4" placeholder="Mensaje" required></textarea>
+                                                  rows="2"
+                                                  placeholder="Si desea envie un mensaje al comercio"></textarea>
                                 </div>
                                 <div class="col-md-12">
-                                    <button type="submit" id="submit-message" class="btn btn-primary btn-block">
-                                        Procesar Compra
-                                    </button>
+                                    @if($cartCount > 0)
+                                        <button type="submit" id="submit-message" class="btn btn-primary btn-block">
+                                            Procesar Compra
+                                        </button>
+                                    @else
+                                        <button type="submit" id="submit-message" class="btn btn-primary btn-block" disabled>
+                                            Procesar Compra
+                                        </button>
+                                    @endif
                                 </div>
                                 {!! Form::Close() !!}
                             </div>

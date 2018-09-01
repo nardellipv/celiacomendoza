@@ -3,7 +3,10 @@
 namespace celiacomendoza\Http\Controllers;
 
 use celiacomendoza\Commerce;
+use celiacomendoza\Http\Requests\MailCustomerRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -12,5 +15,18 @@ class HomeController extends Controller
         $commerces = Commerce::all();
 
         return view('layouts.main', compact('commerces'));
+    }
+
+    public function MailClient(MailCustomerRequest $request)
+    {
+
+        Mail::send('web.mails.MailClient', $request->all(), function ($msj) use ($request) {
+            $msj->from($request->email, $request->name);
+            $msj->subject('Mensaje desde celiacomendoza');
+            $msj->to('no-respond@celiacomendoza.com', 'CeliacoMendoza');
+        });
+
+        Session::flash('message', 'Su mensaje fue enviado correctamente. Muchas gracias!!!');
+        return back();
     }
 }

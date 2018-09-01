@@ -21,30 +21,9 @@
                         <a href="#footer" data-scroll="scrollTo" data-hover="Contactenos">Contactenos</a>
                     </li>
                 </ul>
-                <div class="module module-search pull-left">
-                    <div class="module-icon search-icon">
-                        <i class="fa fa-search"></i>
-                        <span class="title">search</span>
-                    </div>
-
-                </div>
             </div>
         </div>
     </nav>
-    <div class="module-search-box">
-        <div class="module-content search-box">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12  col-sm-12  col-md-12">
-                        <form class="search-form">
-                            <input type="text" class="form-control" placeholder="Ingrese el nombre del producto">
-                            <a class="search-cancel" href="#"><i class="fa fa-close"></i></a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </header>
 
 <section id="page-title" class="page-title bg-overlay bg-overlay-dark">

@@ -24,21 +24,15 @@
     <link href="{{asset('webStyle/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('webStyle/css/style.css')}}" rel="stylesheet">
 
-    <!-- RS5.0 Main Stylesheet -->
+ {{--   <!-- RS5.0 Main Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{asset('webStyle/revolution/css/settings.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('webStyle/revolution/css/layers.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('webStyle/revolution/css/navigation.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('webStyle/revolution/css/navigation.css')}}">--}}
 
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-    <script src="{{asset('webStyle/js/html5shiv.js')}}"></script>
-    <script src="{{asset('webStyle/js/respond.min.js')}}"></script>
-    <![endif]-->
-
-    <!-- Document Title
+        <!-- Document Title
         ============================================= -->
-    <title>Celiaco Mendoza</title>
+    <title>Celiacos Mendoza</title>
 </head>
 <body>
 

@@ -13,22 +13,16 @@
                 <div class="col-xs-12 col-sm-6 col-md-3 product">
                     <div class="product-img">
                         <img src="{{ $highlight->photo }}" alt="Product"/>
-                        <div class="product-price">
+                        <div class="product-price" style="background-color: #00000099;">
                             <span>$</span><span class="symbole">{{ $highlight->price }}</span>
-                        </div>
-                        <div class="product-hover">
-                            <div class="product-action">
-                                <a class="btn btn-primary" href="#">Agregar</a>
-                                <a class="btn btn-secondary" href="{{ url('producto', array($commerce->id, $highlight->id)) }}">Detalle</a>
-                            </div>
                         </div>
                     </div>
                     <div class="product-bio">
                         <div class="prodcut-cat">
-                            <a href="#">{{ $highlight->category->name }}</a>
+                            <p>{{ $highlight->category->name }}</p>
                         </div>
                         <div class="prodcut-title">
-                            <h3><a href="#">{{ substr($highlight->name, 0, 20) }}</a></h3>
+                            <h3><a href="{{ url('producto', array($commerce->id, $highlight->id)) }}">{{ substr($highlight->name, 0, 20) }}</a></h3>
                         </div>
                     </div>
                 </div>
