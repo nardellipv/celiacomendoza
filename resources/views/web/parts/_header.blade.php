@@ -20,6 +20,9 @@
                     <li class="has-dropdown">
                         <a href="#footer" data-scroll="scrollTo" data-hover="Contactenos">Contactenos</a>
                     </li>
+                    <li class="has-dropdown">
+                        <a href="#" data-toggle="modal" data-target=".login-modal-lg" data-hover="Ingresar/Registrarse">Ingresar/Registrarse</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -42,3 +45,5 @@
         </div>
     </div>
 </section>
+
+@include('web.parts._modalLogin')
