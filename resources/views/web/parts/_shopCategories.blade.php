@@ -1,14 +1,25 @@
-<div class="widget widget-categories">
-    <div class="widget-title">
-        <h5>Categorias</h5>
+<aside>
+    <div class="sidebar-modern-inner">
+        <div class="block-title has-arrow sidebar-header">
+            <h5>Categorías</h5>
+        </div>
+        <div class="block-content categories-list  list-filter ">
+            <ul class=" list-unstyled">
+                @foreach($listCategories as $listCategory)
+                    <li>
+                        <a href="{{ url('listado-categoria', array($commerce->id,$listCategory->id)) }}"><span
+                                    class="title">{{ $listCategory->name }}</span>
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+
+        <div class="block-title has-arrow ">
+            <h5>Últimos Productos</h5>
+        </div>
+        <div class="block-content locations-list  list-filter ">
+            @include('web.parts._shopLastItems')
+        </div>
     </div>
-    <div class="widget-content">
-        <ul class="list-unstyled mb-0">
-            @foreach($listCategories as $listCategory)
-                <li>
-                    <a href="{{ url('listado-categoria', array($commerce->id,$listCategory->id)) }}"><i class="fa fa-angle-double-right"></i>{{ $listCategory->name }}</a>
-                </li>
-            @endforeach
-        </ul>
-    </div>
-</div>
+</aside>

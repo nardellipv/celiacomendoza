@@ -19,6 +19,7 @@ class CreateCommercesTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('location');
+            $table->string('number');
             $table->string('phone');
             $table->string('web');
             $table->mediumText('about');

@@ -1,39 +1,29 @@
-<section id="locales" class="team team-1 pb-lg">
+<section class="event-category">
     <div class="container">
-        <div class="row heading-1 mb-60 clearfix">
-            <div class="col-xs-12 col-xs-offset-1  col-sm-12  col-md-3 col-md-offset-1">
-                <div class="heading mb-0">
-                    <p>Asociados</p>
-                    <h2>Listado de tiendas</h2>
-                </div>
-            </div>
-            <div class="col-xs-12  col-sm-12  col-md-6">
-                {{--texto al costado del titulo--}}
-            </div>
+        <div class="col-12 title-box text-center section-header">
+            <h2 class="title">Listado de locales</h2>
         </div>
-
         <div class="row">
             @foreach($commerces as $commerce)
-                <div class="col-xs-12 col-sm-6 col-md-3 member">
-                    <div class="member-img">
-                        <img src="{{asset($commerce->logo)}}" alt="member"/>
-                        <div class="member-bg"></div>
-                        <div class="member-hover">
-                            <h5>{{ $commerce->name }}</h5>
-                            <h6>{{ $commerce->address }}</h6>
-                            <h6>{{ $commerce->phone }}</h6>
-                            <div class="member-social">
-                                @if($commerce->facebook)
-                                    <a href="http://www.facebook.com/{{ $commerce->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
-                                @endif
-                                @if($commerce->twitter)
-                                        <a href="https://twitter.com/{{ $commerce->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
-                                @endif
-                                <a href="{{url('catalogo', $commerce->id)}}"><i class="fa fa-arrow-right" style="color: black"></i></a>
-                            </div>
+            <div class=" col-md-3 col-sm-6 col-6 event-item-col">
+                <div class="card card-event info-overlay overlay-visible card-category">
+                    <div class="img has-background"
+                         style="background-size:cover ">
+                        <img alt="340x230" class="card-img-top img-responsive" data-holder-rendered="true"
+                             src="images/thumbnail/{{$commerce->logo}}">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{{url('catalogo', $commerce->id)}}">{{ $commerce->name }}</a>
+                        </h4>
+                        <p class="card-text hide">Donec imperdiet leo ac ipsum blandit auctor.</p>
+                        <div class="card-event-info">
+                            <p class="event-location"><i class="fa icon-location-1"></i>
+                                <a class="location" href="">{{ $commerce->address }} </a></p>
                         </div>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>

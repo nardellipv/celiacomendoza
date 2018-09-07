@@ -1,20 +1,18 @@
-<section id="shortcode12" class="shortcode-12">
+<div class="main-container inner-page">
     <div class="container">
-        <div class="row heading-1 clearfix">
-            <div class="col-xs-12 col-sm-12 col-md-3 col-md-offset-1">
-                <div class="heading mb-0">
-                    <p>Sobre Nosotros</p>
-                    <h2>{{ $commerce->name }}</h2>
+        <div class="section-content">
+            <div class="row ">
+                <div class="col-xl-12">
+                    <h1 class="text-center title-1"> Acerca de <b>{{ $commerce->name }}</b> </h1>
+                    <hr class="center-block small text-hr">
                 </div>
-                <!-- .heading end -->
+
+                <div class="col-sm-9 offset-2">
+                    <div class="text-content has-lead-para text-left">
+                        <p class="lead"> {{ $commerce->about }} </p>
+                    </div>
+                </div>
             </div>
-            <!-- .col-md-4 end -->
-            <div class="col-xs-12 col-sm-12 col-md-7">
-                <p class="mb-0">{{ $commerce->about }}</p>
-            </div>
-            <!-- .col-md-8 end -->
         </div>
-        <!-- .row end -->
     </div>
-    <!-- .container end -->
-</section>
+</div>

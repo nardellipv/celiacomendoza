@@ -1,12 +1,9 @@
-@if (Session::has('message'))
-    <div class="alerts alert-info text-center" style="background-color: yellow;">
-        <div class="alert-content">
-            <div class="alert-icon">
-                <i class="fa fa-check-circle"></i>
-            </div>
-            <h4>Compra Realizada con éxito</h4>
-            <p>{!! Session::get('message') !!}</p>
-        </div>
-    </div>
+@if (Session::has('messageCheckout'))
+<div class="alert alert-warning alert-dismissible fade show text text-center" role="alert">
+    <strong><i class="fa fa-thumbs-up fa-2x"></i> Compra Realizada con éxito</strong> {!! Session::get('message') !!}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 @endif
 

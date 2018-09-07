@@ -1,12 +1,8 @@
 @if (Session::has('message'))
-    <div class="alerts alert-info">
-        <div class="alert-icon">
-            <i class="fa fa-check-circle"></i>
-        </div>
-        <div class="alert-content">
-            <h4>Mensaje Enviado</h4>
-            <p>{!! Session::get('message') !!}</p>
-        </div>
+    <div class="alert alert-warning alert-dismissible fade show text text-center" role="alert">
+        <strong><i class="fa fa-thumbs-up fa-2x"></i> ¡¡¡Perfecto!!!</strong> {!! Session::get('message') !!}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
 @endif
-

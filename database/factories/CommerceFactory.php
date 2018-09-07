@@ -7,6 +7,7 @@ $factory->define(\celiacomendoza\Commerce::class, function (Faker $faker) {
         'name' => $faker->company,
         'address' => $faker->address,
         'location' => $faker->city,
+        'number' => rand(100, 10000),
         'phone' => $faker->phoneNumber,
         'web' => $faker->url,
         'about' => $faker->text($maxNbChars = 500),

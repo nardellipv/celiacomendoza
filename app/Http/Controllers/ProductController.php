@@ -171,7 +171,7 @@ class ProductController extends Controller
 
         $commerces = Commerce::all();
 
-        Session::flash('message', 'Su compra fue realizada, por favor revise su mail para saber como sigue el proceso de compra.');
+        Session::flash('messageCheckout', 'Su compra fue realizada, por favor revise su mail para saber como sigue el proceso de compra.');
         return view('layouts.main', compact('commerces'));
     }
 }

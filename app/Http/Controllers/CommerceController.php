@@ -21,9 +21,10 @@ class CommerceController extends Controller
             ->where('in_offer', 'YES')
             ->get();
 
-        $highlights = Product::where('highlight', 'YES')
+        $highlights = Product::where('commerce_id', $id)
+            ->where('highlight', 'YES')
             ->where('available', 'YES')
-            ->Limit(4)
+            ->Limit(10)
             ->get();
 
         return view('web.catalog', compact('commerce', 'offers', 'highlights'));
@@ -52,10 +53,8 @@ class CommerceController extends Controller
     {
         $commerce = Commerce::find($id);
 
-        $countProducts = Product::where('commerce_id', $id)
-            ->count();
-
         $products = Product::where('commerce_id', $id)
+            ->where('available', 'YES')
             ->paginate(10);
 
         $listCategories = Category::all();
@@ -65,20 +64,17 @@ class CommerceController extends Controller
             ->take(3)
             ->get();
 
-        return view('web.shop', compact('commerce', 'countProducts', 'products', 'listCategories', 'lastProducts'));
+        return view('web.shop', compact('commerce', 'products', 'listCategories', 'lastProducts'));
     }
 
     public function shopCategory($id, $category_id)
     {
         $commerce = Commerce::find($id);
 
-        $countProducts = Product::where('commerce_id', $id)
-            ->where('category_id', $category_id)
-            ->count();
-
         $listCategories = Category::all();
 
         $products = Product::where('commerce_id', $id)
+            ->where('available', 'YES')
             ->where('category_id', $category_id)
             ->paginate(10);
 
@@ -88,6 +84,6 @@ class CommerceController extends Controller
             ->get();
 
         return view('web.shopChooseCategory', compact('commerce', 'lastProducts',
-            'listCategories', 'countProducts', 'products'));
+            'listCategories', 'products'));
     }
 }

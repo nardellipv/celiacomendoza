@@ -21,5 +21,21 @@ Route::post('checkout', 'ProductController@checkout');
 Route::post('mailcustomers', 'CommerceController@MailCustomer')->name('mailcustomers');
 Route::post('mailclient', 'HomeController@MailClient')->name('mailclient');
 
+Route::get('terminos', function () {
+    return view('web.parts._term');
+});
+Route::get('politicas', function () {
+    return view('web.parts._politices');
+});
+//---------------------
+
+//Admin Company
+Route::middleware(['auth'])->group(function () {
+    Route::get('cliente-perfil', 'AdminClient\DashboardController@dashboard');
+    Route::resource('cliente-perfil/updatePerson', 'AdminClient\PersonController');
+    Route::resource('cliente-perfil/updateCommerce', 'AdminClient\CommerceController');
+    Route::get('cliente-perfil/activos', 'AdminClient\DashboardController@dashboard');
+    Route::get('cliente-perfil/desactivos', 'AdminClient\DashboardController@dashboard');
+});
 //---------------------
 
