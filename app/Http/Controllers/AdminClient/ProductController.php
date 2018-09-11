@@ -7,6 +7,7 @@ use celiacomendoza\Commerce;
 use celiacomendoza\Http\Requests\ClientProductRequest;
 use celiacomendoza\Product;
 use celiacomendoza\User;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 use Image;
 
@@ -142,6 +143,16 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+//        dd($product);
+
+        if(File::exists(public_path('images/thumbnail/products/' . $product->photo))){
+            File::delete(public_path('images/thumbnail/products/' . $product->photo));
+        }
+
+        if(File::exists(public_path('images/' . $product->commerce->name . '-' . $product->commerce->id . '/products/' . $product->photo))){
+            File::delete(public_path('images/' . $product->commerce->name . '-' . $product->commerce->id . '/products/' . $product->photo));
+        }
+
         $product->delete();
 
         Session::flash('message', 'Producto eliminado correctamente');

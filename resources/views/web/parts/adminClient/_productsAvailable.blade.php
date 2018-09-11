@@ -105,7 +105,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                @include('web.parts.adminClient._modalShare')
                             @endforeach
                             </tbody>
                         </table>
