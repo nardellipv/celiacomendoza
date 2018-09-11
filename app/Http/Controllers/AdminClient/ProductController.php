@@ -115,7 +115,28 @@ class ProductController extends Controller
 
         Session::flash('message', 'Producto modificado correctamente');
         return back();
+    }
 
+    public function available($id)
+    {
+        $product = Product::find($id);
+
+        $product->available = 'YES';
+        $product->update();
+
+        Session::flash('message', 'Producto Activado correctamente');
+        return back();
+    }
+
+    public function unavailable($id)
+    {
+        $product = Product::find($id);
+
+        $product->available = 'NO';
+        $product->update();
+
+        Session::flash('message', 'Producto Activado correctamente');
+        return back();
     }
 
     public function destroy($id)

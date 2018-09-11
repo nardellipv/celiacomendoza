@@ -42,10 +42,11 @@
                             @foreach($productsAvailable as $productAvailable)
                                 <tr>
                                     <td style="width:14%" class="add-img-td">
-                                        <a href="../images/{{ $commerce->name }}-{{ $commerce->id }}/products/{{ $productAvailable->photo }}" target="_blank">
+                                        <a href="../images/{{ $commerce->name }}-{{ $commerce->id }}/products/{{ $productAvailable->photo }}"
+                                           target="_blank">
                                             <img class="thumbnail  img-responsive"
-                                                    src="../images/thumbnail/products/{{ $productAvailable->photo }}"
-                                                    alt="img"></a>
+                                                 src="../images/thumbnail/products/{{ $productAvailable->photo }}"
+                                                 alt="img"></a>
                                     </td>
                                     <td style="width:58%" class="ads-details-td">
                                         <div>
@@ -65,6 +66,12 @@
                                                 <p><strong> Sin Oferta </strong></p>
                                             @endif
                                         </div>
+
+                                        <a href="http://www.twitter.com/intent/tweet?url=http://your-url&text=caption" class="btn btn-tw">tweet</a>
+                                        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=small&mobile_iframe=true&appId=1548595978765268&width=81&height=20"
+                                                width="81" height="20" style="border:none;overflow:hidden"
+                                                scrolling="no" frameborder="0" allowTransparency="true"
+                                                allow="encrypted-media"></iframe>
                                     </td>
                                     <td style="width:20%" class="price-td">
                                         <div>Precio: <strong>$ {{ $productAvailable->price }}</strong></div>
@@ -74,15 +81,19 @@
                                     </td>
                                     <td style="width:10%" class="action-td">
                                         <div>
-                                            <p><a href="{{ route('product.edit', $productAvailable->id) }}" class="btn btn-primary btn-sm">
+                                            <p>
+                                                <a href="{{ route('product.edit', $productAvailable->id) }}"
+                                                   class="btn btn-primary btn-sm">
                                                     <i class="fa fa-edit"></i> Editar
                                                 </a>
                                             </p>
 
-                                            <p><a class="btn btn-info btn-sm"> <i class="fa fa-mail-forward"></i>
-                                                    Compartir
-                                                </a></p>
-
+                                            <p>
+                                                <a href="{{ route('unavailable', $productAvailable->id) }}"
+                                                   class="btn btn-info btn-sm">
+                                                    <i class=" fa fa-times"></i> Desactivar
+                                                </a>
+                                            </p>
                                             <p>
                                                 {!! Form::open(['method' => 'DELETE','route' => ['product.destroy', $productAvailable->id],'style'=>'display:inline']) !!}
                                                 {{Form::token() }}
@@ -94,6 +105,7 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @include('web.parts.adminClient._modalShare')
                             @endforeach
                             </tbody>
                         </table>
@@ -103,9 +115,10 @@
         </div>
     </div>
 </div>
+
 @section('script')
-    <script src="{{ asset('webStyle/assets/js/footable.js?v=2-0-1') }}" type="text/javascript"></script>
-    <script src="{{ asset('webStyle/assets/js/footable.filter.js?v=2-0-1') }}" type="text/javascript"></script>
+    <script src="{{ asset('webStyle/assets/js/footable.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('webStyle/assets/js/footable.filter.js') }}" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
             $('#addManageTable').footable().bind('footable_filtering', function (e) {

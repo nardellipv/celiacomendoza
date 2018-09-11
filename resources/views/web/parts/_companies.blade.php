@@ -9,8 +9,8 @@
                 <div class="card card-event info-overlay overlay-visible card-category">
                     <div class="img has-background"
                          style="background-size:cover ">
-                        <img alt="340x230" class="card-img-top img-responsive" data-holder-rendered="true"
-                             src="images/thumbnail/{{$commerce->logo}}">
+                        <img alt="logo" class="card-img-top img-responsive" data-holder-rendered="true"
+                             src="images/thumbnail/logo/{{$commerce->logo}}">
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">

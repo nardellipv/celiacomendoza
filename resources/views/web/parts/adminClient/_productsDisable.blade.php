@@ -75,13 +75,18 @@
                                     </td>
                                     <td style="width:10%" class="action-td">
                                         <div>
-                                            <p><a class="btn btn-primary btn-sm"> <i class="fa fa-edit"></i> Editar
+                                            <p>
+                                                <a href="{{ route('product.edit', $productDisable->id) }}"
+                                                   class="btn btn-primary btn-sm">
+                                                    <i class="fa fa-edit"></i> Editar
                                                 </a>
                                             </p>
 
-                                            <p><a class="btn btn-info btn-sm"> <i class="fa fa-mail-forward"></i>
-                                                    Compartir
-                                                </a></p>
+                                            <p>
+                                                <a href="{{ route('available', $productDisable->id) }}" class="btn btn-info btn-sm">
+                                                    <i class=" fa fa-retweet"></i>  Activar
+                                                </a>
+                                            </p>
 
                                             <p>
                                                 {!! Form::open(['method' => 'DELETE','route' => ['product.destroy', $productDisable->id],'style'=>'display:inline']) !!}
@@ -104,8 +109,8 @@
     </div>
 </div>
 @section('script')
-    <script src="{{ asset('webStyle/assets/js/footable.js?v=2-0-1') }}" type="text/javascript"></script>
-    <script src="{{ asset('webStyle/assets/js/footable.filter.js?v=2-0-1') }}" type="text/javascript"></script>
+    <script src="{{ asset('webStyle/assets/js/footable.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('webStyle/assets/js/footable.filter.js') }}" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
             $('#addManageTable').footable().bind('footable_filtering', function (e) {

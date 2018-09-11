@@ -65,22 +65,24 @@
 <!-- Placed at the end of the document so the pages load faster -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="webStyle/assets/js/jquery/jquery-3.3.1.min.js">\x3C/script>')</script>
+<!--<script>window.jQuery || document.write('<script src="webStyle/assets/js/jquery/jquery-3.3.1.min.js">\x3C/script>')</script>-->
 
-<script src="{{ ('webStyle/assets/js/vendors.min.js') }}"></script>
+<script src="{{ asset('webStyle/assets/js/vendors.min.js') }}"></script>
 
 <!-- include custom script for site  -->
-<script src="{{ ('webStyle/assets/js/main.min.js') }}"></script>
+<script src="{{ asset('webStyle/assets/js/main.min.js') }}"></script>
 
 
 <!-- include jquery autocomplete plugin  -->
+<script type="text/javascript" src="{{ asset('webStyle/assets/plugins/autocomplete/jquery.mockjax.js') }}"></script>
+<script type="text/javascript" src="{{ asset('webStyle/assets/plugins/autocomplete/jquery.autocomplete.js') }}"></script>
 
-<script type="text/javascript" src="{{ ('webStyle/assets/plugins/autocomplete/jquery.mockjax.js') }}"></script>
-<script type="text/javascript" src="{{ ('webStyle/assets/plugins/autocomplete/jquery.autocomplete.js') }}"></script>
-
-<script type="text/javascript" src="{{ ('webStyle/assets/plugins/autocomplete/autocomplete-demo.js') }}"></script>
+<script type="text/javascript" src="{{ asset('webStyle/assets/plugins/autocomplete/autocomplete-demo.js') }}"></script>
 
 @yield('script')
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-591dcb7e764af49d"></script>
 
 </body>
 </html>

@@ -37,6 +37,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('cliente-perfil/updatePerson', 'AdminClient\PersonController', ['only' => ['update']]);
     Route::resource('cliente-perfil/updateCommerce', 'AdminClient\CommerceController', ['only' => ['update']]);
     Route::resource('cliente-perfil/product', 'AdminClient\ProductController', ['except' => ['show']]);
+        Route::get('cliente-perfil/available/{id}', 'AdminClient\ProductController@reactive')->name('available');
+        Route::get('cliente-perfil/unavailable/{id}', 'AdminClient\ProductController@reactive')->name('unavailable');
+    Route::resource('cliente-perfil/mensajes', 'AdminClient\MessageController');
 });
 //---------------------
 
