@@ -4,7 +4,7 @@ namespace celiacomendoza\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ClientCommerceRequest extends FormRequest
+class ClientProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +25,13 @@ class ClientCommerceRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'address' => 'required|min:10',
-            'phone' => 'required|numeric',
-            'file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'about' => 'required',
+            'description' => 'required | min:10',
+            'price' => 'required | numeric',
+            'offer' => 'required | numeric',
+            'category_id' => 'required',
+            'in_offer' => 'required',
+            'highlight' => 'required',
+            'available' => 'required',
         ];
     }
 }

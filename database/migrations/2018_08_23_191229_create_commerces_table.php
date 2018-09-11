@@ -21,10 +21,10 @@ class CreateCommercesTable extends Migration
             $table->string('location');
             $table->string('number');
             $table->string('phone');
-            $table->string('web');
+            $table->string('web')->nullable();
             $table->mediumText('about');
-            $table->string('twitter');
-            $table->string('facebook');
+            $table->string('twitter')->nullable();
+            $table->string('facebook')->nullable();
             $table->string('logo')->nullable();
 
             $table->integer('user_id')->unsigned();

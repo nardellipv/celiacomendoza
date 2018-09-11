@@ -1,10 +1,11 @@
 <div class="main-container">
     <div class="container">
+        @include('web.parts.alerts.success')
+        @include('web.parts.alerts.error')
         <div class="row">
             <div class="col-md-3 page-sidebar">
                 @include('web.parts.adminClient._aside')
             </div>
-
             <div class="col-md-9 page-content">
                 <div class="inner-box">
                     <h2 class="title-2"><i class="icon-docs"></i> Listado de productos Activados</h2>
@@ -40,10 +41,12 @@
                             <tbody>
                             @foreach($productsAvailable as $productAvailable)
                                 <tr>
-                                    <td style="width:14%" class="add-img-td"><a href="{{ $productAvailable->photo }}"><img
-                                                    class="thumbnail  img-responsive"
-                                                    src="{{ $productAvailable->photo }}"
-                                                    alt="img"></a></td>
+                                    <td style="width:14%" class="add-img-td">
+                                        <a href="../images/{{ $commerce->name }}-{{ $commerce->id }}/products/{{ $productAvailable->photo }}" target="_blank">
+                                            <img class="thumbnail  img-responsive"
+                                                    src="../images/thumbnail/products/{{ $productAvailable->photo }}"
+                                                    alt="img"></a>
+                                    </td>
                                     <td style="width:58%" class="ads-details-td">
                                         <div>
                                             <p><strong> <a href="ads-details.html"
@@ -71,16 +74,23 @@
                                     </td>
                                     <td style="width:10%" class="action-td">
                                         <div>
-                                            <p><a class="btn btn-primary btn-sm"> <i class="fa fa-edit"></i> Edit
+                                            <p><a href="{{ route('product.edit', $productAvailable->id) }}" class="btn btn-primary btn-sm">
+                                                    <i class="fa fa-edit"></i> Editar
                                                 </a>
                                             </p>
 
                                             <p><a class="btn btn-info btn-sm"> <i class="fa fa-mail-forward"></i>
-                                                    Share
+                                                    Compartir
                                                 </a></p>
 
-                                            <p><a class="btn btn-danger btn-sm"> <i class=" fa fa-trash"></i> Delete
-                                                </a></p>
+                                            <p>
+                                                {!! Form::open(['method' => 'DELETE','route' => ['product.destroy', $productAvailable->id],'style'=>'display:inline']) !!}
+                                                {{Form::token() }}
+                                                <button type="submit" class="btn btn-danger btn-sm">
+                                                    <i class=" fa fa-trash"></i> Eliminar
+                                                </button>
+                                                {!! Form::Close() !!}
+                                            </p>
                                         </div>
                                     </td>
                                 </tr>

@@ -115,29 +115,30 @@
 
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" name="web" id="web"
-                                                       value="{{ $commerce->web }}" placeholder="Sitio Web"
-                                                       required/>
+                                                       value="{{ $commerce->web }}" placeholder="Sitio Web" />
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Usuario facebook</label>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Usuario Facebook</label>
 
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="facebook"
-                                                       id="facebook"
-                                                       value="{{ $commerce->facebook }}"
-                                                       placeholder="www.facebook.com/USUARIO"/>
+                                        <div class="input-group col-sm-9">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">https://www.facebook.com/</span>
                                             </div>
+                                            <input type="text" name="facebook" class="form-control"
+                                                   value="{{ $commerce->facebook }}" placeholder="USUARIO">
                                         </div>
+
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">Usuario Twitter</label>
-
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="twitter"
-                                                       id="twitter"
-                                                       value="{{ $commerce->twitter }}"
-                                                       placeholder="twitter.com/USUARIO"/>
+                                            <div class="input-group col-sm-9">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">https://twitter.com/</span>
+                                                </div>
+                                                <input type="text" name="twitter" class="form-control"
+                                                       value="{{ $commerce->twitter }}" placeholder="USUARIO">
                                             </div>
+
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">Cuenta al público sobre tu local y
@@ -154,6 +155,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label" for="textarea">Logo del local</label>
                                             <div class="col-lg-8">
+                                                <img src="images/thumbnail/logo/{{$commerce->logo}}">
                                                 <div class="mb10">
                                                     <input id="input-upload-img1" name="file" type="file" class="file" >
                                                 </div>

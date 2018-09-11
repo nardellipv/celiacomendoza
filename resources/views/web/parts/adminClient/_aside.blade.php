@@ -3,9 +3,9 @@
         <div class="user-panel-sidebar">
             <div class="collapse-box">
                 <h5 class="collapse-title no-border"> Menú <a href="#MyClassified" aria-expanded="true"
-                                                              data-toggle="collapse"
-                                                              class="pull-right"><i
-                                class="fa fa-angle-down"></i></a></h5>
+                                                              data-toggle="collapse" class="pull-right">
+                        <i class="fa fa-angle-down"></i></a>
+                </h5>
 
                 <div class="panel-collapse collapse show" id="MyClassified">
                     <ul class="acc-list">

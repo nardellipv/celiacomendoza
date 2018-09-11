@@ -1,10 +1,12 @@
+{{--{{dd(public_path('images/thumbnail/'.$commerce->logo))}}--}}
 @if (Auth::check())
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav ml-auto navbar-right">
             <li class="dropdown no-arrow nav-item"><a href="#" class="dropdown-toggle nav-link"
                                                       data-toggle="dropdown">
 
-                    <span>Hola, {{ Auth()->user()->name}}</span><i class="icon-user fa"></i> <i class="icon-down-open-big fa"></i></a>
+                    <span>Hola, {{ Auth()->user()->name}}</span><i class="icon-user fa"></i> <i
+                            class="icon-down-open-big fa"></i></a>
                 <ul class="dropdown-menu user-menu dropdown-menu-right">
                     <li class="active dropdown-item"><a href="{{ url('cliente-perfil') }}"><i class="icon-home"></i>
                             Panel Principal
@@ -33,10 +35,10 @@
                     </li>
                 </ul>
             </li>
-            <li class="postadd nav-item"><a class="btn btn-block btn-border btn-post btn-danger nav-link"
-                                            href="post-ads.html">Subir un Producto</a>
-            </li>
 
+            <li class="postadd nav-item"><a class="btn btn-block btn-border btn-post btn-danger nav-link"
+                                            href="{{ url('cliente-perfil/product/create') }}">Subir un Producto</a>
+            </li>
         </ul>
     </div>
 @else

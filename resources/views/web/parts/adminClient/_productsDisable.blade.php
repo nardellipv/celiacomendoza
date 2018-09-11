@@ -1,5 +1,7 @@
 <div class="main-container">
     <div class="container">
+        @include('web.parts.alerts.success')
+        @include('web.parts.alerts.error')
         <div class="row">
             <div class="col-md-3 page-sidebar">
                 @include('web.parts.adminClient._aside')
@@ -40,10 +42,12 @@
                             <tbody>
                             @foreach($productsDisable as $productDisable)
                                 <tr>
-                                    <td style="width:14%" class="add-img-td"><a href="{{ $productDisable->photo }}"><img
-                                                    class="thumbnail  img-responsive"
-                                                    src="{{ $productDisable->photo }}"
-                                                    alt="img"></a></td>
+                                    <td style="width:14%" class="add-img-td">
+                                        <a href="../images/{{ $commerce->name }}-{{ $commerce->id }}/products/{{ $productDisable->photo }}" target="_blank">
+                                            <img class="thumbnail  img-responsive"
+                                                 src="../images/thumbnail/products/{{ $productDisable->photo }}"
+                                                 alt="img"></a>
+                                    </td>
                                     <td style="width:58%" class="ads-details-td">
                                         <div>
                                             <p><strong> <a href="ads-details.html"
@@ -71,16 +75,22 @@
                                     </td>
                                     <td style="width:10%" class="action-td">
                                         <div>
-                                            <p><a class="btn btn-primary btn-sm"> <i class="fa fa-edit"></i> Edit
+                                            <p><a class="btn btn-primary btn-sm"> <i class="fa fa-edit"></i> Editar
                                                 </a>
                                             </p>
 
                                             <p><a class="btn btn-info btn-sm"> <i class="fa fa-mail-forward"></i>
-                                                    Share
+                                                    Compartir
                                                 </a></p>
 
-                                            <p><a class="btn btn-danger btn-sm"> <i class=" fa fa-trash"></i> Delete
-                                                </a></p>
+                                            <p>
+                                                {!! Form::open(['method' => 'DELETE','route' => ['product.destroy', $productDisable->id],'style'=>'display:inline']) !!}
+                                                {{Form::token() }}
+                                                <button type="submit" class="btn btn-danger btn-sm">
+                                                    <i class=" fa fa-trash"></i> Eliminar
+                                                </button>
+                                                {!! Form::Close() !!}
+                                            </p>
                                         </div>
                                     </td>
                                 </tr>

@@ -32,10 +32,11 @@ Route::get('politicas', function () {
 //Admin Company
 Route::middleware(['auth'])->group(function () {
     Route::get('cliente-perfil', 'AdminClient\DashboardController@dashboard');
-    Route::resource('cliente-perfil/updatePerson', 'AdminClient\PersonController');
-    Route::resource('cliente-perfil/updateCommerce', 'AdminClient\CommerceController');
     Route::get('cliente-perfil/activos', 'AdminClient\DashboardController@dashboard');
     Route::get('cliente-perfil/desactivos', 'AdminClient\DashboardController@dashboard');
+    Route::resource('cliente-perfil/updatePerson', 'AdminClient\PersonController', ['only' => ['update']]);
+    Route::resource('cliente-perfil/updateCommerce', 'AdminClient\CommerceController', ['only' => ['update']]);
+    Route::resource('cliente-perfil/product', 'AdminClient\ProductController', ['except' => ['show']]);
 });
 //---------------------
 

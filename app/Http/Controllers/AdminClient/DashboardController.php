@@ -14,22 +14,24 @@ class DashboardController extends Controller
         $user = User::where('id', auth()->user()->id)
             ->first();
 
-        $commerce = Commerce::where('user_id', auth()->user()->id)
+        $commerce = Commerce::where('user_id', $user->id)
             ->first();
 
-        $productsAvailable = Product::where('commerce_id', $commerce->id)
+        $productsAvailable = Product::where('commerce_id', $user->id)
             ->where('available', 'YES')
+            ->orderBy('created_at', 'DESC')
             ->get();
 
-        $countProductsAvailable = Product::where('commerce_id', $commerce->id)
+        $countProductsAvailable = Product::where('commerce_id', $user->id)
             ->where('available', 'YES')
             ->count();
 
-        $productsDisable = Product::where('commerce_id', $commerce->id)
+        $productsDisable = Product::where('commerce_id', $user->id)
             ->where('available', 'NO')
+            ->orderBy('created_at', 'DESC')
             ->get();
 
-        $countProductsDisable = Product::where('commerce_id', $commerce->id)
+        $countProductsDisable = Product::where('commerce_id', $user->id)
             ->where('available', 'NO')
             ->count();
 
