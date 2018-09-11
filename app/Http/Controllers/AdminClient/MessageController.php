@@ -4,6 +4,7 @@ namespace celiacomendoza\Http\Controllers\AdminClient;
 
 use celiacomendoza\Category;
 use celiacomendoza\Commerce;
+use celiacomendoza\Message;
 use celiacomendoza\Product;
 use celiacomendoza\User;
 use Illuminate\Http\Request;
@@ -16,20 +17,14 @@ class MessageController extends Controller
         $user = User::where('id', auth()->user()->id)
             ->first();
 
-        $commerce = Commerce::where('user_id', auth()->user()->id)
-            ->first();
+        $messages = Message::where('commerce_id', $user->id)
+            ->get();
 
-        $countProductsAvailable = Product::where('commerce_id', $user->id)
-            ->where('available', 'YES')
-            ->count();
+//        $commerce = Commerce::where('user_id', auth()->user()->id)
+//            ->first();
 
-        $countProductsDisable = Product::where('commerce_id', $user->id)
-            ->where('available', 'NO')
-            ->count();
 
-        $categories = Category::all();
 
-        return view('web.parts.adminClient._accountMessage', compact('user', 'commerce', 'countProductsAvailable',
-            'countProductsDisable', 'categories'));
+        return view('web.parts.adminClient._accountMessage', compact('user','messages'));
     }
 }

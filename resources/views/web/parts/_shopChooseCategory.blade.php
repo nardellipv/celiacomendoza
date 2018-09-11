@@ -49,7 +49,7 @@
                                                     </p>
                                                     <p class="event-location"><i class="fa icon-location"></i>
                                                         <a class="location"
-                                                           href="">{{ substr($product->description,0,100) }} </a>
+                                                           href="">{{ str_limit($product->description,100) }} </a>
                                                     </p>
                                                 </div>
                                             </div>

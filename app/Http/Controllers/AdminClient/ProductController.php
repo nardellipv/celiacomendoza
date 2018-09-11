@@ -23,18 +23,9 @@ class ProductController extends Controller
         $commerce = Commerce::where('user_id', auth()->user()->id)
             ->first();
 
-        $countProductsAvailable = Product::where('commerce_id', $user->id)
-            ->where('available', 'YES')
-            ->count();
-
-        $countProductsDisable = Product::where('commerce_id', $user->id)
-            ->where('available', 'NO')
-            ->count();
-
         $categories = Category::all();
 
-        return view('web.parts.adminClient._productsCreate', compact('user', 'commerce', 'countProductsAvailable',
-            'countProductsDisable', 'categories'));
+        return view('web.parts.adminClient._productsCreate', compact('user', 'commerce', 'categories'));
     }
 
     public function store(ClientProductRequest $request)
@@ -75,17 +66,9 @@ class ProductController extends Controller
         $user = User::where('id', auth()->user()->id)
             ->first();
 
-        $countProductsAvailable = Product::where('commerce_id', $user->id)
-            ->where('available', 'YES')
-            ->count();
-
-        $countProductsDisable = Product::where('commerce_id', $user->id)
-            ->where('available', 'NO')
-            ->count();
-
         $categories = Category::all();
 
-        return view('web.parts.adminClient._productsEdit', compact('countProductsAvailable', 'countProductsDisable', 'categories',
+        return view('web.parts.adminClient._productsEdit', compact('categories',
             'product'));
     }
 

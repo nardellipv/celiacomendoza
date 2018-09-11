@@ -43,7 +43,7 @@
                             <a class="{{ request()->is('cliente-perfil/mensajes') ? 'active' : '' }}"
                                href="{{ url('cliente-perfil/mensajes') }}">
                                 <i class="icon-mail"></i>
-                                Mensajes <span class="badge">15</span></a></li>
+                                Mensajes <span class="badge">{{ $countMessage }}</span></a></li>
                     </ul>
                 </div>
             </div>

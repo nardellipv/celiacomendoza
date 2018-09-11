@@ -22,20 +22,11 @@ class DashboardController extends Controller
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        $countProductsAvailable = Product::where('commerce_id', $user->id)
-            ->where('available', 'YES')
-            ->count();
-
         $productsDisable = Product::where('commerce_id', $user->id)
             ->where('available', 'NO')
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        $countProductsDisable = Product::where('commerce_id', $user->id)
-            ->where('available', 'NO')
-            ->count();
-
-        return view('web.adminClient', compact('user', 'commerce', 'productsAvailable','countProductsAvailable',
-            'productsDisable', 'countProductsDisable'));
+        return view('web.adminClient', compact('user', 'commerce', 'productsAvailable', 'productsDisable'));
     }
 }
