@@ -37,7 +37,7 @@
             <div class="col-md-8">
                 <div class="contact-form">
                     <h5 class="list-title gray"><strong>Contactenos</strong></h5>
-                    {!! Form::open(['method' => 'POST','route' => ['mailcustomers']]) !!}
+                    {!! Form::open(['method' => 'POST','route' => ['mailcustomers', $commerce->id]]) !!}
                     {{ csrf_field() }}
                         <fieldset>
                             <div class="row">

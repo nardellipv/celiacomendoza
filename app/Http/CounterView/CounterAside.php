@@ -2,6 +2,7 @@
 
 namespace celiacomendoza\Http\CounterView;
 
+use celiacomendoza\Commerce;
 use celiacomendoza\Message;
 use celiacomendoza\Product;
 use celiacomendoza\User;
@@ -22,7 +23,11 @@ class CounterAside
             ->where('available', 'NO')
             ->count();
 
-        $countMessage = Message::where('commerce_id', $user->id)
+        $commerce = Commerce::where('user_id', auth()->user()->id)
+            ->first();
+
+        $countMessage = Message::where('commerce_id', $commerce->id)
+            ->where('read', 'NO')
             ->count();
 
         $view->with([

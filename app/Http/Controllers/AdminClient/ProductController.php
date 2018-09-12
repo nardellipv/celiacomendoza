@@ -126,7 +126,6 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
-//        dd($product);
 
         if(File::exists(public_path('images/thumbnail/products/' . $product->photo))){
             File::delete(public_path('images/thumbnail/products/' . $product->photo));

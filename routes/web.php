@@ -18,7 +18,7 @@ Route::get('compra/{id}', 'ProductController@cart');
 Route::get('borrar/{id}/{idProduct}', 'ProductController@delItems');
 Route::post('checkout', 'ProductController@checkout');
 
-Route::post('mailcustomers', 'CommerceController@MailCustomer')->name('mailcustomers');
+Route::post('mailcustomers/{id}', 'CommerceController@MailCustomer')->name('mailcustomers');
 Route::post('mailclient', 'HomeController@MailClient')->name('mailclient');
 
 Route::get('terminos', function () {
@@ -39,7 +39,11 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('cliente-perfil/product', 'AdminClient\ProductController', ['except' => ['show']]);
         Route::get('cliente-perfil/available/{id}', 'AdminClient\ProductController@reactive')->name('available');
         Route::get('cliente-perfil/unavailable/{id}', 'AdminClient\ProductController@reactive')->name('unavailable');
-    Route::get('cliente-perfil/mensajes', 'AdminClient\MessageController@listmessage');
+    Route::get('cliente-perfil/mensajes', 'AdminClient\MessageController@listMessage');
+    Route::get('cliente-perfil/leer-mensaje/{id}', 'AdminClient\MessageController@readMessage');
+    Route::get('cliente-perfil/responder-mensaje/{id}', 'AdminClient\MessageController@responsMessage');
+    Route::delete('cliente-perfil/delete/{id}', 'AdminClient\MessageController@deleteMessage')->name('deletemessage');
+    Route::post('cliente-perfil/response/{id}', 'AdminClient\MessageController@responsMessageCliente')->name('responsMessageCliente');
 });
 //---------------------
 

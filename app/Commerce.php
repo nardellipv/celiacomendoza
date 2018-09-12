@@ -19,4 +19,9 @@ class Commerce extends Model
     {
         return $this->hasMany(Purchase::class);
     }
+
+    public function Messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 }

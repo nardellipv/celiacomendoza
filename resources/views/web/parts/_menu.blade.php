@@ -21,7 +21,7 @@
                             <i class="fa fa-times-circle"></i>
                             Productos Desactivos </a>
                     </li>
-                    <li class="dropdown-item"><a href="statements.html"><i class="icon-mail"></i>
+                    <li class="dropdown-item"><a href="{{ url('cliente-perfil/mensajes') }}"><i class="icon-mail"></i>
                             Mensajes </a>
                     </li>
                     <li class="dropdown-item"><a href="{{ route('logout') }}" onclick="event.preventDefault();

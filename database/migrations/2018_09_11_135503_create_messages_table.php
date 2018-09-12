@@ -19,6 +19,7 @@ class CreateMessagesTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->longText('message');
+            $table->enum('read',['YES','NO']);
 
             $table->integer('commerce_id')->unsigned();
 

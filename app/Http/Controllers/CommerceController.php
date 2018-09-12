@@ -5,6 +5,7 @@ namespace celiacomendoza\Http\Controllers;
 use celiacomendoza\Category;
 use celiacomendoza\Commerce;
 use celiacomendoza\Http\Requests\MailCustomerRequest;
+use celiacomendoza\Message;
 use celiacomendoza\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -37,8 +38,16 @@ class CommerceController extends Controller
         return view('web.contact', compact('commerce'));
     }
 
-    public function MailCustomer(MailCustomerRequest $request)
+    public function MailCustomer(MailCustomerRequest $request, $id)
     {
+
+        $message = new Message;
+        $message->name = $request['name'];
+        $message->email = $request['email'];
+        $message->message = $request['messageCustomer'];
+        $message->commerce_id = $id;
+        $message->save();
+
         Mail::send('web.mails.MailCustomer', $request->all(), function ($msj) use ($request) {
             $msj->from($request->email, $request->name);
             $msj->subject('Mensaje desde celiacomendoza');
