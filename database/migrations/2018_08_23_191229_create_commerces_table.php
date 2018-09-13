@@ -17,12 +17,12 @@ class CreateCommercesTable extends Migration
             $table->increments('id');
 
             $table->string('name');
-            $table->string('address');
-            $table->string('location');
-            $table->string('number');
-            $table->string('phone');
+            $table->string('address')->nullable();
+            $table->string('location')->nullable();
+            $table->string('number')->nullable();
+            $table->string('phone')->nullable();
             $table->string('web')->nullable();
-            $table->mediumText('about');
+            $table->mediumText('about')->nullable();
             $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();
             $table->string('logo')->nullable();

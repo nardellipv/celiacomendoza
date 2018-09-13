@@ -1,4 +1,5 @@
 @extends('layouts.login')
+
 @section('content')
     <div class="main-container">
         <div class="container">
@@ -6,11 +7,7 @@
                 <div class="col-sm-5 login-box">
                     <div class="card card-default">
                         <div class="panel-intro text-center">
-                            <h2 class="logo-title">
-                                <!-- Original Logo will be placed here  -->
-                                <span class="logo-icon"><i
-                                            class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span> BOOT<span>CLASSIFIED </span>
-                            </h2>
+                            <img src="{{ asset('webStyle/img/img-logo.png') }}" alt="logo" width="25%">
                         </div>
                         <div class="card-body">
                             <form method="POST" action="{{ route('login') }}"
@@ -85,7 +82,7 @@
                     </div>
                     <div class="login-box-btm text-center">
                         <p> ¿No posee una cuenta? <br>
-                            <a href="signup.html"><strong>¡¡¡Registrase Gratis!!!</strong> </a></p>
+                            <a href="{{ url('register') }}"><strong>¡¡¡Registrase Gratis!!!</strong> </a></p>
                     </div>
                 </div>
             </div>

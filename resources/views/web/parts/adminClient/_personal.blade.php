@@ -86,7 +86,7 @@
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" name="name" id="name"
                                                        value="{{ $commerce->name }}" placeholder="Nombre"
-                                                       required/>
+                                                       required readonly/>
                                             </div>
                                         </div>
 
@@ -97,7 +97,7 @@
                                                 <input type="text" class="form-control" name="address"
                                                        id="address"
                                                        value="{{ $commerce->address }}" placeholder="Dirección"
-                                                       required/>
+                                                       />
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -107,7 +107,7 @@
                                                 <input type="text" class="form-control" name="phone"
                                                        id="phone"
                                                        value="{{ $commerce->phone }}" placeholder="Teléfono"
-                                                       required/>
+                                                       />
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -147,15 +147,14 @@
                                             <div class="col-sm-9">
                                                     <textarea class="form-control" name="about" id="about"
                                                               rows="5" placeholder="Cuenta sobre tu local y comida"
-                                                              required> {{ $commerce->about }}
-                                                        </textarea>
+                                                              required>{{ $commerce->about }}</textarea>
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label" for="textarea">Logo del local</label>
                                             <div class="col-lg-8">
-                                                <img src="images/thumbnail/logo/{{$commerce->logo}}">
+                                                <img src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}">
                                                 <div class="mb10">
                                                     <input id="input-upload-img1" name="file" type="file" class="file" >
                                                 </div>

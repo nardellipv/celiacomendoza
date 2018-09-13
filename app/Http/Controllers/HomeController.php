@@ -13,7 +13,9 @@ class HomeController extends Controller
 {
     public function list()
     {
-        $commerces = Commerce::all();
+        $commerces = Commerce::where('about', '!=', 'NULL')
+            ->where('logo', '!=', 'NULL')
+            ->get();
 
         return view('layouts.main', compact('commerces'));
     }

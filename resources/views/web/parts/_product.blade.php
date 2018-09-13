@@ -11,7 +11,8 @@
                         @else
                             <h1 class="pricetag"> $ {{ $product->offer }}</h1>
                         @endif
-                        <img src="{{ $product->photo }}" alt="img"/>
+                            {{--<img src="{{ asset('images/thumbnail/products/'.($product->photo)) }}">--}}
+                            <img src="{{ asset('images/' . $product->commerce->name . '-' . $product->commerce->id . '/products/' . $product->photo) }}">
                     </div>
                     <!--ads-image-->
 
@@ -54,7 +55,7 @@
                     <div class="card card-user-info sidebar-card">
                         <div class="block-cell user">
 
-                            <div class="cell-media"><img src="{{asset('webStyle/images/users/5.jpg')}}" alt=""></div>
+                            <div class="cell-media"><img src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}" alt="logo"></div>
                             <div class="cell-content">
                                 <h5 class="title">Local</h5>
                                 <span class="name">{{ $commerce->name }}</span>

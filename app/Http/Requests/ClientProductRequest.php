@@ -27,7 +27,6 @@ class ClientProductRequest extends FormRequest
             'name' => 'required',
             'description' => 'required | min:10',
             'price' => 'required | numeric',
-            'offer' => 'required | numeric',
             'category_id' => 'required',
             'in_offer' => 'required',
             'highlight' => 'required',

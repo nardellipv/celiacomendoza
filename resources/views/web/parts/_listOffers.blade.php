@@ -24,7 +24,7 @@
             @foreach($offers as $offer)
                     <div class="item"><a href="{{ url('producto', array($commerce->id, $offer->id)) }}">
                      <span class="item-carousel-thumb">
-                    	<img class="img-responsive" src="{{ $offer->photo }}" alt="img">
+                    	<img src="{{ asset('images/thumbnail/products/'.($offer->photo)) }}">
                      </span>
                             <span class="item-name"> {{ $offer->name }} </span>
                             @if(!$offer->offer)

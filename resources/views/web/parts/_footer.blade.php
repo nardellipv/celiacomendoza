@@ -6,11 +6,11 @@
                 <div class=" col-xl-4 col-xl-4 col-md-4 col-6">
                     <div class="footer-col">
                         <h4 class="footer-title">Sobre Nosotros</h4>
-                        <p>Queremos poder ofrecerle a los usuario una guía practica y simple para poder
-                            comparar precios y buscar locales cercanos
-                            a sus domicilios como también dar la posibilidad a los distintos comercios y productores
+                        <p>Queremos poder ofrecerle a personas celíacas una guía práctica y simple para poder
+                            comparar precios y productos, y buscar locales cercanos
+                            a sus domicilios, como también dar la posibilidad a los distintos comercios y productores
                             particulares de darse a conocer, llegar a mucha
-                            más gente y dar visibilidad a sus productos.</p>
+                            más gente y dar visibilidad a sus productos y comercios.</p>
                     </div>
                 </div>
 

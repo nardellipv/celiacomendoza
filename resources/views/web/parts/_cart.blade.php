@@ -27,8 +27,7 @@
                                         <div class="row">
                                             <div class="col-md-2 no-padding photobox">
                                                 <div class="add-image">
-                                                    <img class="thumbnail no-margin" src="{{ $listProduct->photo }}"
-                                                         alt="img">
+                                                    <img src="{{ asset('images/thumbnail/products/'.($listProduct->photo)) }}">
                                                 </div>
                                             </div>
                                             <!--/.photobox-->

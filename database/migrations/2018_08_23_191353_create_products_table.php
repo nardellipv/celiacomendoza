@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
 
             $table->string('name');
             $table->mediumText('description');
-            $table->decimal('price', 6, 0);
-            $table->decimal('offer', 6, 0)->nullable();
+            $table->integer('price');
+            $table->integer('offer')->nullable();
             $table->enum('in_offer', ['YES', 'NO'])->default('NO');
             $table->enum('highlight', ['YES', 'NO'])->default('NO');
             $table->enum('available', ['YES', 'NO'])->default('NO');

@@ -25,8 +25,6 @@ class ClientCommerceRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'address' => 'required|min:10',
-            'phone' => 'required|numeric',
             'file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'about' => 'required',
         ];

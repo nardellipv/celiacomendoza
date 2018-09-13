@@ -3,9 +3,9 @@
          role="navigation">
         <div class="container">
             <div class="navbar-identity">
-                <a href="index.html" class="navbar-brand logo logo-title">
-    			<span class="logo-icon"><i class="icon icon-search-1 ln-shadow-logo "></i>
-    			</span>BOOT<span>CLASSIFIED </span> </a>
+                <a href="{{ url('/') }}" class="navbar-brand logo logo-title">
+    			<img src="{{ asset('webStyle/img/logo-text.png') }}" alt="logo" style="margin-top: -15px;">
+    			</a>
             </div>
             @include('web.parts._menu')
         </div>

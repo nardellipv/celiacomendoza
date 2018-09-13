@@ -52,9 +52,20 @@
 
     @include('web.parts._header')
 
-
     <div class="main-container">
         <div class="container">
+            @if(Request::is('cliente-perfil'))
+            @if(!$commerce->about OR !$commerce->logo)
+                <div class="alert alert-warning alert-dismissible fade show text text-center" role="alert">
+                    <strong><i class="fa fa-thumbs-down fa-2x"></i> ¡¡¡Termina de completar tus datos!!!</strong>
+                    Faltan completar datos de tu local, te recomendamos completarlos para que mucha más gente te encuentre.<p>
+                    Campos requeridos, contar sobre tu local y comida y el logo de tu local.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+            @endif
             @yield('content')
         </div>
     </div>
@@ -75,7 +86,8 @@
 
 <!-- include jquery autocomplete plugin  -->
 <script type="text/javascript" src="{{ asset('webStyle/assets/plugins/autocomplete/jquery.mockjax.js') }}"></script>
-<script type="text/javascript" src="{{ asset('webStyle/assets/plugins/autocomplete/jquery.autocomplete.js') }}"></script>
+<script type="text/javascript"
+        src="{{ asset('webStyle/assets/plugins/autocomplete/jquery.autocomplete.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('webStyle/assets/plugins/autocomplete/autocomplete-demo.js') }}"></script>
 

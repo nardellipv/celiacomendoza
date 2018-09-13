@@ -45,7 +45,7 @@
                                     <td style="width:14%" class="add-img-td">
                                         <a href="../images/{{ $commerce->name }}-{{ $commerce->id }}/products/{{ $productDisable->photo }}" target="_blank">
                                             <img class="thumbnail  img-responsive"
-                                                 src="../images/thumbnail/products/{{ $productDisable->photo }}"
+                                                 src="{{ asset('images/thumbnail/products/'.($productDisable->photo)) }}"
                                                  alt="img"></a>
                                     </td>
                                     <td style="width:58%" class="ads-details-td">

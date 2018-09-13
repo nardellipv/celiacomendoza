@@ -63,13 +63,12 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-        $user = User::where('id', auth()->user()->id)
+        $commerce = Commerce::where('user_id', auth()->user()->id)
             ->first();
 
         $categories = Category::all();
 
-        return view('web.parts.adminClient._productsEdit', compact('categories',
-            'product'));
+        return view('web.parts.adminClient._productsEdit', compact('categories', 'product', 'commerce'));
     }
 
     public function update(ClientProductRequest $request, $id)

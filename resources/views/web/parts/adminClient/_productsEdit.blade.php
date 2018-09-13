@@ -153,7 +153,7 @@
                                     <label class="col-sm-3 col-form-label" for="textarea">Imagen del
                                         Producto</label>
                                     <div class="col-lg-8">
-                                        <img src="../../../images/thumbnail/products/{{$product->photo}}">
+                                        <img src="{{ asset('images/thumbnail/products/'.($product->photo)) }}">
                                         <div class="mb10">
                                             <input id="input-upload-img1" name="file" type="file" class="file"
                                                    data-preview-file-type="text">

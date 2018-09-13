@@ -26,7 +26,7 @@
                 @foreach($highlights as $highlight)
                     <div class="item"><a href="{{ url('producto', array($commerce->id, $highlight->id)) }}">
                      <span class="item-carousel-thumb">
-                    	<img class="img-responsive" src="{{ $highlight->photo }}" alt="img">
+                    	<img src="{{ asset('images/thumbnail/products/'.($highlight->photo)) }}">
                      </span>
                             <span class="item-name"> {{ $highlight->name }} </span>
                                 <span class="price">$ {{ $highlight->price }}</span>

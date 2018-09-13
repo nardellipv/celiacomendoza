@@ -2,6 +2,11 @@
     <div class="inner-box">
         <div class="user-panel-sidebar">
             <div class="collapse-box">
+                @if(!$commerce->logo)
+                    <i class="fa fa-image fa-4x" style="color:red;"></i>
+                @else
+                    <img src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}">
+                @endif
                 <h5 class="collapse-title no-border"> Menú <a href="#MyClassified" aria-expanded="true"
                                                               data-toggle="collapse" class="pull-right">
                         <i class="fa fa-angle-down"></i></a>

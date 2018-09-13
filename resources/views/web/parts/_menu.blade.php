@@ -46,7 +46,7 @@
         <li class="nav-item"><a href="{{ url('login') }}" class="nav-link"><i class="fa fa-sign-in-alt"></i>
                 Ingresar</a>
         </li>
-        <li class="nav-item"><a href="category.html" class="nav-link" style="color: red"><i class="fa fa-user-plus"></i>
+        <li class="nav-item"><a href="{{ url('register') }}" class="nav-link" style="color: red"><i class="fa fa-user-plus"></i>
                 Registrarse</a>
         </li>
 
