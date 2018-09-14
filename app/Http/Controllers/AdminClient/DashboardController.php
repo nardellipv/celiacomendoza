@@ -4,6 +4,7 @@ namespace celiacomendoza\Http\Controllers\AdminClient;
 
 use celiacomendoza\Commerce;
 use celiacomendoza\Product;
+use celiacomendoza\Region;
 use celiacomendoza\User;
 use celiacomendoza\Http\Controllers\Controller;
 
@@ -17,16 +18,18 @@ class DashboardController extends Controller
         $commerce = Commerce::where('user_id', $user->id)
             ->first();
 
+        $regions = Region::all();
+
         $productsAvailable = Product::where('commerce_id', $user->id)
             ->where('available', 'YES')
             ->orderBy('created_at', 'DESC')
-            ->get();
+            ->paginate(10);
 
         $productsDisable = Product::where('commerce_id', $user->id)
             ->where('available', 'NO')
             ->orderBy('created_at', 'DESC')
-            ->get();
+            ->paginate(310);
 
-        return view('web.adminClient', compact('user', 'commerce', 'productsAvailable', 'productsDisable'));
+        return view('web.adminClient', compact('user', 'commerce', 'productsAvailable', 'productsDisable','regions'));
     }
 }

@@ -7,33 +7,37 @@ use celiacomendoza\Commerce;
 use celiacomendoza\Http\Requests\MailCustomerRequest;
 use celiacomendoza\Message;
 use celiacomendoza\Product;
-use Illuminate\Http\Request;
+use celiacomendoza\Region;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class CommerceController extends Controller
 {
-    public function commerce($id)
+    public function commerce($slug)
     {
-        $commerce = Commerce::find($id);
+        $commerce = Commerce::where('slug', $slug)
+            ->first();
 
-        $offers = Product::where('commerce_id', $id)
+        $offers = Product::where('commerce_id', $commerce->id)
             ->where('available', 'YES')
             ->where('in_offer', 'YES')
             ->get();
 
-        $highlights = Product::where('commerce_id', $id)
+        $highlights = Product::where('commerce_id', $commerce->id)
             ->where('highlight', 'YES')
             ->where('available', 'YES')
             ->Limit(10)
             ->get();
 
-        return view('web.catalog', compact('commerce', 'offers', 'highlights'));
+        $regions = Region::all();
+
+        return view('web.catalog', compact('commerce', 'offers', 'highlights','regions'));
     }
 
-    public function contact($id)
+    public function contact($slug)
     {
-        $commerce = Commerce::find($id);
+        $commerce = Commerce::where('slug', $slug)
+            ->first();
 
         return view('web.contact', compact('commerce'));
     }
@@ -58,17 +62,18 @@ class CommerceController extends Controller
         return back();
     }
 
-    public function shop($id)
+    public function shop($slug)
     {
-        $commerce = Commerce::find($id);
+        $commerce = Commerce::where('slug', $slug)
+            ->first();
 
-        $products = Product::where('commerce_id', $id)
+        $products = Product::where('commerce_id', $commerce->id)
             ->where('available', 'YES')
             ->paginate(10);
 
         $listCategories = Category::all();
 
-        $lastProducts = Product::where('commerce_id', $id)
+        $lastProducts = Product::where('commerce_id', $commerce->id)
             ->orderBy('updated_at', 'DESC')
             ->take(3)
             ->get();
@@ -76,18 +81,19 @@ class CommerceController extends Controller
         return view('web.shop', compact('commerce', 'products', 'listCategories', 'lastProducts'));
     }
 
-    public function shopCategory($id, $category_id)
+    public function shopCategory($slug, $category_id)
     {
-        $commerce = Commerce::find($id);
+        $commerce = Commerce::where('slug', $slug)
+            ->first();
 
         $listCategories = Category::all();
 
-        $products = Product::where('commerce_id', $id)
+        $products = Product::where('commerce_id', $commerce->id)
             ->where('available', 'YES')
             ->where('category_id', $category_id)
             ->paginate(10);
 
-        $lastProducts = Product::where('commerce_id', $id)
+        $lastProducts = Product::where('commerce_id', $commerce->id)
             ->orderBy('updated_at', 'DESC')
             ->take(3)
             ->get();

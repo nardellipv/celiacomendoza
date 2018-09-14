@@ -11,6 +11,6 @@ class CommerceTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\celiacomendoza\Commerce::class, 10)->create();
+        factory(\celiacomendoza\Commerce::class, 100)->create();
     }
 }

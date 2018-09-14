@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="tab-box save-search-bar text-center">
-                    <a class="btn btn-secondary" href="{{ url('/') }}#locales">Continuar Comprando</a>
+                    <a class="btn btn-secondary" href="{{ url('/') }}">Continuar Comprando</a>
                 </div>
             </div>
 

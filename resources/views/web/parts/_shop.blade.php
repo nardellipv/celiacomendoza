@@ -26,8 +26,9 @@
                                         <div class="row">
                                             <div class="col-md-2 no-padding photobox">
                                                 <div class="add-image">
-                                                    <a href="{{ url('producto', array($commerce->id, $product->id)) }}">
-                                                        <img class="thumbnail no-margin" src="{{ $product->photo }}"
+                                                    <a href="{{ url('producto', array($commerce->slug, $product->id)) }}">
+                                                        <img class="thumbnail no-margin"
+                                                             src="{{ asset('images/thumbnail/products/'.($product->photo)) }}"
                                                              alt="img">
                                                     </a>
                                                 </div>
@@ -45,7 +46,7 @@
                                                     </p>
                                                     <p class="event-location"><i class="fa icon-location"></i>
                                                         <a class="location"
-                                                           href="">{{ substr($product->description,0,100) }} </a>
+                                                           href="{{ url('producto', array($commerce->slug, $product->id)) }}">{{ str_limit($product->description,100) }} </a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -60,7 +61,7 @@
                                                     <h2 class="item-price"> $ {{ $product->offer }} </h2>
                                                 @endif
 
-                                                <a href="{{ url('producto', array($commerce->id, $product->id)) }}"
+                                                <a href="{{ url('producto', array($commerce->slug, $product->id)) }}"
                                                    class="btn btn-secondary  btn-sm make-favorite"> <i
                                                             class="fa fa-eye"></i> <span>Detalle</span>
                                                 </a>
@@ -68,15 +69,14 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                <div class="pagination-bar">
+                                    <nav aria-label="Page navigation " class="d-inline-b">
+                                        {{ $products->render() }}
+                                    </nav>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="pagination-bar text-center">
-                    <nav aria-label="Page navigation " class="d-inline-b">
-                        {{ $products->render() }}
-                    </nav>
                 </div>
             </div>
         </div>

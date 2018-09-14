@@ -57,10 +57,10 @@
         @endif
 
         @if (Request::is('catalogo/*'))
-            <li class="nav-item"><a href="{{url('listado', $commerce->id)}}" class="nav-link"><i
+            <li class="nav-item"><a href="{{url('listado', $commerce->slug)}}" class="nav-link"><i
                             class="fa fa-cookie-bite"></i> Productos</a>
             </li>
-            <li class="nav-item"><a href="{{ url('contacto', $commerce->id) }}" class="nav-link"><i
+            <li class="nav-item"><a href="{{ url('contacto', $commerce->slug) }}" class="nav-link"><i
                             class="fa fa-paper-plane"></i> Contacto</a>
             </li>
         @endif
@@ -74,7 +74,7 @@
         @if (Request::is('catalogo/*') OR Request::is('producto/*/*') OR Request::is('contacto/*') OR Request::is('listado/*'))
             <li class="nav-item">
                 <div id="ex4">
-                    <a href="{{ url('compra', $commerce->id) }}" style="color:#00B233;">
+                    <a href="{{ url('compra', $commerce->slug) }}" style="color:#00B233;">
                   <span class="p1 fa-stack fa-2x has-badge" data-count="{{ $cartCount }}">
                     <i class="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="4b"></i>
                   </span>

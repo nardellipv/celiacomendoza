@@ -108,6 +108,11 @@
                             @endforeach
                             </tbody>
                         </table>
+                        <div class="pagination-bar">
+                            <nav aria-label="Page navigation " class="d-inline-b">
+                                {!! $productsAvailable->render() !!}
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>

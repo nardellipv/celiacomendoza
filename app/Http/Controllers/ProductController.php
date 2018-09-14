@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Cookie;
 
 class ProductController extends Controller
 {
-    public function product($id, $product_id)
+    public function product($slug, $product_id)
     {
-        $commerce = Commerce::find($id);
+        $commerce = Commerce::where('slug', $slug)
+            ->first();
 
         $listCategories = Category::all();
 
@@ -24,7 +25,7 @@ class ProductController extends Controller
             ->where('available', 'YES')
             ->first();
 
-        $lastProducts = Product::where('commerce_id', $id)
+        $lastProducts = Product::where('commerce_id', $commerce->id)
             ->where('available', 'YES')
             ->orderBy('updated_at', 'DESC')
             ->take(3)
@@ -32,7 +33,7 @@ class ProductController extends Controller
 
         $relationItems = Product::where('category_id', $product->category_id)
             ->where('available', 'YES')
-            ->where('commerce_id', $id)
+            ->where('commerce_id', $commerce->id)
             ->where('id', '!=', $product_id)
             ->get();
 
@@ -101,9 +102,10 @@ class ProductController extends Controller
         return back();
     }
 
-    public function cart($id)
+    public function cart($slug)
     {
-        $commerce = Commerce::find($id);
+        $commerce = Commerce::where('slug', $slug)
+            ->first();
 
         $numInvoice = Cookie::get('id-recibo');
 

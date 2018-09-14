@@ -12,7 +12,6 @@ class CommerceController extends Controller
 {
     public function update(ClientCommerceRequest $request, $id)
     {
-
         $commerce = Commerce::find($id);
 
         $commerce->fill($request->all())->save();
@@ -23,7 +22,7 @@ class CommerceController extends Controller
 
             $destinationPath = public_path('images/thumbnail/logo/');
             $img = Image::make($image->getRealPath());
-            $img->resize(100, 100, function ($constraint) {
+            $img->resize(50, 50, function ($constraint) {
                 $constraint->aspectRatio();
             })->save($destinationPath.$input['file']);
 

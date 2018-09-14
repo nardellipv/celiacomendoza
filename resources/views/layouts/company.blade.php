@@ -4,16 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-          href="{{ asset('webStyle/assets/ico/apple-touch-icon-144-precomposed.png') }}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-          href="{{ asset('webStyle/assets/ico/apple-touch-icon-114-precomposed.png') }}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-          href="{{ asset('webStyle/assets/ico/apple-touch-icon-72-precomposed.png') }}">
-    <link rel="apple-touch-icon-precomposed"
-          href="{{ asset('webStyle/assets/ico/apple-touch-icon-57-precomposed.png') }}">
-    <link rel="shortcut icon" href="webStyle/assets/ico/favicon.png">
-    <title>BOOTCLASIFIED - Responsive Classified Theme</title>
+    <link sizes="72x72" href="{{ asset('webStyle/assets/ico/apple-icon-72x72.png') }}">
+    <link sizes="114x114" href="{{ asset('webStyle/assets/ico/apple-icon-144x144.png') }}">
+    <link sizes="72x72" href="{{ asset('webStyle/assets/ico/android-icon-72x72.png') }}">
+    <link sizes="114x114" href="{{ asset('webStyle/assets/ico/android-icon-144x144.png') }}">
+    <link rel="shortcut icon" href="{{ asset('webStyle/assets/ico/favicon.png') }}">
+
+    <title>Celiaco Mendoza | {{ $commerce->name }}</title>
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('webStyle/assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 

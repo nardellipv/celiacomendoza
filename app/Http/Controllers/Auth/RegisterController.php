@@ -73,11 +73,25 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
+//        por si se repite el nombre del comercio, se crea otro slug
+        $slug = str_slug($data['nameCommerce']);
+        $slugCount = Commerce::where('slug', $slug)
+            ->count();
 
-        $commerce = Commerce::create([
-            'name' => $data['nameCommerce'],
-            'user_id' => $user->id,
-        ]);
+        if ($slugCount == 0) {
+            $commerce = Commerce::create([
+                'name' => $data['nameCommerce'],
+                'user_id' => $user->id,
+                'slug' => str_slug($data['nameCommerce']),
+            ]);
+        } else {
+            $commerce = Commerce::create([
+                'name' => $data['nameCommerce'],
+                'user_id' => $user->id,
+                'slug' => str_slug($data['nameCommerce'] . rand(0,100)),
+            ]);
+        }
+
 
         return $user;
     }

@@ -19,9 +19,9 @@ class MessageController extends Controller
 
         $messages = Message::where('commerce_id', $commerce->id)
             ->orderBy('created_at', 'DESC')
-            ->get();
+            ->paginate(10);
 
-        return view('web.parts.adminClient._accountMessage', compact('messages'));
+        return view('web.parts.adminClient._accountMessage', compact('messages', 'commerce'));
     }
 
     public function readMessage($id)
@@ -30,14 +30,20 @@ class MessageController extends Controller
         $message->read = 'YES';
         $message->save();
 
-        return view('web.parts.adminClient._readMessage', compact('message'));
+        $commerce = Commerce::where('user_id', auth()->user()->id)
+            ->first();
+
+        return view('web.parts.adminClient._readMessage', compact('message','commerce'));
     }
 
     public function responsMessage($id)
     {
         $message = Message::find($id);
 
-        return view('web.parts.adminClient._composeMessage',compact('message'));
+        $commerce = Commerce::where('user_id', auth()->user()->id)
+            ->first();
+
+        return view('web.parts.adminClient._composeMessage',compact('message', 'commerce'));
     }
 
 //    respuesta del comercio
@@ -66,9 +72,9 @@ class MessageController extends Controller
 
         $messages = Message::where('commerce_id', $commerce->id)
             ->orderBy('created_at', 'DESC')
-            ->get();
+            ->paginate(10);
 
         Session::flash('message', 'Mensaje eliminado correctamente');
-        return view('web.parts.adminClient._accountMessage', compact('messages'));
+        return view('web.parts.adminClient._accountMessage', compact('messages','commerce'));
     }
 }

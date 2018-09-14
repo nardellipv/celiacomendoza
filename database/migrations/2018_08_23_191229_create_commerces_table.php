@@ -18,7 +18,6 @@ class CreateCommercesTable extends Migration
 
             $table->string('name');
             $table->string('address')->nullable();
-            $table->string('location')->nullable();
             $table->string('number')->nullable();
             $table->string('phone')->nullable();
             $table->string('web')->nullable();
@@ -26,14 +25,20 @@ class CreateCommercesTable extends Migration
             $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();
             $table->string('logo')->nullable();
+            $table->string('slug', 150)->unique();
 
             $table->integer('user_id')->unsigned();
+            $table->integer('region_id')->unsigned()->nullable();
 
             $table->timestamps();
 
             //relaciones
 
             $table->foreign('user_id')->references('id')->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('region_id')->references('id')->on('regions')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

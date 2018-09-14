@@ -7,7 +7,7 @@
             <ul class=" list-unstyled">
                 @foreach($listCategories as $listCategory)
                     <li>
-                        <a href="{{ url('listado-categoria', array($commerce->id,$listCategory->id)) }}"><span
+                        <a href="{{ url('listado-categoria', array($commerce->slug, $listCategory->id)) }}"><span
                                     class="title">{{ $listCategory->name }}</span>
                         </a>
                     </li>

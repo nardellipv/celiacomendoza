@@ -4,8 +4,7 @@ namespace celiacomendoza\Http\Controllers;
 
 use celiacomendoza\Commerce;
 use celiacomendoza\Http\Requests\MailCustomerRequest;
-use celiacomendoza\Message;
-use Illuminate\Http\Request;
+use celiacomendoza\Region;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
@@ -15,9 +14,28 @@ class HomeController extends Controller
     {
         $commerces = Commerce::where('about', '!=', 'NULL')
             ->where('logo', '!=', 'NULL')
-            ->get();
+            ->paginate(12);
 
-        return view('layouts.main', compact('commerces'));
+        $regions = Region::all();
+
+        return view('layouts.main', compact('commerces', 'regions'));
+    }
+
+    public function region($slug)
+    {
+
+        $region = Region::where('slug', $slug)
+            ->first();
+
+        $commerces = Commerce::where('about', '!=', 'NULL')
+            ->where('logo', '!=', 'NULL')
+            ->where('region_id', $region->id)
+            ->paginate(10);
+
+
+        $allRegion = Region::all();
+
+        return view('web.parts._searchRegion', compact('region', 'allRegion', 'commerces'));
     }
 
     public function MailClient(MailCustomerRequest $request)

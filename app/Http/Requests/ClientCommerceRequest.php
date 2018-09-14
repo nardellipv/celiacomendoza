@@ -24,7 +24,7 @@ class ClientCommerceRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'region_id' => 'required',
             'file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'about' => 'required',
         ];

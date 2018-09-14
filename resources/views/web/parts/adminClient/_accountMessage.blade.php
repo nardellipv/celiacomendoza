@@ -44,6 +44,11 @@
                                                         </div>
                                                     </div>
                                                 @endforeach
+                                                    <div class="pagination-bar">
+                                                        <nav aria-label="Page navigation " class="d-inline-b">
+                                                            {!! $messages->render() !!}
+                                                        </nav>
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>

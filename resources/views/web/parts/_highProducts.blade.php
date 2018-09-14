@@ -24,7 +24,7 @@
             @endif
             <div class="no-margin featured-list-slider ">
                 @foreach($highlights as $highlight)
-                    <div class="item"><a href="{{ url('producto', array($commerce->id, $highlight->id)) }}">
+                    <div class="item"><a href="{{ url('producto', array($commerce->slug, $highlight->id)) }}">
                      <span class="item-carousel-thumb">
                     	<img src="{{ asset('images/thumbnail/products/'.($highlight->photo)) }}">
                      </span>

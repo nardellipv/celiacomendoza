@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Commerce extends Model
 {
     protected $fillable = [
-        'name', 'address', 'location', 'phone', 'web', 'twitter', 'facebook', 'logo', 'about','user_id'
+        'name','address', 'phone', 'web', 'twitter', 'facebook', 'logo', 'slug', 'about','user_id', 'region_id'
     ];
 
     public function User()
@@ -23,5 +23,10 @@ class Commerce extends Model
     public function Messages()
     {
         return $this->hasMany(Message::class);
+    }
+
+    public function Region()
+    {
+        return $this->belongsTo(Region::class);
     }
 }

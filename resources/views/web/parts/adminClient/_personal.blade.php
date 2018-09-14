@@ -56,7 +56,7 @@
 
                                         <div class="col-sm-9">
                                             <input type="password" class="form-control" name="password"
-                                                   id="password" />
+                                                   id="password"/>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -80,44 +80,60 @@
                                 <div class="card-body">
                                     {!! Form::model($commerce, ['method' => 'PATCH','route' => ['updateCommerce.update', $commerce->id], 'enctype' => 'multipart/form-data']) !!}
                                     {{ csrf_field() }}
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Nombre</label>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Nombre</label>
 
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="name" id="name"
-                                                       value="{{ $commerce->name }}" placeholder="Nombre"
-                                                       required readonly/>
-                                            </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="name" id="name"
+                                                   value="{{ $commerce->name }}" placeholder="Nombre"
+                                                   required readonly/>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Dirección</label>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Dirección</label>
 
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="address"
-                                                       id="address"
-                                                       value="{{ $commerce->address }}" placeholder="Dirección"
-                                                       />
-                                            </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="address"
+                                                   id="address"
+                                                   value="{{ $commerce->address }}" placeholder="Dirección"/>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Teléfono</label>
+                                    </div>
 
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="phone"
-                                                       id="phone"
-                                                       value="{{ $commerce->phone }}" placeholder="Teléfono"
-                                                       />
-                                            </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Región</label>
+                                        <div class="col-sm-9">
+                                            <select id="inputState" class="form-control" name="region_id" required>
+                                                @if($commerce->region_id)
+                                                <option selected value="{{ $commerce->region_id }}">{{ $commerce->region->name }}</option>
+                                                @else
+                                                <option selected value="">Elegir región...</option>
+                                                @endif
+                                                <option disabled>---------------------------------------------</option>
+                                                @foreach($regions as $region)
+                                                    <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-3 control-label">Sitio Web</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Teléfono</label>
 
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="web" id="web"
-                                                       value="{{ $commerce->web }}" placeholder="Sitio Web" />
-                                            </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="phone"
+                                                   id="phone"
+                                                   value="{{ $commerce->phone }}" placeholder="Teléfono"
+                                            />
                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Sitio Web</label>
+
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="web" id="web"
+                                                   value="{{ $commerce->web }}" placeholder="Sitio Web"/>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">Usuario Facebook</label>
 
@@ -156,7 +172,7 @@
                                             <div class="col-lg-8">
                                                 <img src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}">
                                                 <div class="mb10">
-                                                    <input id="input-upload-img1" name="file" type="file" class="file" >
+                                                    <input id="input-upload-img1" name="file" type="file" class="file">
                                                 </div>
                                             </div>
                                         </div>
@@ -166,7 +182,8 @@
                                                 <button type="submit" class="btn btn-default">Actualizar</button>
                                             </div>
                                         </div>
-                                    {!! Form::Close() !!}
+                                        {!! Form::Close() !!}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -175,13 +192,12 @@
             </div>
         </div>
     </div>
-</div>
 
 @section('script')
     <!-- include jquery file upload plugin  -->
-    <script src="{{ asset('webStyle/assets/js/fileinput.min.js') }}" type="text/javascript"></script>
-    <script>
-        // initialize with defaults
-        $("#input-upload-img1").fileinput();
-    </script>
+        <script src="{{ asset('webStyle/assets/js/fileinput.min.js') }}" type="text/javascript"></script>
+        <script>
+            // initialize with defaults
+            $("#input-upload-img1").fileinput();
+        </script>
 @endsection

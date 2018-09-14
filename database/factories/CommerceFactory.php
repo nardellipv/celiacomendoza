@@ -3,10 +3,10 @@
 use Faker\Generator as Faker;
 
 $factory->define(\celiacomendoza\Commerce::class, function (Faker $faker) {
+    $title = $faker->unique()->word(5);
     return [
-        'name' => $faker->company,
+        'name' => $title,
         'address' => $faker->address,
-        'location' => $faker->city,
         'number' => rand(100, 10000),
         'phone' => $faker->phoneNumber,
         'web' => $faker->url,
@@ -14,6 +14,8 @@ $factory->define(\celiacomendoza\Commerce::class, function (Faker $faker) {
         'twitter' => 'nardellip',
         'facebook' => 'todofraseslive',
         'logo' => $faker->imageUrl(),
-        'user_id' => rand(1, 10),
+        'slug' => $title,
+        'user_id' => rand(1, 100),
+        'region_id' => rand(1, 18),
     ];
 });

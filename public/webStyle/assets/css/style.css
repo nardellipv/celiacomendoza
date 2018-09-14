@@ -4356,6 +4356,8 @@ nav.slider-nav a.next {
 .pagination-bar {
     margin-top: 35px;
     display: block;
+    margin-left: 30%;
+    margin-bottom: 35px;
 }
 
 .pagination-bar .pagination {

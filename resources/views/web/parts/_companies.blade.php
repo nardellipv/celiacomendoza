@@ -1,30 +1,26 @@
 <section class="event-category">
     <div class="container">
-        <div class="col-12 title-box text-center section-header">
-            <h2 class="title">Listado de locales y vendedores</h2>
-        </div>
-        <div class="row">
-            @foreach($commerces as $commerce)
-            <div class=" col-md-3 col-sm-6 col-6 event-item-col">
-                <div class="card card-event info-overlay overlay-visible card-category">
-                    <div class="img has-background"
-                         style="background-size:cover ">
-                        <img alt="logo" class="card-img-top img-responsive" data-holder-rendered="true"
-                             src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="{{url('catalogo', $commerce->id)}}">{{ $commerce->name }}</a>
-                        </h4>
-                        <p class="card-text hide">Donec imperdiet leo ac ipsum blandit auctor.</p>
-                        <div class="card-event-info">
-                            <p class="event-location"><i class="fa icon-location-1"></i>
-                                <a class="location" href="">{{ $commerce->address }} </a></p>
-                        </div>
+        <div class="col-xl-12 content-box ">
+            <div class="row row-featured row-featured-category">
+                <div class="col-xl-12  box-title no-border">
+                    <div class="inner"><h2><span>Listado de locales y vendedores</span></h2>
                     </div>
                 </div>
+                @foreach($commerces as $commerce)
+                    <div class="col-xl-2 col-md-3 col-sm-3 col-xs-4 f-category">
+                        <a href="{{url('catalogo', $commerce->slug)}}">{{ str_limit($commerce->name,20) }}
+                            <img src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}" class="img-responsive"
+                                 alt="img">
+                            <h6><i class="fa fa-map-marker-alt"></i> {{ $commerce->address }}
+                                - {{ $commerce->region->name }} </h6></a>
+                    </div>
+                @endforeach
+                <div class="pagination-bar">
+                    <nav aria-label="Page navigation " class="d-inline-b">
+                        {!! $commerces->render() !!}
+                    </nav>
+                </div>
             </div>
-            @endforeach
         </div>
     </div>
 </section>

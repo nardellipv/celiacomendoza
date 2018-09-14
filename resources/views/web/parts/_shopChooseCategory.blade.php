@@ -11,7 +11,7 @@
                 <div class="category-list ">
                     <div class="listing-filter">
                         <div class="pull-left col-xs-6">
-                            <div class="breadcrumb-list"><a href="{{ url('listado', $commerce->id) }}"><i
+                            <div class="breadcrumb-list"><a href="{{ url('listado', $commerce->slug) }}"><i
                                             class="fa fa-arrow-circle-left fa-lg"></i> Volver al listado</a>
                             </div>
                         </div>
@@ -30,8 +30,8 @@
                                         <div class="row">
                                             <div class="col-md-2 no-padding photobox">
                                                 <div class="add-image">
-                                                    <a href="{{ url('producto', array($commerce->id, $product->id)) }}">
-                                                        <img class="thumbnail no-margin" src="{{ $product->photo }}"
+                                                    <a href="{{ url('producto', array($commerce->slug, $product->id)) }}">
+                                                        <img class="thumbnail no-margin" src="{{ asset('images/thumbnail/products/'.($product->photo)) }}"
                                                              alt="img">
                                                     </a>
                                                 </div>
@@ -64,7 +64,7 @@
                                                     <h2 class="item-price"> $ {{ $product->offer }} </h2>
                                                 @endif
 
-                                                <a href="{{ url('producto', array($commerce->id, $product->id)) }}"
+                                                <a href="{{ url('producto', array($commerce->slug, $product->id)) }}"
                                                    class="btn btn-secondary  btn-sm make-favorite"> <i
                                                             class="fa fa-eye"></i> <span>Detalle</span>
                                                 </a>
