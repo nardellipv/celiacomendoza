@@ -165,12 +165,8 @@
                                            placeholder="Email" required/>
                                 </div>
                             </div>
-                            <div class="col-md-8 offset-2">
-                                        <textarea class="form-control" name="contact-message" id="message"
-                                                  rows="3"
-                                                  placeholder="Si desea envie un mensaje al comercio">{{ old('contact-message') }}</textarea>
-                            </div>
-                            <div class="col-md-8 offset-2">
+
+                            <div class="col-md-6 offset-3">
                                 @if($cartCount > 0)
                                     <button type="submit" id="submit-message" class="btn btn-primary btn-block">
                                         Procesar Compra

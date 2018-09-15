@@ -7,6 +7,7 @@ use celiacomendoza\Commerce;
 use celiacomendoza\Http\Requests\FormCartRequest;
 use celiacomendoza\Product;
 use celiacomendoza\Purchase;
+use celiacomendoza\Region;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
@@ -145,6 +146,13 @@ class ProductController extends Controller
 
     public function checkout(FormCartRequest $request)
     {
+
+        $regions = Region::all();
+
+        $commerces = Commerce::where('about', '!=', 'NULL')
+            ->where('logo', '!=', 'NULL')
+            ->paginate(12);
+
         Cookie::queue(
             Cookie::forget('id-recibo')
         );
@@ -158,7 +166,6 @@ class ProductController extends Controller
         $listproduct[] = $request->products;
         $numInvoice = $request->numInvoice;
 
-
         Mail::send('web.mails.MailBuy', $request->all(), function ($msj) use ($request) {
             $msj->from('no-respond@celiacosmendoza.com', 'CeliacosMendoza');
             $msj->subject('Compra de productos');
@@ -171,9 +178,8 @@ class ProductController extends Controller
             $msj->to($request->email, $request->name);
         });
 
-        $commerces = Commerce::all();
-
         Session::flash('messageCheckout', 'Su compra fue realizada, por favor revise su mail para saber como sigue el proceso de compra.');
-        return view('layouts.main', compact('commerces'));
+        return view('layouts.main', compact('commerces','regions'));
+
     }
 }
