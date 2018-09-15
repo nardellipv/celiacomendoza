@@ -2,6 +2,10 @@
 
 namespace celiacomendoza\Providers;
 
+use celiacomendoza\Message;
+use celiacomendoza\Policies\MessagePolicy;
+use celiacomendoza\Policies\productPolicy;
+use celiacomendoza\Product;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -13,7 +17,9 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'celiacomendoza\Model' => 'celiacomendoza\Policies\ModelPolicy',
+//        'celiacomendoza\Model' => 'celiacomendoza\Policies\ModelPolicy',
+        Product::class => ProductPolicy::class,
+        Message::class => MessagePolicy::class,
     ];
 
     /**

@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Error 404</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <title>Error 403</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link sizes="72x72" href="{{ asset('webStyle/assets/ico/apple-icon-72x72.png') }}">
+    <link sizes="114x114" href="{{ asset('webStyle/assets/ico/apple-icon-144x144.png') }}">
+    <link sizes="72x72" href="{{ asset('webStyle/assets/ico/android-icon-72x72.png') }}">
+    <link sizes="114x114" href="{{ asset('webStyle/assets/ico/android-icon-144x144.png') }}">
+    <link rel="shortcut icon" href="{{ asset('webStyle/assets/ico/favicon.png') }}">
+
+
+    <script type="application/x-javascript"> addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        } </script>
     <link href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <link href="{{ asset('webStyle/errors/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('webStyle/errors/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+</head>
+
 <body>
 <div class="container demo-2">
     <div class="content">

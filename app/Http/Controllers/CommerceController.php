@@ -49,6 +49,7 @@ class CommerceController extends Controller
         $message->name = $request['name'];
         $message->email = $request['email'];
         $message->message = $request['messageCustomer'];
+        $message->read = 'NO';
         $message->commerce_id = $id;
         $message->save();
 
