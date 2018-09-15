@@ -18,9 +18,10 @@ class CreatePurchasesTable extends Migration
 
             $table->string('num_invoice');
             $table->string('name');
-            $table->decimal('price', 6, 0);
+            $table->integer('price');
             $table->integer('quantity');
             $table->string('photo')->nullable();
+            $table->enum('status',['PENDING','FINISH']);
 
             $table->integer('commerce_id')->unsigned();
             $table->integer('product_id')->unsigned();

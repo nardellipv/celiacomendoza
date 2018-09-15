@@ -21,6 +21,10 @@
                             <i class="fa fa-times-circle"></i>
                             Productos Desactivos </a>
                     </li>
+                    <li class="dropdown-item"><a href="{{ url('cliente-perfil/ventas') }}">
+                            <i class="fa fa-shopping-cart"></i>
+                            Productos Vendidos </a>
+                    </li>
                     <li class="dropdown-item"><a href="{{ url('cliente-perfil/mensajes') }}"><i class="icon-mail"></i>
                             Mensajes </a>
                     </li>

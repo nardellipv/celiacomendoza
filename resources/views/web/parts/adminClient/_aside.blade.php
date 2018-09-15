@@ -44,6 +44,14 @@
                                 <span class="badge badge-secondary">{{ $countProductsDisable }}</span>
                             </a>
                         </li>
+                        <li>
+                            <a class="{{ request()->is('cliente-perfil/ventas') ? 'active' : '' }}"
+                               href="{{ url('cliente-perfil/ventas') }}">
+                                <i class="fa fa-shopping-cart"></i>
+                                Productos Vendidos
+                                {{--<span class="badge badge-secondary">{{ $countProductsDisable }}</span>--}}
+                            </a>
+                        </li>
                         <li class="">
                             <a class="{{ request()->is('cliente-perfil/mensajes') ? 'active' : '' }}"
                                href="{{ url('cliente-perfil/mensajes') }}">

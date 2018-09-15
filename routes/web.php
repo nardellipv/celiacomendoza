@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('cliente-perfil/product', 'AdminClient\ProductController', ['except' => ['show']]);
         Route::get('cliente-perfil/available/{id}', 'AdminClient\ProductController@available')->name('available');
         Route::get('cliente-perfil/unavailable/{id}', 'AdminClient\ProductController@unavailable')->name('unavailable');
+    Route::get('cliente-perfil/ventas', 'AdminClient\PurchaseController@list');
     Route::get('cliente-perfil/mensajes', 'AdminClient\MessageController@listMessage');
     Route::get('cliente-perfil/leer-mensaje/{id}', 'AdminClient\MessageController@readMessage');
     Route::get('cliente-perfil/responder-mensaje/{id}', 'AdminClient\MessageController@responsMessage');

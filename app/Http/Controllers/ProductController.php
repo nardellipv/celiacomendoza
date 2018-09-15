@@ -147,11 +147,16 @@ class ProductController extends Controller
     public function checkout(FormCartRequest $request)
     {
 
+//        dd($request->all());
+
         $regions = Region::all();
 
         $commerces = Commerce::where('about', '!=', 'NULL')
             ->where('logo', '!=', 'NULL')
             ->paginate(12);
+
+        $purchase = Purchase::where('num_invoice', Cookie::get('id-recibo'))
+            ->update(['status' => 'FINISH']);
 
         Cookie::queue(
             Cookie::forget('id-recibo')

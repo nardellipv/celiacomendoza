@@ -9,6 +9,7 @@ $factory->define(\celiacomendoza\Purchase::class, function (Faker $faker) {
         'price' => $faker->numberBetween($min = 10, $max = 500),
         'quantity' => $faker->numberBetween($min = 10, $max = 500),
         'photo' => $faker->imageUrl($width = 640, $height = 480),
+        'status' => $faker->randomElement($array = array('PENDING', 'FINISH')),
         'commerce_id' => rand(1, 100),
         'product_id' => rand(1, 1000),
     ];
