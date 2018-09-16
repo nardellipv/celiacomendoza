@@ -29,6 +29,13 @@ Route::get('politicas', function () {
     return view('web.parts._politices');
 });
 //---------------------
+//Admin CeliacosMendoza
+Route::middleware(['auth','UserType'])->group(function () {
+    Route::get('admin/', 'AdminCeliac\DashboardController@index');
+    Route::resource('admin/user', 'AdminCeliac\UserController');
+    Route::resource('admin/categorias', 'AdminCeliac\CategoriesController');
+});
+//-------------------------
 
 //Admin Company
 Route::middleware(['auth'])->group(function () {
@@ -48,4 +55,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('cliente-perfil/response/{id}', 'AdminClient\MessageController@responsMessageCliente')->name('responsMessageCliente');
 });
 //---------------------
+
+
 

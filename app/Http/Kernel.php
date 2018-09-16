@@ -59,5 +59,6 @@ class Kernel extends HttpKernel
         'guest' => \celiacomendoza\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'UserType' => Middleware\UserType::class,
     ];
 }
