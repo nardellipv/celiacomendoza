@@ -373,7 +373,7 @@
                                                 <td style="padding-right: 0px; padding-left: 0px;" align="center">
                                         <![endif]-->
                                         <img class="center fixedwidth" align="center" border="0"
-                                             src="images/img-logo.png" alt="Image" title="Image"
+                                             src="celiacosmendoza.com/webStyle/img/img-mails/img-logo.png" alt="Image" title="Image"
                                              style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: 0;height: auto;float: none;width: 100%;max-width: 350px"
                                              width="350">
                                         <!--[if mso]></td></tr></table><![endif]-->
@@ -1012,9 +1012,9 @@
                                                 <tr style="vertical-align: top">
                                                     <td align="left" valign="middle"
                                                         style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-                                                        <a href="https://www.facebook.com/" title="Facebook"
+                                                        <a href="https://www.facebook.com/celiacosmendozaOK" title="Facebook"
                                                            target="_blank">
-                                                            <img src="images/facebook@2x.png" alt="Facebook"
+                                                            <img src="celiacosmendoza.com/webStyle/img/img-mails/facebook%402x.png" alt="Facebook"
                                                                  title="Facebook" width="32"
                                                                  style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
                                                         </a>

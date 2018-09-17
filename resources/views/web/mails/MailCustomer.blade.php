@@ -236,7 +236,7 @@
                                     <div align="center" class="img-container center fixedwidth " style="padding-right: 0px;  padding-left: 0px;">
                                         <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px;line-height:0px;"><td style="padding-right: 0px; padding-left: 0px;" align="center"><![endif]-->
                                         <a href="https://beefree.io" target="_blank">
-                                            <img class="center fixedwidth" align="center" border="0" src="images/img-logo.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;width: 100%;max-width: 97.5px" width="97.5">
+                                            <img class="center fixedwidth" align="center" border="0" src="celiacosmendoza.com/webStyle/img/img-mails/img-logo.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;width: 100%;max-width: 97.5px" width="97.5">
                                         </a>
                                         <!--[if mso]></td></tr></table><![endif]-->
                                     </div>
@@ -344,8 +344,8 @@
                                             <!--[if (mso)|(IE)]><table width="131" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-collapse:collapse; padding-right: 10px; padding-left: 10px; padding-bottom: 10px;"  align="center"><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace: 0pt;mso-table-rspace: 0pt; width:131px;"><tr><td width="32" style="width:32px; padding-right: 5px;" valign="top"><![endif]-->
                                             <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;Margin-right: 0">
                                                 <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-                                                        <a href="https://www.facebook.com/" title="Facebook" target="_blank">
-                                                            <img src="images/facebook.png" alt="Facebook" title="Facebook" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+                                                        <a href="https://www.facebook.com/celiacosmendozaOK" title="Facebook" target="_blank">
+                                                            <img src="http://celiacosmendoza.com/webStyle/img/img-mails/facebook.png" alt="Facebook" title="Facebook" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
                                                         </a>
                                                         <div style="line-height:5px;font-size:1px">&#160;</div>
                                                     </td></tr>
