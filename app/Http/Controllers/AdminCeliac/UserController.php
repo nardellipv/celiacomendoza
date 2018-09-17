@@ -33,7 +33,7 @@ class UserController extends Controller
         $user->delete();
 
 //        borro carpeta del comercio
-        File::deleteDirectory(public_path('images/'.$commerce->name.'-'.$user->id));
+        File::deleteDirectory('images/'.$commerce->name.'-'.$user->id);
 
         return back();
     }

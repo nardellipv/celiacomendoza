@@ -41,13 +41,13 @@ class ProductController extends Controller
             $image = $request->file('file');
             $input['file'] = time() . '.' . $image->getClientOriginalExtension();
 
-            $destinationPath = public_path('images/thumbnail/products/');
+            $destinationPath = 'images/thumbnail/products/';
             $img = Image::make($image->getRealPath());
             $img->resize(50, 50, function ($constraint) {
                 $constraint->aspectRatio();
             })->save($destinationPath . $input['file']);
 
-            $destinationPath = public_path('images/' . $commerce->name . '-' . $commerce->id . '/products');
+            $destinationPath = 'images/' . $commerce->name . '-' . $commerce->id . '/products';
             $image->move($destinationPath, $input['file']);
 
             $product->photo = $input['file'];
@@ -88,13 +88,13 @@ class ProductController extends Controller
             $image = $request->file('file');
             $input['file'] = time() . '.' . $image->getClientOriginalExtension();
 
-            $destinationPath = public_path('images/thumbnail/products/');
+            $destinationPath = 'images/thumbnail/products/';
             $img = Image::make($image->getRealPath());
             $img->resize(50, 50, function ($constraint) {
                 $constraint->aspectRatio();
             })->save($destinationPath . $input['file']);
 
-            $destinationPath = public_path('images/' . $product->commerce->name . '-' . $product->commerce->id . '/products');
+            $destinationPath = 'images/' . $product->commerce->name . '-' . $product->commerce->id . '/products';
             $image->move($destinationPath, $input['file']);
 
             $product->photo = $input['file'];

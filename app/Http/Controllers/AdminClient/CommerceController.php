@@ -23,13 +23,13 @@ class CommerceController extends Controller
             $image = $request->file('file');
             $input['file'] = time().'.'.$image->getClientOriginalExtension();
 
-            $destinationPath = public_path('images/thumbnail/logo/');
+            $destinationPath = 'images/thumbnail/logo/';
             $img = Image::make($image->getRealPath());
             $img->resize(50, 50, function ($constraint) {
                 $constraint->aspectRatio();
             })->save($destinationPath.$input['file']);
 
-            $destinationPath = public_path('images/'.$commerce->name.'-'.$commerce->id.'/logo');
+            $destinationPath = 'images/'.$commerce->name.'-'.$commerce->id.'/logo';
             $image->move($destinationPath, $input['file']);
 
             $commerce->logo = $input['file'];

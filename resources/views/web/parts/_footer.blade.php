@@ -37,9 +37,8 @@
                     <h4 class="footer-title no-margin">Seguinos en</h4>
                     <ul class="list-unstyled list-inline footer-nav social-list-footer social-list-color footer-nav-inline">
                         <li><a class="icon-color fb" title="Facebook" data-placement="top"
-                               data-toggle="tooltip" href="#"><i class="fab fa-facebook-f"></i> </a></li>
-                        <li><a class="icon-color tw" title="Twitter" data-placement="top"
-                               data-toggle="tooltip" href="#"><i class="fab fa-twitter"></i> </a></li>
+                               data-toggle="tooltip" href="https://www.facebook.com/celiacosmendozaOK" target="_blank"><i class="fab fa-facebook-f"></i> </a></li>
+
                     </ul>
                 </div>
                 <div style="clear: both"></div>
