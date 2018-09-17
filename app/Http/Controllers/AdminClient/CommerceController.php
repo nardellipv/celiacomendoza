@@ -15,7 +15,7 @@ class CommerceController extends Controller
         $commerce = Commerce::find($id);
 
         //controlo de que sea el mismo comercio que el dueño
-        $this->authorize('CommercePass', $commerce);
+//        $this->authorize('CommercePass', $commerce);
 
         $commerce->fill($request->all())->save();
 

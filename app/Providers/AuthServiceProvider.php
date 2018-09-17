@@ -8,7 +8,6 @@ use celiacomendoza\Policies\CommercePolicy;
 use celiacomendoza\Policies\MessagePolicy;
 use celiacomendoza\Policies\productPolicy;
 use celiacomendoza\Product;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider

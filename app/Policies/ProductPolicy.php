@@ -24,6 +24,6 @@ class ProductPolicy
     public function passProduct(User $user, Product $product)
     {
 
-        return $user->id == $product->commerce_id;
+        return $user->id === $product->commerce_id;
     }
 }

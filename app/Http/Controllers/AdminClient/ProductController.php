@@ -64,7 +64,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         //controlo de que sea el dueño del producto
-        $this->authorize('passProduct', $product);
+//        $this->authorize('passProduct', $product);
 
         $commerce = Commerce::where('user_id', auth()->user()->id)
             ->first();
@@ -80,7 +80,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         //controlo de que sea el dueño del producto
-        $this->authorize('passProduct', $product);
+//        $this->authorize('passProduct', $product);
 
         $product->fill($request->all())->save();
 
@@ -111,7 +111,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         //controlo de que sea el dueño del producto
-        $this->authorize('passProduct', $product);
+//        $this->authorize('passProduct', $product);
         $product->available = 'YES';
         $product->update();
 
@@ -124,7 +124,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         //controlo de que sea el dueño del producto
-        $this->authorize('passProduct', $product);
+//        $this->authorize('passProduct', $product);
         $product->available = 'NO';
         $product->update();
 
@@ -137,7 +137,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         //controlo de que sea el dueño del producto
-        $this->authorize('passProduct', $product);
+//        $this->authorize('passProduct', $product);
 
         if(File::exists(public_path('images/thumbnail/products/' . $product->photo))){
             File::delete(public_path('images/thumbnail/products/' . $product->photo));
