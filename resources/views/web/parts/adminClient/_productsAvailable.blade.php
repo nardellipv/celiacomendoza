@@ -67,11 +67,11 @@
                                             @endif
                                         </div>
 
-                                        <a href="http://www.twitter.com/intent/tweet?url=http://your-url&text=caption" class="btn btn-tw">tweet</a>
+                                        {{--<a href="http://www.twitter.com/intent/tweet?url=http://your-url&text=caption" class="btn btn-tw">tweet</a>
                                         <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=small&mobile_iframe=true&appId=1548595978765268&width=81&height=20"
                                                 width="81" height="20" style="border:none;overflow:hidden"
                                                 scrolling="no" frameborder="0" allowTransparency="true"
-                                                allow="encrypted-media"></iframe>
+                                                allow="encrypted-media"></iframe>--}}
                                     </td>
                                     <td style="width:20%" class="price-td">
                                         <div>Precio: <strong>$ {{ $productAvailable->price }}</strong></div>
