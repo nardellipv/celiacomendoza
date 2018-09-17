@@ -106,9 +106,16 @@
 
                     <div class="card sidebar-card">
                         <div class="inner-box no-padding">
-                            <div class="inner-box-content"><a href="#"><img class="img-responsive"
-                                                                            src="{{ asset('webStyle/images/site/app.jpg') }}"
-                                                                            alt="tv"></a>
+                            <div class="inner-box-content">
+                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <!-- HomeCeliacos -->
+                                <ins class="adsbygoogle"
+                                     style="display:inline-block;width:200px;height:200px"
+                                     data-ad-client="ca-pub-7543412924958320"
+                                     data-ad-slot="5887202721"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
                             </div>
                         </div>
                     </div>

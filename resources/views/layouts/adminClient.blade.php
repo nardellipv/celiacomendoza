@@ -40,7 +40,7 @@
     <script src="{{ asset('webStyle/assets/js/pace.min.js') }}"></script>
     <script src="{{ asset('webStyle/assets/plugins/modernizr/modernizr-custom.js') }}"></script>
 
-
+    @include('external.analitycs')
 </head>
 <body>
 

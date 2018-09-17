@@ -43,6 +43,7 @@
     <script src="{{ asset('webStyle/assets/js/pace.min.js') }}"></script>
     <script src="{{ asset('webStyle/assets/plugins/modernizr/modernizr-custom.js') }}"></script>
 
+    @include('external.analitycs')
 </head>
 <body>
 
@@ -87,9 +88,15 @@
         <div class="container">
             <div class="offset-md-2">
                 <div class="has-aff relative">
-                    <a href="category.html"><img src="{{ asset('webStyle/images/aff2.jpg') }}" class="img-responsive"
-                                                 alt="aff">
-                    </a>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- HomeCeliacos -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:200px;height:200px"
+                         data-ad-client="ca-pub-7543412924958320"
+                         data-ad-slot="5887202721"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
                 </div>
             </div>
         </div>
@@ -109,5 +116,6 @@
 <!-- include custom script for site  -->
 <script src="{{ ('webStyle/assets/js/main.min.js') }}"></script>
 
+@include('external.getsiteControl')
 </body>
 </html>

@@ -10,7 +10,7 @@
     <link sizes="114x114" href="{{ asset('webStyle/assets/ico/android-icon-144x144.png') }}">
     <link rel="shortcut icon" href="{{ asset('webStyle/assets/ico/favicon.png') }}">
 
-    <title>Celiaco Mendoza | {{ $commerce->name }}</title>
+    <title>Celiaco Mendoza</title>
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('webStyle/assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 
@@ -43,8 +43,9 @@
     <script src="{{ asset('webStyle/assets/js/pace.min.js') }}"></script>
     <script src="{{ asset('webStyle/assets/plugins/modernizr/modernizr-custom.js') }}"></script>
 
-
     @yield('style')
+
+    @include('external.analitycs')
 </head>
 <body>
 
@@ -99,5 +100,6 @@
 
 @yield('script')
 
+@include('external.getsiteControl')
 </body>
 </html>

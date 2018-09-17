@@ -21,7 +21,15 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-xs-12">
-                        <img src="{{ asset('webStyle/images/add2.jpg') }}">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- HomeCeliacos -->
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:200px;height:200px"
+                             data-ad-client="ca-pub-7543412924958320"
+                             data-ad-slot="5887202721"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
                     </div>
                     <div style="clear: both"></div>
                 </div>
