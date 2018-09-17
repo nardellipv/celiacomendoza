@@ -89,11 +89,11 @@
             <div class="offset-md-2">
                 <div class="has-aff relative">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- HomeCeliacos -->
+                    <!-- HomeCeliacos1 -->
                     <ins class="adsbygoogle"
-                         style="display:inline-block;width:200px;height:200px"
+                         style="display:inline-block;width:970px;height:90px"
                          data-ad-client="ca-pub-7543412924958320"
-                         data-ad-slot="5887202721"></ins>
+                         data-ad-slot="8423411310"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
