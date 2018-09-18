@@ -29,7 +29,7 @@ class MessageController extends Controller
         $message = Message::find($id);
 
         //controlo de que sea el dueño del mensaje
-//        $this->authorize('MessagePass', $message);
+        $this->authorize('MessagePass', $message);
 
         $message->read = 'YES';
         $message->save();
@@ -45,7 +45,7 @@ class MessageController extends Controller
         $message = Message::find($id);
 
         //controlo de que sea el dueño del mensaje
-//        $this->authorize('MessagePass', $message);
+        $this->authorize('MessagePass', $message);
 
         $commerce = Commerce::where('user_id', auth()->user()->id)
             ->first();
@@ -60,7 +60,7 @@ class MessageController extends Controller
         $message = Message::find($id);
 
         //controlo de que sea el dueño del mensaje
-//        $this->authorize('MessagePass', $message);
+        $this->authorize('MessagePass', $message);
 
 
         Mail::send('web.mails.MailResponseCommerce', [$request->all(), $message], function ($msj)  use ($request, $message) {
@@ -78,7 +78,7 @@ class MessageController extends Controller
         $message = Message::find($id);
 
         //controlo de que sea el dueño del mensaje
-//        $this->authorize('MessagePass', $message);
+        $this->authorize('MessagePass', $message);
 
         $message->delete();
 

@@ -6,7 +6,7 @@ use celiacomendoza\Commerce;
 use celiacomendoza\Message;
 use celiacomendoza\Policies\CommercePolicy;
 use celiacomendoza\Policies\MessagePolicy;
-use celiacomendoza\Policies\productPolicy;
+use celiacomendoza\Policies\ProductPolicy;
 use celiacomendoza\Product;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
