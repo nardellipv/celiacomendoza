@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Locales y vendedores de comida para celíacos en mendoza.
+    Guía práctica y simple para poder comparar precios y productos, y buscar locales cercanos a sus domicilios ">
     <!-- Fav and touch icons -->
     <link sizes="72x72" href="{{ asset('webStyle/assets/ico/apple-icon-72x72.png') }}">
     <link sizes="114x114" href="{{ asset('webStyle/assets/ico/apple-icon-144x144.png') }}">
