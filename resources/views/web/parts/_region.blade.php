@@ -1,6 +1,6 @@
 <div id="region" class="main-container">
+    @include('web.parts._login')
     <div class="container">
-
         <div class="w100 content-box content-box-map no-bg">
             <div class=" row-featured row-featured-category">
                 <div class="  box-title no-border">

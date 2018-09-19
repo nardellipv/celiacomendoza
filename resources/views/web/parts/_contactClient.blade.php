@@ -2,7 +2,7 @@
     <div class="page-bottom-info-inner">
 
         <div class="page-bottom-info-content text-center">
-            <h1>Si tienes alguna pregunta, duda o sugerencia, por favor contactanos.</h1>
+            <h2>Si tienes alguna pregunta, duda o sugerencia, por favor contactanos.</h2>
             {!! Form::open(['method' => 'POST','route' => ['mailclient'],'style'=>'display:inline']) !!}
             {{ csrf_field() }}
             <fieldset>

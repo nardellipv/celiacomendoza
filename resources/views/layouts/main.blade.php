@@ -88,18 +88,18 @@
     {{--ads--}}
     <div class="main-container">
         <div class="container">
-            <div class="offset-md-2">
-                <div class="has-aff relative">
+            <div class="offset-md-3">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- HomeCeliacos1 -->
+                    <!-- IndexUP -->
                     <ins class="adsbygoogle"
-                         style="display:inline-block;width:970px;height:90px"
+                         style="display:block"
                          data-ad-client="ca-pub-7543412924958320"
-                         data-ad-slot="8423411310"></ins>
+                         data-ad-slot="3230632682"
+                         data-ad-format="link"
+                         data-full-width-responsive="true"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
-                </div>
             </div>
         </div>
     </div>
