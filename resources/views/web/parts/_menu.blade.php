@@ -53,6 +53,9 @@
         <li class="nav-item"><a href="{{ url('register') }}" class="nav-link" style="color: red"><i class="fa fa-user-plus"></i>
                 Registrarse</a>
         </li>
+        <li class="nav-item"><a href="{{ url('blog') }}" class="nav-link"><i class="fa fa-book-reader"></i>
+                Blog</a>
+        </li>
 
         @if (!Request::is('/'))
             <li class="nav-item"><a href="{{ url('/') }}" class="nav-link"><i class="fa fa-home"></i> Pagina

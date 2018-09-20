@@ -2,7 +2,9 @@
 
 namespace celiacomendoza\Providers;
 
+use celiacomendoza\Blog;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view::composer('web.parts._asideBlog', function ($view) {
+            $lastPosts = Blog::orderBy('created_at', 'DESC')
+                ->take(5)
+                ->get();
+
+            $view->with('lastPosts', $lastPosts);
+        });
     }
 
     /**

@@ -18,6 +18,8 @@ Route::post('add/{product_id}', 'ProductController@addcart');
 Route::get('compra/{slug}', 'ProductController@cart');
 Route::get('borrar/{id}/{idProduct}', 'ProductController@delItems');
 Route::post('checkout', 'ProductController@checkout');
+Route::get('blog', 'BlogController@index');
+Route::get('blog/{slug}', 'BlogController@post');
 
 Route::post('mailcustomers/{id}', 'CommerceController@MailCustomer')->name('mailcustomers');
 Route::post('mailclient', 'HomeController@MailClient')->name('mailclient');
@@ -53,6 +55,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('cliente-perfil/responder-mensaje/{id}', 'AdminClient\MessageController@responsMessage');
     Route::delete('cliente-perfil/delete/{id}', 'AdminClient\MessageController@deleteMessage')->name('deletemessage');
     Route::post('cliente-perfil/response/{id}', 'AdminClient\MessageController@responsMessageCliente')->name('responsMessageCliente');
+    Route::get('admin/blog/list', 'BlogController@list')->name('blog.list');
+    Route::get('admin/blog/create', 'BlogController@create')->name('blog.create');
+    Route::post('admin/blog/store', 'BlogController@store')->name('blog.store');
+/*    Route::post('admin/blog/edit/{id}', 'BlogController@edit')->name('blog.edit');
+    Route::post('admin/blog/delete/{id}', 'BlogController@delete')->name('blog.delete');*/
 });
 //---------------------
 

@@ -7423,7 +7423,7 @@ td.ads-details-td {
 }
 
 .section-ev {
-    padding: 60px 0 0;
+    padding: 60px 0 60px;
     display: inline-block;
     width: 100%;
 }

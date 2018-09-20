@@ -2,6 +2,7 @@
 
 namespace celiacomendoza\Http\Controllers;
 
+use celiacomendoza\Blog;
 use celiacomendoza\Commerce;
 use celiacomendoza\Http\Requests\MailCustomerRequest;
 use celiacomendoza\Region;
@@ -18,7 +19,11 @@ class HomeController extends Controller
 
         $regions = Region::all();
 
-        return view('layouts.main', compact('commerces', 'regions'));
+        $posts = Blog::orderBy('created_at', 'DESC')
+            ->take(4)
+            ->get();
+
+        return view('layouts.main', compact('commerces', 'regions','posts'));
     }
 
     public function region($slug)

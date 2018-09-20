@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-<!-- include pace script for automatic web page progress bar  -->
+    <!-- include pace script for automatic web page progress bar  -->
     <script>
         paceOptions = {
             elements: true
@@ -47,8 +47,10 @@
 
     @include('external.analitycs')
 </head>
+
 <body>
 
+    @include('external.addthis')
 <div id="wrapper">
 
     <div class="intro-inner">
@@ -58,7 +60,8 @@
             <div class="dtable hw100">
                 <div class="dtable-cell hw100">
                     <div class="container text-center">
-                        <h1 class="intro-title animated fadeInDown"> Mercados para celiacos en Mendoza </h1>
+                        <h2 style="font-size: 27px; color: white;font-weight: bold;"> Mercados para celiacos en Mendoza </h2>
+                        <h3 style="font-size: 23px; color: white;font-weight: bold;">Nuestro Blog</h3>
                     </div>
                 </div>
             </div>
@@ -67,41 +70,26 @@
 
     </div>
 
-    @include('web.parts._header')
+@include('web.parts._header')
+<!-- /.header -->
 
-    @include('web.parts.alerts.successCheckout')
-    @include('web.parts.alerts.success')
-    @include('web.parts.alerts.error')
-
-    <div class="main-container">
+    <div class="main-container inner-page">
         <div class="container">
-            @include('web.parts._region')
-            @include('web.parts._companies')
-        </div>
-    </div>
+            <div class="section-content">
+                <div class="row ">
+                    <div class="col-sm-8 blogLeft">
+                        <div class="blog-post-wrapper">
 
+                            @yield('content')
 
-    @include('web.parts._features')
+                        </div>
+                    </div>
+                    <div class="col-sm-4 blogRight page-sidebar">
 
-    @include('web.parts._lastBlog')
+                        @include('web.parts._asideBlog')
 
-    @include('web.parts._contactClient')
-
-    {{--ads--}}
-    <div class="main-container">
-        <div class="container">
-            <div class="offset-md-3">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- IndexUP -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-7543412924958320"
-                         data-ad-slot="3230632682"
-                         data-ad-format="link"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -110,8 +98,10 @@
 
 </div>
 
-<!-- Placed at the end of the document so the pages load faster -->
+<!-- Le javascript
+================================================== -->
 
+<!-- Placed at the end of the document so the pages load faster -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="webStyle/assets/js/jquery/jquery-3.3.1.min.js">\x3C/script>')</script>
 
@@ -120,6 +110,5 @@
 <!-- include custom script for site  -->
 <script src="{{ ('webStyle/assets/js/main.min.js') }}"></script>
 
-@include('external.getsiteControl')
 </body>
 </html>

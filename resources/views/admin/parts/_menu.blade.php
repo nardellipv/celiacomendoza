@@ -12,5 +12,8 @@
         <li class="{{ request()->is('admin/categorias') ? 'active' : '' }}">
             <a href="{{ url('admin/categorias') }}"><span class="fa fa-list"></span> <span class="xn-text">Categorias</span></a>
         </li>
+        <li class="{{ request()->is('admin/blog/list') ? 'active' : '' }}">
+            <a href="{{ url('admin/blog/list') }}"><span class="fa fa-list"></span> <span class="xn-text">Blog</span></a>
+        </li>
     </ul>
 </div>
