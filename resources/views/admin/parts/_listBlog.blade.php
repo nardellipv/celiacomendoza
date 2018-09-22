@@ -25,11 +25,11 @@
                                 <td>{{ str_limit($post->body, 100) }}</td>
                                 <td>{{ $post->status }}</td>
                                 <td>
-                                    <a href="{{ route('blog.edit', $post->id) }}" class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                                   {{-- <a href="{{ route('blog.edit', $post->id) }}" class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
                                     {!! Form::open(['method' => 'DELETE','route' => ['blog.delete', $post->id],'style'=>'display:inline']) !!}
                                     {{Form::token() }}
                                     <button class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
-                                    {!! Form::Close() !!}
+                                    {!! Form::Close() !!}--}}
                                 </td>
                             </tr>
                         @endforeach

@@ -46,6 +46,8 @@
     <script src="{{ asset('webStyle/assets/plugins/modernizr/modernizr-custom.js') }}"></script>
 
     @include('external.analitycs')
+
+    @include('external.hotkey')
 </head>
 <body>
 

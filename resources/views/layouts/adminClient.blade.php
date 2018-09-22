@@ -43,6 +43,8 @@
     @include('external.analitycs')
 
     @include('external.pixelFace')
+
+    @include('external.hotkey')
 </head>
 <body>
 
@@ -58,7 +60,8 @@
                 <div class="alert alert-warning alert-dismissible fade show text text-center" role="alert">
                     <strong><i class="fa fa-thumbs-down fa-2x"></i> ¡¡¡Termina de completar tus datos!!!</strong>
                     Faltan completar datos de tu local, te recomendamos completarlos para que mucha más gente te encuentre.<p>
-                    Campos requeridos, contar sobre tu local y comida y el logo de tu local.
+                    Campos requeridos, contar sobre tu local y el logo de tu local.
+                    <p><i class="fa fa-exclamation-triangle"></i> Tu local no se publicará hasta que no se complete la información requerida</p>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
