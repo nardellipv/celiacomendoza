@@ -44,7 +44,7 @@
 
     @include('external.pixelFace')
 
-    @include('external.hotkey')
+    {{--@include('external.hotkey')--}}
 </head>
 <body>
 

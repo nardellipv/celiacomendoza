@@ -125,6 +125,22 @@
                                             </div>
                                         </div>
 
+                                        <div class="form-group  row required">
+                                            <label class="col-md-4 control-label">Lugar del negocio
+                                                <sup>*</sup></label>
+                                            <div class="col-sm-6">
+                                                <select id="inputState" class="form-control" name="region_id" required>
+                                                    <option selected value="">Elegir región...</option>
+                                                    <option disabled>---------------------------------------------
+                                                    </option>
+                                                    @foreach($regions as $region)
+                                                        <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+
+
                                         <div class="form-group row">
                                             <label class="col-md-4 control-label"></label>
 

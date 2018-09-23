@@ -56,7 +56,7 @@ class CommerceController extends Controller
         Mail::send('web.mails.MailCustomer', $request->all(), function ($msj) use ($request) {
             $msj->from($request->email, $request->name);
             $msj->subject('Mensaje desde celiacomendoza');
-            $msj->to('no-respond@celiacomendoza.com', 'CeliacoMendoza');
+            $msj->to('no-respond@celiacosmendoza.com', 'CeliacoMendoza');
         });
 
         Session::flash('message', 'Su mensaje fue enviado correctamente. Muchas gracias!!!');

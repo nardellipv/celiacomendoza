@@ -9,10 +9,20 @@
                 @foreach($commerces as $commerce)
                     <div class="col-xl-2 col-md-3 col-sm-3 col-xs-4 f-category">
                         <a href="{{url('catalogo', $commerce->slug)}}">{{ str_limit($commerce->name,20) }}
-                            <img src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}" class="img-responsive"
-                                 alt="img">
-                            <h6><i class="fa fa-map-marker-alt"></i> {{ $commerce->address }}
-                                - {{ $commerce->region->name }} </h6></a>
+                            @if($commerce->logo)
+                                <img src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}"
+                                     class="img-responsive"
+                                     alt="img">
+                            @else
+                                <img src="{{ asset('images/nodisp.png') }}" alt="sin logo">
+                            @endif
+                            <h6><i class="fa fa-map-marker-alt"></i>
+                                @if($commerce->region)
+                                {{ $commerce->address }} - {{ $commerce->region->name }}
+                                    @else
+                                    Local sin dirección
+                                @endif
+                            </h6></a>
                     </div>
                 @endforeach
                 <div class="pagination-bar">

@@ -47,7 +47,7 @@
 
     @include('external.analitycs')
 
-    @include('external.hotkey')
+    {{--@include('external.hotkey')--}}
 </head>
 <body>
 

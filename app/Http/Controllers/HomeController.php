@@ -13,9 +13,7 @@ class HomeController extends Controller
 {
     public function list()
     {
-        $commerces = Commerce::where('about', '!=', 'NULL')
-//            ->where('logo', '!=', 'NULL')
-            ->paginate(12);
+        $commerces = Commerce::paginate(12);
 
         $regions = Region::all();
 

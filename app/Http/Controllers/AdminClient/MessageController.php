@@ -64,7 +64,7 @@ class MessageController extends Controller
 
 
         Mail::send('web.mails.MailResponseCommerce', [$request->all(), $message], function ($msj)  use ($request, $message) {
-            $msj->from('no-respond@celiacomendoza.com');
+            $msj->from('no-respond@celiacosmendoza.com');
             $msj->subject('Mensaje em respuesta a tu pregunta');
             $msj->to($message->email, $message->name);
         });
