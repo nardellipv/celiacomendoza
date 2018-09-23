@@ -147,8 +147,6 @@ class ProductController extends Controller
     public function checkout(FormCartRequest $request)
     {
 
-//        dd($request->all());
-
         $regions = Region::all();
 
         $commerces = Commerce::where('about', '!=', 'NULL')

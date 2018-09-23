@@ -45,6 +45,9 @@ class CommerceController extends Controller
     public function MailCustomer(MailCustomerRequest $request, $id)
     {
 
+        $commerce = Commerce::where('id', $id)
+            ->first();
+
         $message = new Message;
         $message->name = $request['name'];
         $message->email = $request['email'];
@@ -53,10 +56,10 @@ class CommerceController extends Controller
         $message->commerce_id = $id;
         $message->save();
 
-        Mail::send('web.mails.MailCustomer', $request->all(), function ($msj) use ($request) {
-            $msj->from($request->email, $request->name);
+        Mail::send('web.mails.MailCustomer', $request->all(), function ($msj) use ($request, $commerce) {
+            $msj->from('no-respond@celiacosmendoza.com', 'CeliacosMendoza');
             $msj->subject('Mensaje desde celiacomendoza');
-            $msj->to('no-respond@celiacosmendoza.com', 'CeliacoMendoza');
+            $msj->to($commerce->user->email, $commerce->user->name);
         });
 
         Session::flash('message', 'Su mensaje fue enviado correctamente. Muchas gracias!!!');

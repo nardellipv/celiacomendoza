@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'info@celiacosmendoza.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'no-respond@celiacosmendoza.com'),
         'name' => env('MAIL_FROM_NAME', 'CeliacosMendoza'),
     ],
 
