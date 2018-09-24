@@ -50,8 +50,8 @@
                                     </td>
                                     <td style="width:58%" class="ads-details-td">
                                         <div>
-                                            <p><strong> <a href="ads-details.html"
-                                                           title="Brand New Nexus 4">{{ $productAvailable->name }}</a>
+                                            <p><strong> <a href="#"
+                                                           title="{{ $productAvailable->name }}">{{ $productAvailable->name }}</a>
                                                 </strong></p>
 
                                             @if($productAvailable->highlight == 'YES')

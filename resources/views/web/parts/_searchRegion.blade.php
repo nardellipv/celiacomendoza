@@ -35,7 +35,7 @@
                                 <div class="card card-event info-overlay">
                                     <div class="img has-background" style="background-size:cover ">
 
-                                        <a href="event-details.html">
+                                        <a href="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}">
                                             <img alt="340x230" class="card-img-top img-responsive" data-holder-rendered="true"
                                                  src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}"> </a>
                                     </div>

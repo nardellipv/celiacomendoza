@@ -63,9 +63,9 @@ class MessageController extends Controller
         $this->authorize('MessagePass', $message);
 
 
-        Mail::send('web.mails.MailResponseCommerce', [$request->all(), $message], function ($msj)  use ($request, $message) {
+        Mail::send('web.mails.MailResponseCommerce', $request->all(), function ($msj)  use ($request, $message) {
             $msj->from('no-respond@celiacosmendoza.com');
-            $msj->subject('Mensaje em respuesta a tu pregunta');
+            $msj->subject('Mensaje en respuesta a tu pregunta');
             $msj->to($message->email, $message->name);
         });
 

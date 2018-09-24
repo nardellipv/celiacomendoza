@@ -11,14 +11,14 @@
 
 
                         <div class="col-sm-4 col-xs-4 no-padding photobox">
-                            <div class="add-image"><a href="ads-details.html">
+                            <div class="add-image"><a href="{{ url('blog', $lastPost->slug) }}">
                                     <img class="no-margin" src="{{ asset('images/blog/thumbnail/' .$lastPost->photo) }}" alt="img"></a>
                             </div>
                         </div>
                         <!--/.photobox-->
                         <div class="col-sm-8 col-xs-8 add-desc-box">
                             <div class="ads-details">
-                                <h5 class="add-title"><a href="ads-details.html">{{ $lastPost->title }}</a></h5>
+                                <h5 class="add-title"><a href="{{ url('blog', $lastPost->slug) }}">{{ $lastPost->title }}</a></h5>
                                 <span class="info-row">  <span class="date"><i
                                                 class=" icon-clock"> </i> {{ Date::parse($lastPost->created_at)->format('d/m/Y H:m') }}  </span> </span>
                             </div>
