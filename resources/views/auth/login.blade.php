@@ -81,8 +81,8 @@
                         </div>
                     </div>
                     <div class="login-box-btm text-center">
-                        <p> ¿No posee una cuenta? <br>
-                            <a href="{{ url('register') }}"><strong>¡¡¡Registrase Gratis!!!</strong> </a></p>
+                        <p> ¿No tienes una cuenta? <br>
+                            <a href="{{ url('register') }}"><strong>Registrarse!</strong> </a></p>
                     </div>
                 </div>
             </div>

@@ -22,11 +22,13 @@
                     </div>
                     <div class="col-sm-6 col-xs-12">
                         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <!-- HomeCeliacos -->
+                        <!-- regionsCeliacos -->
                         <ins class="adsbygoogle"
-                             style="display:inline-block;width:200px;height:200px"
+                             style="display:block"
                              data-ad-client="ca-pub-7543412924958320"
-                             data-ad-slot="5887202721"></ins>
+                             data-ad-slot="4444645960"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>

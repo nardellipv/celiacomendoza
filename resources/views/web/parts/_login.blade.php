@@ -36,14 +36,22 @@
                     </div>
                 </div>
 
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">
-                        {{ __('Login') }}
-                    </button>
-
-                </div>
-
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                {{ __('Login') }}
+                            </button>
+                        </div>
+                    </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <p class="text-center pull-right">
+                                <a href="{{ route('password.request') }}">
+                                    {{ __('¿Olvidá mi contraseña?') }}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
 
             </form>
         </div>
