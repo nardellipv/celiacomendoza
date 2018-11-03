@@ -38,10 +38,8 @@
                                         <p>{!! $post->body !!}</p>
                                     </div>
                                 </div>
-
-
                                 <div class="clearfix">
-                                        <div class="addthis_inline_share_toolbox_iswp"></div>
+                                    <div class="addthis_inline_share_toolbox_iswp"></div>
                                 </div>
                             </div>
                         </div>
@@ -51,4 +49,14 @@
         </div>
     </div>
 
+    {{--ads--}}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- indexFooterCeliacos -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:970px;height:90px"
+         data-ad-client="ca-pub-7543412924958320"
+         data-ad-slot="3943694264"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 @endsection
