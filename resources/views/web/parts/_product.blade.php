@@ -70,7 +70,7 @@
                                         <span>Ubicación</span>
                                     </div>
                                     <div class="col to">
-                                        <span>{{ $commerce->location }}</span>
+                                        <span>{{ $commerce->region->name }}</span>
                                     </div>
                                 </div>
 

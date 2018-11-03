@@ -13,7 +13,7 @@ class HomeController extends Controller
 {
     public function list()
     {
-        $commerces = Commerce::paginate(12);
+        $commerces = Commerce::paginate(18);
 
         $regions = Region::all();
 

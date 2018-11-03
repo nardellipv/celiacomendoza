@@ -29,7 +29,12 @@
                     	<img src="{{ asset('images/thumbnail/products/'.($highlight->photo)) }}">
                      </span>
                             <span class="item-name"> {{ $highlight->name }} </span>
+                            @if(!$highlight->offer)
                                 <span class="price">$ {{ $highlight->price }}</span>
+                            @else
+                                <span class="price"><del>$ {{ $highlight->price }}</del></span>
+                                <span class="price">$ {{ $highlight->offer }}</span>
+                            @endif
                         </a>
                     </div>
                 @endforeach
