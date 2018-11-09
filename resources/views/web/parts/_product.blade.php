@@ -55,8 +55,13 @@
                     <div class="card card-user-info sidebar-card">
                         <div class="block-cell user">
 
-                            <div class="cell-media"><img src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}"
-                                                         alt="logo"></div>
+                            <div class="cell-media">
+                                @if($commerce->logo)
+                                    <img src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}" alt="logo">
+                                @else
+                                    <img src="{{ asset('images/nodisp.png') }}" alt="sin logo">
+                                @endif
+                            </div>
                             <div class="cell-content">
                                 <h5 class="title">Local</h5>
                                 <span class="name">{{ $commerce->name }}</span>

@@ -1,4 +1,3 @@
-{{--{{dd(public_path('images/thumbnail/'.$commerce->logo))}}--}}
 @if (Auth::check())
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav ml-auto navbar-right">

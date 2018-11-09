@@ -43,7 +43,7 @@ class ProductController extends Controller
 
             $destinationPath = 'images/thumbnail/products/';
             $img = Image::make($image->getRealPath());
-            $img->resize(50, 50, function ($constraint) {
+            $img->resize(100, 100, function ($constraint) {
                 $constraint->aspectRatio();
             })->save($destinationPath . $input['file']);
 
@@ -90,7 +90,7 @@ class ProductController extends Controller
 
             $destinationPath = 'images/thumbnail/products/';
             $img = Image::make($image->getRealPath());
-            $img->resize(50, 50, function ($constraint) {
+            $img->resize(100, 100, function ($constraint) {
                 $constraint->aspectRatio();
             })->save($destinationPath . $input['file']);
 

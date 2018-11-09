@@ -1,6 +1,6 @@
 @foreach($lastProducts as $lastProduct)
     <div class="product">
-        <img src="{{ $lastProduct->photo }}" alt="product" width="20%"/>
+        <img src="{{ asset('images/thumbnail/products/'.$lastProduct->photo) }}" alt="product" width="20%"/>
         <div class="product-desc">
             <div class="product-title">
                 <a href="{{ url('producto', array($commerce->slug, $lastProduct->id)) }}">{{ str_limit($lastProduct->name,25) }}</a>

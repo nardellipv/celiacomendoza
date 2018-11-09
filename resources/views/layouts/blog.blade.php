@@ -105,10 +105,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="webStyle/assets/js/jquery/jquery-3.3.1.min.js">\x3C/script>')</script>
 
-<script src="{{ ('webStyle/assets/js/vendors.min.js') }}"></script>
+<script src="{{ asset('webStyle/assets/js/vendors.min.js') }}"></script>
 
 <!-- include custom script for site  -->
-<script src="{{ ('webStyle/assets/js/main.min.js') }}"></script>
+<script src="{{ asset('webStyle/assets/js/main.min.js') }}"></script>
 
 </body>
 </html>

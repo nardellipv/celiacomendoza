@@ -66,6 +66,18 @@
 
                 <div class="panel-collapse collapse show" id="TerminateAccount">
                     <ul class="acc-list">
+                        <li class="postadd nav-item"><a class="btn btn-block btn-border btn-post btn-danger nav-link"
+                                                        href="{{ url('cliente-perfil/product/create') }}"><i class="fas fa-chevron-circle-up"></i> Subir un Producto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapse-box">
+                <h5 class="collapse-title"></h5>
+
+                <div class="panel-collapse collapse show" id="TerminateAccount">
+                    <ul class="acc-list">
                         <li>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

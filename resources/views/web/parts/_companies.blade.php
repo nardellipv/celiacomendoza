@@ -18,8 +18,8 @@
                             @endif
                             <h6><i class="fa fa-map-marker-alt"></i>
                                 @if($commerce->region)
-                                {{ $commerce->address }} - {{ $commerce->region->name }}
-                                    @else
+                                    {{ $commerce->address }} - {{ $commerce->region->name }}
+                                @else
                                     Local sin dirección
                                 @endif
                             </h6></a>
