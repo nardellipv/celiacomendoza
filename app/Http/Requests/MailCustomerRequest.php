@@ -27,6 +27,7 @@ class MailCustomerRequest extends FormRequest
             'name' => 'required',
             'email' => 'required | email',
             'messageCustomer' => 'required | min:10',
+            'g-recaptcha-response' =>  'required|recaptcha',
         ];
     }
 }

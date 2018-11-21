@@ -29,6 +29,12 @@
                                                           required>{{ old('messageCustomer') }}</textarea>
                         </div>
 
+                        <div class="offset-4">
+                            <div class="form-group">
+                                {!! Recaptcha::render() !!}
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <button type="submit" id="submit-message" class="btn btn-primary btn-block">Enviar Mensaje
                             </button>

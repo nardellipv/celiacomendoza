@@ -154,6 +154,7 @@ return [
         'Jenssegers\Date\DateServiceProvider',
         celiacomendoza\Providers\ComposerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -215,6 +216,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Date' => Jenssegers\Date\Date::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 
 ];
