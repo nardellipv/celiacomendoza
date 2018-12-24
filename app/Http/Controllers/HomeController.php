@@ -13,7 +13,9 @@ class HomeController extends Controller
 {
     public function list()
     {
-        $commerces = Commerce::paginate(18);
+        $commerces = Commerce::join('users', 'users.id', 'commerces.user_id')
+            ->where('users.status', 'ACTIVE')
+            ->paginate(18);
 
         $regions = Region::all();
 
@@ -21,7 +23,7 @@ class HomeController extends Controller
             ->take(4)
             ->get();
 
-        return view('layouts.main', compact('commerces', 'regions','posts'));
+        return view('layouts.main', compact('commerces', 'regions', 'posts'));
     }
 
     public function region($slug)

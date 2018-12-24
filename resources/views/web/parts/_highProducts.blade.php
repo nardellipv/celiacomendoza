@@ -1,7 +1,9 @@
 <div id="highlight" class="col-xl-12 content-box ">
     <div class="row row-featured" style="background-color: #e4ff005e;">
         <div class="col-xl-12  box-title" style="background-color: yellow;">
-            <div class="inner"><h2><span>Productos </span> Destacados </h2>
+            <div class="inner"><h2><span>Productos </span> Destacados
+                <a href="{{url('listado', $commerce->slug)}}" class="sell-your-item"> Ver más productos<i
+                            class="  icon-th-list"></i> </a></h2>
             </div>
         </div>
 

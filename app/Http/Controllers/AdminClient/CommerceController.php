@@ -6,6 +6,7 @@ use celiacomendoza\Commerce;
 use celiacomendoza\Http\Requests\ClientCommerceRequest;
 use celiacomendoza\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 use Image;
 
 class CommerceController extends Controller
