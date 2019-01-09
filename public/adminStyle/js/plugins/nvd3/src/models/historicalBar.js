@@ -1,4 +1,4 @@
-//TODO: consider deprecating and using multibar with single series for this
+//TD: consider deprecating and using multibar with single series for this
 nv.models.historicalBar = function() {
   "use strict";
   //============================================================
@@ -121,7 +121,7 @@ nv.models.historicalBar = function() {
             dispatch.elementMouseover({
                 point: d,
                 series: data[0],
-                pos: [x(getX(d,i)), y(getY(d,i))],  // TODO: Figure out why the value appears to be shifted
+                pos: [x(getX(d,i)), y(getY(d,i))],  //TD: Figure out why the value appears to be shifted
                 pointIndex: i,
                 seriesIndex: 0,
                 e: d3.event
@@ -171,7 +171,7 @@ nv.models.historicalBar = function() {
           .attr('class', function(d,i,j) { return (getY(d,i) < 0 ? 'nv-bar negative' : 'nv-bar positive') + ' nv-bar-' + j + '-' + i })
           .transition()
           .attr('transform', function(d,i) { return 'translate(' + (x(getX(d,i)) - availableWidth / data[0].values.length * .45) + ',0)'; }) 
-           //TODO: better width calculations that don't assume always uniform data spacing;w
+           //TD: better width calculations that don't assume always uniform data spacing;w
           .attr('width', (availableWidth / data[0].values.length) * .9 );
 
 

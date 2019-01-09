@@ -2,7 +2,11 @@
 
 namespace celiacomendoza\Http\Controllers\AdminClient;
 
+use celiacomendoza\Characteristic;
+use celiacomendoza\CharacteristicCommerce;
 use celiacomendoza\Commerce;
+use celiacomendoza\CommercePayment;
+use celiacomendoza\Payment;
 use celiacomendoza\Product;
 use celiacomendoza\Region;
 use celiacomendoza\User;
@@ -28,8 +32,21 @@ class DashboardController extends Controller
         $productsDisable = Product::where('commerce_id', $user->id)
             ->where('available', 'NO')
             ->orderBy('created_at', 'DESC')
-            ->paginate(310);
+            ->paginate(10);
 
-        return view('web.adminClient', compact('user', 'commerce', 'productsAvailable', 'productsDisable','regions'));
+        $payments = Payment::all();
+
+        $paymentsCommerce = CommercePayment::with('payment')
+            ->where('commerce_id', $commerce->id)
+            ->get();
+
+        $characteristics = Characteristic::all();
+
+        $characteristicsCommerce = CharacteristicCommerce::with('characteristic')
+            ->where('commerce_id', $commerce->id)
+            ->get();
+
+        return view('web.adminClient', compact('user', 'commerce', 'productsAvailable', 'productsDisable',
+            'regions', 'payments', 'characteristics', 'paymentsCommerce', 'characteristicsCommerce'));
     }
 }

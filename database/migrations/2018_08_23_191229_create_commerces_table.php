@@ -18,11 +18,9 @@ class CreateCommercesTable extends Migration
 
             $table->string('name');
             $table->string('address')->nullable();
-            $table->string('number')->nullable();
             $table->string('phone')->nullable();
             $table->string('web')->nullable();
             $table->mediumText('about')->nullable();
-            $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();
             $table->string('logo')->nullable();
             $table->string('slug', 150)->unique();

@@ -1798,7 +1798,7 @@
         var includeAncestor = options && options.includeAncestor;
         var fullyContains = options && options.fullyContains;
 
-        // TODO compare points and sort
+        //TD compare points and sort
         var startPoint = this.getStartPoint();
         var endPoint = this.getEndPoint();
 
@@ -2490,7 +2490,7 @@
 
     /**
      * fontsize
-     * FIXME: Still buggy
+     * FX: Still buggy
      *
      * @param {jQuery} $editable
      * @param {String} value - px
@@ -2717,7 +2717,7 @@
 
     var applySnapshot = function ($editable, snapshot) {
       $editable.html(snapshot.contents);
-      // FIXME: Still buggy, use marker tag
+      // FX: Still buggy, use marker tag
       // range.createFromBookmark($editable[0], snapshot.bookmark).select();
     };
 

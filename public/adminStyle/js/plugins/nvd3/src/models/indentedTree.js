@@ -4,7 +4,7 @@ nv.models.indentedTree = function() {
   // Public Variables with Default Settings
   //------------------------------------------------------------
 
-  var margin = {top: 0, right: 0, bottom: 0, left: 0} //TODO: implement, maybe as margin on the containing div
+  var margin = {top: 0, right: 0, bottom: 0, left: 0} //TD: implement, maybe as margin on the containing div
     , width = 960
     , height = 500
     , color = nv.utils.defaultColor()
@@ -13,9 +13,9 @@ nv.models.indentedTree = function() {
     , filterZero = false
     , noData = "No Data Available."
     , childIndent = 20
-    , columns = [{key:'key', label: 'Name', type:'text'}] //TODO: consider functions like chart.addColumn, chart.removeColumn, instead of a block like this
+    , columns = [{key:'key', label: 'Name', type:'text'}] //TD: consider functions like chart.addColumn, chart.removeColumn, instead of a block like this
     , tableClass = null
-    , iconOpen = 'images/grey-plus.png' //TODO: consider removing this and replacing with a '+' or '-' unless user defines images
+    , iconOpen = 'images/grey-plus.png' //TD: consider removing this and replacing with a '+' or '-' unless user defines images
     , iconClose = 'images/grey-minus.png'
     , dispatch = d3.dispatch('elementClick', 'elementDblclick', 'elementMouseover', 'elementMouseout')
     , getUrl = function(d) { return d.url }
@@ -85,14 +85,14 @@ nv.models.indentedTree = function() {
 
       //compute max generations
       depth = d3.max(nodes, function(node) { return node.depth });
-      tree.size([height, depth * childIndent]); //TODO: see if this is necessary at all
+      tree.size([height, depth * childIndent]); //TD: see if this is necessary at all
 
 
       // Update the nodes…
       var node = tbody.selectAll('tr')
           // .data(function(d) { return d; }, function(d) { return d.id || (d.id == ++i)});
           .data(function(d) { return d.filter(function(d) { return (filterZero && !d.children) ? filterZero(d) :  true; } )}, function(d,i) { return d.id || (d.id || ++idx)});
-          //.style('display', 'table-row'); //TODO: see if this does anything
+          //.style('display', 'table-row'); //TD: see if this does anything
 
       node.exit().remove();
 
@@ -106,7 +106,7 @@ nv.models.indentedTree = function() {
       columns.forEach(function(column, index) {
 
         var nodeName = nodeEnter.append('td')
-            .style('padding-left', function(d) { return (index ? 0 : d.depth * childIndent + 12 + (icon(d) ? 0 : 16)) + 'px' }, 'important') //TODO: check why I did the ternary here
+            .style('padding-left', function(d) { return (index ? 0 : d.depth * childIndent + 12 + (icon(d) ? 0 : 16)) + 'px' }, 'important') //TD: check why I did the ternary here
             .style('text-align', column.type == 'numeric' ? 'right' : 'left');
 
 
@@ -162,7 +162,7 @@ nv.models.indentedTree = function() {
         .order()
         .on('click', function(d) { 
           dispatch.elementClick({
-            row: this, //TODO: decide whether or not this should be consistent with scatter/line events or should be an html link (a href)
+            row: this, //TD: decide whether or not this should be consistent with scatter/line events or should be an html link (a href)
             data: d,
             pos: [d.x, d.y]
           });

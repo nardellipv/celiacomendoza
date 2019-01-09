@@ -42,7 +42,7 @@ class ProductController extends Controller
         return view('web.product', compact('listCategories', 'commerce', 'product', 'lastProducts', 'relationItems'));
     }
 
-    public function addcart($product_id, Request $request)
+    /*public function addcart($product_id, Request $request)
     {
         $product = Product::find($product_id);
 
@@ -184,5 +184,5 @@ class ProductController extends Controller
         Session::flash('messageCheckout', 'Su compra fue realizada, por favor revise su mail para saber como sigue el proceso de compra.');
         return view('layouts.main', compact('commerces','regions'));
 
-    }
+    }*/
 }

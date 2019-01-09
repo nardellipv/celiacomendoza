@@ -43,9 +43,7 @@ class ProductController extends Controller
 
             $destinationPath = 'images/thumbnail/products/';
             $img = Image::make($image->getRealPath());
-            $img->resize(100, 100, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save($destinationPath . $input['file']);
+            $img->resize(250, 250)->save($destinationPath . $input['file']);
 
             $destinationPath = 'images/' . $commerce->name . '-' . $commerce->id . '/products';
             $image->move($destinationPath, $input['file']);
@@ -90,9 +88,7 @@ class ProductController extends Controller
 
             $destinationPath = 'images/thumbnail/products/';
             $img = Image::make($image->getRealPath());
-            $img->resize(100, 100, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save($destinationPath . $input['file']);
+            $img->resize(250, 250)->save($destinationPath . $input['file']);
 
             $destinationPath = 'images/' . $product->commerce->name . '-' . $product->commerce->id . '/products';
             $image->move($destinationPath, $input['file']);
@@ -111,7 +107,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         //controlo de que sea el dueño del producto
-         $this->authorize('passProduct', $product);
+        $this->authorize('passProduct', $product);
         $product->available = 'YES';
         $product->update();
 
@@ -139,11 +135,11 @@ class ProductController extends Controller
         //controlo de que sea el dueño del producto
         $this->authorize('passProduct', $product);
 
-        if(File::exists(public_path('images/thumbnail/products/' . $product->photo))){
+        if (File::exists(public_path('images/thumbnail/products/' . $product->photo))) {
             File::delete(public_path('images/thumbnail/products/' . $product->photo));
         }
 
-        if(File::exists(public_path('images/' . $product->commerce->name . '-' . $product->commerce->id . '/products/' . $product->photo))){
+        if (File::exists(public_path('images/' . $product->commerce->name . '-' . $product->commerce->id . '/products/' . $product->photo))) {
             File::delete(public_path('images/' . $product->commerce->name . '-' . $product->commerce->id . '/products/' . $product->photo));
         }
 

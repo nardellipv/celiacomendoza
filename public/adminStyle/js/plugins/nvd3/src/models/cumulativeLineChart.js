@@ -746,7 +746,7 @@ nv.models.cumulativeLineChart = function() {
       }
       var v = lines.y()(indexValue, idx);
 
-      //TODO: implement check below, and disable series if series loses 100% or more cause divide by 0 issue
+      //TD: implement check below, and disable series if series loses 100% or more cause divide by 0 issue
       if (v < -.95 && !noErrorCheck) {
         //if a series loses more than 100%, calculations fail.. anything close can cause major distortion (but is mathematically correct till it hits 100)
 

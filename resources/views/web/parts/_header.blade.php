@@ -1,13 +1,41 @@
-<div class="header">
-    <nav class="navbar  fixed-top navbar-site navbar-light bg-light navbar-expand-md"
-         role="navigation">
+<header id="main_header_2">
+    <div id="header-top">
         <div class="container">
-            <div class="navbar-identity">
-                <a href="{{ url('/') }}" class="navbar-brand logo logo-title">
-    			<img src="{{ asset('webStyle/img/logo-text.png') }}" alt="logo" style="margin-top: -15px;">
-    			</a>
+            <div class="row">
+
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="top-contact">
+                        <p>Para más información: <span>info@celiacosmendoza.com</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="top_right_links2">
+                        <ul class="top_links">
+                            <li><a href="{{ url('cliente-perfil') }}"><i class="fa fa-user-o" aria-hidden="true"></i>
+                                    Perfíl</a></li>
+                            @if (Auth::check())
+                                <li>Bienvenido {{ Auth::user()->name }}</li>
+                            @else
+                                <li><a href="{{ url('login') }}"><i class="fa fa-lock" aria-hidden="true"></i> Ingresar
+                                        /
+                                        Registrarse</a></li>
+                            @endif
+                        </ul>
+                        @if (Auth::check())
+                            <div class="add-listing"><a href="{{ url('cliente-perfil/product/create') }}"><i
+                                            class="fa fa-plus" aria-hidden="true"></i> Subir producto</a></div>
+                        @else
+                            <div class="add-listing"><a href="{{ url('cliente-perfil/product/create') }}"><i
+                                            class="fa fa-plus" aria-hidden="true"></i> Subir local</a></div>
+                        @endif
+                    </div>
+                </div>
+                <div class="top_right_links2-bg"></div>
+
             </div>
-            @include('web.parts._menu')
         </div>
-    </nav>
-</div>
+    </div>
+    @include('web.parts._menu')
+</header>

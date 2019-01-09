@@ -1,4 +1,4 @@
-<div class="main-container">
+<section id="profile" class="p_b70 p_t70 bg_lightgry">
     <div class="container">
         @include('web.parts.alerts.success')
         @include('web.parts.alerts.error')
@@ -9,25 +9,8 @@
 
             <div class="col-md-9 page-content">
                 <div class="inner-box">
-                    <h2 class="title-2"><i class="icon-docs"></i> Listado de productos Desactivado</h2>
 
                     <div class="table-responsive">
-                        <div class="table-action">
-                            <div class="table-search pull-right col-sm-7">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-sm-5 control-label text-right">Buscar <br>
-                                            <a title="clear filter" class="clear-filter" href="#clear">[borrar
-                                                búsqueda]</a>
-                                        </label>
-
-                                        <div class="col-sm-7 searchpan">
-                                            <input type="text" class="form-control" id="filter">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <table id="addManageTable"
                                class="table table-striped table-bordered add-manage-table table demo"
                                data-filter="#filter" data-filter-text-only="true">
@@ -112,26 +95,4 @@
             </div>
         </div>
     </div>
-</div>
-@section('script')
-    <script src="{{ asset('webStyle/assets/js/footable.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('webStyle/assets/js/footable.filter.js') }}" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(function () {
-            $('#addManageTable').footable().bind('footable_filtering', function (e) {
-                var selected = $('.filter-status').find(':selected').text();
-                if (selected && selected.length > 0) {
-                    e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
-                    e.clear = !e.filter;
-                }
-            });
-
-            $('.clear-filter').click(function (e) {
-                e.preventDefault();
-                $('.filter-status').val('');
-                $('table.demo').trigger('footable_clear_filter');
-            });
-
-        });
-    </script>
-@endsection
+</section>

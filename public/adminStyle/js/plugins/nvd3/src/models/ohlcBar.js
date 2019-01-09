@@ -35,7 +35,7 @@ nv.models.ohlcBar = function() {
   // Private Variables
   //------------------------------------------------------------
 
-  //TODO: store old scales for transitions
+  //TD: store old scales for transitions
 
   //============================================================
 
@@ -155,7 +155,7 @@ nv.models.ohlcBar = function() {
             dispatch.elementMouseover({
                 point: d,
                 series: data[0],
-                pos: [x(getX(d,i)), y(getY(d,i))],  // TODO: Figure out why the value appears to be shifted
+                pos: [x(getX(d,i)), y(getY(d,i))],  //TD: Figure out why the value appears to be shifted
                 pointIndex: i,
                 seriesIndex: 0,
                 e: d3.event

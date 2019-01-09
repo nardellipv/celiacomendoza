@@ -7,6 +7,8 @@ Route::get('/', function () {
     return view('layouts.main');
 });
 
+
+//web
 Route::get('/', 'HomeController@list')->name('list');
 Route::get('catalogo/{slug}', 'CommerceController@commerce');
 Route::get('region/{name}', 'HomeController@region');
@@ -15,7 +17,7 @@ Route::get('listado/{slug}', 'CommerceController@shop');
 Route::get('listado-categoria/{slug}/{category_id}', 'CommerceController@shopCategory');
 Route::get('producto/{slug}/{product_id}', 'ProductController@product');
 Route::post('add/{product_id}', 'ProductController@addcart');
-Route::get('compra/{slug}', 'ProductController@cart');
+//Route::get('compra/{slug}', 'ProductController@cart');
 Route::get('borrar/{id}/{idProduct}', 'ProductController@delItems');
 Route::post('checkout', 'ProductController@checkout');
 Route::get('blog', 'BlogController@index');
@@ -31,6 +33,8 @@ Route::get('politicas', function () {
     return view('web.parts._politices');
 });
 //---------------------
+
+
 //Admin CeliacosMendoza
 Route::middleware(['auth','UserType'])->group(function () {
     Route::get('admin/', 'AdminCeliac\DashboardController@index');
@@ -49,12 +53,14 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('cliente-perfil/product', 'AdminClient\ProductController', ['except' => ['show']]);
         Route::get('cliente-perfil/available/{id}', 'AdminClient\ProductController@available')->name('available');
         Route::get('cliente-perfil/unavailable/{id}', 'AdminClient\ProductController@unavailable')->name('unavailable');
-    Route::get('cliente-perfil/ventas', 'AdminClient\PurchaseController@list');
+//    Route::get('cliente-perfil/ventas', 'AdminClient\PurchaseController@list');
     Route::get('cliente-perfil/mensajes', 'AdminClient\MessageController@listMessage');
     Route::get('cliente-perfil/leer-mensaje/{id}', 'AdminClient\MessageController@readMessage');
     Route::get('cliente-perfil/responder-mensaje/{id}', 'AdminClient\MessageController@responsMessage');
     Route::delete('cliente-perfil/delete/{id}', 'AdminClient\MessageController@deleteMessage')->name('deletemessage');
     Route::post('cliente-perfil/response/{id}', 'AdminClient\MessageController@responsMessageCliente')->name('responsMessageCliente');
+
+
     Route::get('admin/blog/list', 'BlogController@list')->name('blog.list');
     Route::get('admin/blog/create', 'BlogController@create')->name('blog.create');
     Route::post('admin/blog/store', 'BlogController@store')->name('blog.store');

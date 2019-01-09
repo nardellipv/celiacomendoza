@@ -3,9 +3,13 @@
 namespace celiacomendoza\Http\Controllers;
 
 use celiacomendoza\Category;
+use celiacomendoza\CharacteristicCommerce;
 use celiacomendoza\Commerce;
+use celiacomendoza\Commerce_Payment;
+use celiacomendoza\CommercePayment;
 use celiacomendoza\Http\Requests\MailCustomerRequest;
 use celiacomendoza\Message;
+use celiacomendoza\Payment;
 use celiacomendoza\Product;
 use celiacomendoza\Region;
 use Illuminate\Support\Facades\Mail;
@@ -18,20 +22,19 @@ class CommerceController extends Controller
         $commerce = Commerce::where('slug', $slug)
             ->first();
 
-        $offers = Product::where('commerce_id', $commerce->id)
+        $products = Product::where('commerce_id', $commerce->id)
             ->where('available', 'YES')
-            ->where('in_offer', 'YES')
+            ->paginate(10);
+
+        $commercePayment = CommercePayment::with(['payment'])
+            ->where('commerce_id', $commerce->id)
             ->get();
 
-        $highlights = Product::where('commerce_id', $commerce->id)
-            ->where('highlight', 'YES')
-            ->where('available', 'YES')
-            ->Limit(10)
+        $characteristicCommerces = CharacteristicCommerce::with('characteristic')
+            ->where('commerce_id', $commerce->id)
             ->get();
 
-        $regions = Region::all();
-
-        return view('web.catalog', compact('commerce', 'offers', 'highlights','regions'));
+        return view('web.catalog', compact('commerce', 'products', 'commercePayment', 'characteristicCommerces'));
     }
 
     public function contact($slug)
@@ -64,25 +67,6 @@ class CommerceController extends Controller
 
         Session::flash('message', 'Su mensaje fue enviado correctamente. Muchas gracias!!!');
         return back();
-    }
-
-    public function shop($slug)
-    {
-        $commerce = Commerce::where('slug', $slug)
-            ->first();
-
-        $products = Product::where('commerce_id', $commerce->id)
-            ->where('available', 'YES')
-            ->paginate(10);
-
-        $listCategories = Category::all();
-
-        $lastProducts = Product::where('commerce_id', $commerce->id)
-            ->orderBy('updated_at', 'DESC')
-            ->take(3)
-            ->get();
-
-        return view('web.shop', compact('commerce', 'products', 'listCategories', 'lastProducts'));
     }
 
     public function shopCategory($slug, $category_id)

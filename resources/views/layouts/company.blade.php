@@ -1,105 +1,111 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Fav and touch icons -->
-    <link sizes="72x72" href="{{ asset('webStyle/assets/ico/apple-icon-72x72.png') }}">
-    <link sizes="114x114" href="{{ asset('webStyle/assets/ico/apple-icon-144x144.png') }}">
-    <link sizes="72x72" href="{{ asset('webStyle/assets/ico/android-icon-72x72.png') }}">
-    <link sizes="114x114" href="{{ asset('webStyle/assets/ico/android-icon-144x144.png') }}">
-    <link rel="shortcut icon" href="{{ asset('webStyle/assets/ico/favicon.png') }}">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Locales y vendedores de comida y productos para celíacos en mendoza.
+    Guía práctica y simple para poder comparar precios y productos, y buscar locales cercanos a sus domicilios ">
     <title>Celiaco Mendoza</title>
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('webStyle/assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('webStyle/css/master.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('webStyle/css/color-green.css') }}">
 
+    <link sizes="72x72" href="{{ asset('webStyle/ico/apple-icon-72x72.png') }}">
+    <link sizes="114x114" href="{{ asset('webStyle/ico/apple-icon-144x144.png') }}">
+    <link sizes="72x72" href="{{ asset('webStyle/ico/android-icon-72x72.png') }}">
+    <link sizes="114x114" href="{{ asset('webStyle/ico/android-icon-144x144.png') }}">
+    <link rel="shortcut icon" href="{{ asset('webStyle/ico/apple-icon-72x72.png') }}">
 
-    <link href="{{ asset('webStyle/assets/css/style.css') }}" rel="stylesheet">
-
-    {{--custom--}}
-    <link href="{{ asset('webStyle/assets/css/custom.css') }}" rel="stylesheet">
-
-    <!-- styles needed for carousel slider -->
-    <link href="{{ asset('webStyle/assets/plugins/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
-    <link href="{{ asset('webStyle/assets/plugins/owl-carousel/owl.theme.css') }}" rel="stylesheet">
-
-    <!-- bxSlider CSS file -->
-    <link href="{{ asset('webStyle/assets/plugins/bxslider/jquery.bxslider.css') }}" rel="stylesheet"/>
-
-    <!-- Just for debugging purposes. -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <!-- include pace script for automatic web page progress bar  -->
-    <script>
-        paceOptions = {
-            elements: true
-        };
-    </script>
-    <script src="{{ asset('webStyle/assets/js/pace.min.js') }}"></script>
-    <script src="{{ asset('webStyle/assets/plugins/modernizr/modernizr-custom.js') }}"></script>
-
-    @yield('style')
 
     @include('external.analitycs')
 </head>
-<body>
 
+<body>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>(function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
+        js = d.createElement(s);
+        js.id = id;
         js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.1';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+<!-- LOADER -->
+<div class="loader">
+    <div class="cssload-svg"><img src="{{ asset('webStyle/img/42-3.gif') }}" alt="image">
+    </div>
+</div>
+<!--LOADER-->
 
-<div id="wrapper">
+<!-- HEADER -->
+@include('web.parts._header')
+<!-- HEADER  -->
 
-    <div class="intro-inner">
-        <div class="about-intro" style="
-                background:url({{ asset('webStyle/img/header-market.jpg') }}) no-repeat center;
-                background-size:cover;">
-            <div class="dtable hw100">
-                <div class="dtable-cell hw100">
-                    <div class="container text-center">
-                        <h1 class="intro-title animated fadeInDown"> Mercados para celiacos en Mendoza </h1>
-                    </div>
+<!-- Inner Banner -->
+<section id="inner-banner-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="inner_banner_2_detail">
                 </div>
             </div>
         </div>
-        <!--/.about-intro -->
-
     </div>
+</section>
+<!-- Inner Banner -->
 
-    @include('web.parts._header')
-
-    <div class="main-container">
-        <div class="container">
-            @yield('content')
+<!-- Listing Details Heading -->
+<section id="listing-details" class="p_b70 p_t70">
+    <div class="container">
+        @yield('contentAbout')
+        <div class="row m_t40">
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                @yield('content')
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                @if (Request::is('region/*'))
+                    @include('web.parts._region')
+                @else
+                    @include('web.parts._asideCommerce')
+                @endif
+            </div>
         </div>
     </div>
+</section>
+<!-- Listing Details Heading -->
 
-    @include('web.parts._footer')
+<!-- Footer -->
+@include('web.parts._footer')
+<!-- Footer -->
 
-</div>
-
-<!-- Placed at the end of the document so the pages load faster -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="webStyle/assets/js/jquery/jquery-3.3.1.min.js">\x3C/script>')</script>
-
-<script src="{{ asset('webStyle/assets/js/vendors.min.js') }}"></script>
-
-<!-- include custom script for site  -->
-<script src="{{ asset('webStyle/assets/js/main.min.js') }}"></script>
-
-@yield('script')
-
+<script src="{{ asset('webStyle/js/jquery.2.2.3.min.js') }}"></script>
+<script src="{{ asset('webStyle/js/bootstrap.min.js') }}"></script>
+{{--<script src="{{ asset('webStyle/js/jquery.appear.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/jquery-countTo.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/owl.carousel.min.js') }}"></script>--}}
+<script src="{{ asset('webStyle/js/jquery.fancybox.min.js') }}"></script>
+<script src="{{ asset('webStyle/js/bootsnav.js') }}"></script>
+{{--<script src="{{ asset('webStyle/js/modernizr.custom.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/grid.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/zelect.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/parallax.min.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/modernizr.custom.26633.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/jquery.gridrotator.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/richmarker-compiled.js') }}"></script>--}}
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAOBKD6V47-g_3opmidcmFapb3kSNAR70U"></script>
+{{--<script src="{{ asset('webStyle/js/google-map.js') }}"></script>--}}
+<script src="{{ asset('webStyle/js/functions.js') }}"></script>
+<script>
+    $(function () {
+        Grid.init();
+    });
+</script>
 @include('external.getsiteControl')
 </body>
+
 </html>

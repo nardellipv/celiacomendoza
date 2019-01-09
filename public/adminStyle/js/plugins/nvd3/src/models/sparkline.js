@@ -67,7 +67,7 @@ nv.models.sparkline = function() {
           );
 
 
-      // TODO: Add CURRENT data point (Need Min, Mac, Current / Most recent)
+      //TD: Add CURRENT data point (Need Min, Mac, Current / Most recent)
       var points = wrap.selectAll('circle.nv-point')
           .data(function(data) {
               var yValues = data.map(function(d, i) { return getY(d,i); });

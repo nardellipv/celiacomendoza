@@ -688,7 +688,7 @@ svg .title {
 
 
 /**
- * TODO: the following 3 selectors are based on classes used in the example.  I should either make them standard and leave them here, or move to a CSS file not included in the library
+ * TD: the following 3 selectors are based on classes used in the example.  I should either make them standard and leave them here, or move to a CSS file not included in the library
  */
 .nvd3.nv-indentedtree .name {
   margin-left: 5px;

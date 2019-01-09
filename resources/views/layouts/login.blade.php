@@ -1,78 +1,72 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
+
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Fav and touch icons -->
-    <link sizes="72x72" href="{{ asset('webStyle/assets/ico/apple-icon-72x72.png') }}">
-    <link sizes="114x114" href="{{ asset('webStyle/assets/ico/apple-icon-144x144.png') }}">
-    <link sizes="72x72" href="{{ asset('webStyle/assets/ico/android-icon-72x72.png') }}">
-    <link sizes="114x114" href="{{ asset('webStyle/assets/ico/android-icon-144x144.png') }}">
-    <link rel="shortcut icon" href="{{ asset('webStyle/assets/ico/favicon.png') }}">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Locales y vendedores de comida y productos para celíacos en mendoza.
+    Guía práctica y simple para poder comparar precios y productos, y buscar locales cercanos a sus domicilios ">
     <title>Celiaco Mendoza</title>
-    <!-- Bootstrap core CSS -->
-    <link href="{{ asset('webStyle/assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('webStyle/css/master.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('webStyle/css/color-green.css') }}">
 
+    <link sizes="72x72" href="{{ asset('webStyle/ico/apple-icon-72x72.png') }}">
+    <link sizes="114x114" href="{{ asset('webStyle/ico/apple-icon-144x144.png') }}">
+    <link sizes="72x72" href="{{ asset('webStyle/ico/android-icon-72x72.png') }}">
+    <link sizes="114x114" href="{{ asset('webStyle/ico/android-icon-144x144.png') }}">
+    <link rel="shortcut icon" href="{{ asset('webStyle/ico/apple-icon-72x72.png') }}">
 
-    <link href="{{ asset('webStyle/assets/css/style.css') }}" rel="stylesheet">
-
-    <!-- styles needed for carousel slider -->
-    <link href="{{ asset('webStyle/assets/plugins/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
-    <link href="{{ asset('webStyle/assets/plugins/owl-carousel/owl.theme.css') }}" rel="stylesheet">
-
-    <!-- bxSlider CSS file -->
-    <link href="{{ asset('webStyle/assets/plugins/bxslider/jquery.bxslider.css') }}" rel="stylesheet"/>
-
-    <!-- Just for debugging purposes. -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
-    <!--<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-<!-- include pace script for automatic web page progress bar  -->
-    <script>
-        paceOptions = {
-            elements: true
-        };
-    </script>
-    <script src="{{ asset('webStyle/assets/js/pace.min.js') }}"></script>
-    <script src="{{ asset('webStyle/assets/plugins/modernizr/modernizr-custom.js') }}"></script>
-
-
 </head>
 <body>
 
-<div id="wrapper">
-
-
-    @include('web.parts._header')
-
-    @yield('content')
-{{--@include('web.parts._login')--}}
-    @include('web.parts._footer')
-
+<!-- LOADER -->
+<div class="loader">
+    <div class="cssload-svg"><img src="{{ asset('webStyle/img/42-3.gif') }}" alt="image">
+    </div>
 </div>
+<!--LOADER-->
 
-<!-- Placed at the end of the document so the pages load faster -->
+<!-- HEADER -->
+@include('web.parts._header')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="webStyle/assets/js/jquery/jquery-3.3.1.min.js">\x3C/script>')</script>
+<!-- Inner Banner -->
+<section id="inner-banner-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="inner_banner_2_detail">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Inner Banner -->
 
-<script src="{{ ('webStyle/assets/js/vendors.min.js') }}"></script>
+<!-- Popular Listing -->
+@yield('content')
+<!-- Popular Listing -->
 
-<!-- include custom script for site  -->
-<script src="{{ ('webStyle/assets/js/main.min.js') }}"></script>
+<!-- Footer -->
+@include('web.parts._footer')
+<!-- Footer -->
 
-
-<!-- include jquery autocomplete plugin  -->
-
-<script type="text/javascript" src="{{ ('webStyle/assets/plugins/autocomplete/jquery.mockjax.js') }}"></script>
-<script type="text/javascript" src="{{ ('webStyle/assets/plugins/autocomplete/jquery.autocomplete.js') }}"></script>
-
-<script type="text/javascript" src="{{ ('webStyle/assets/plugins/autocomplete/autocomplete-demo.js') }}"></script>
-
-
+<script src="{{ asset('webStyle/js/jquery.2.2.3.min.js') }}"></script>
+<script src="{{ asset('webStyle/js/bootstrap.min.js') }}"></script>
+{{--<script src="{{ asset('webStyle/js/jquery.appear.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/jquery-countTo.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/owl.carousel.min.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/jquery.fancybox.min.js') }}"></script>--}}
+<script src="{{ asset('webStyle/js/bootsnav.js') }}"></script>
+{{--<script src="{{ asset('webStyle/js/zelect.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/parallax.min.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/modernizr.custom.26633.js') }}"></script>--}}
+{{--<script src="{{ asset('webStyle/js/jquery.gridrotator.js') }}"></script>--}}
+<script src="{{ asset('webStyle/js/functions.js') }}"></script>
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 @extends('web.adminClient')
 @section('content')
-    <div class="main-container">
+    <section id="profile" class="p_b70 p_t70 bg_lightgry">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 page-sidebar">
@@ -9,7 +9,7 @@
                 <!--/.page-sidebar-->
                 <div class="col-md-9 page-content">
                     <div class="inner-box">
-                        <h2 class="title-2"><i class="fas fa-edit"></i> Responder Mensaje </h2>
+                        <h2 class="title-2"><i class="fa fa-edit"></i> Responder Mensaje </h2>
                         {!! Form::open(['method' => 'POST','route' => ['responsMessageCliente', $message->id]]) !!}
                         {{ csrf_field() }}
                         <div class="inbox-wrapper">
@@ -48,7 +48,7 @@
                                         <div class="type-form-footer">
                                             <button type="submit" class="btn btn-success btn-icon">
                                                 Enviar
-                                                <i class="fas fa-envelope"></i>
+                                                <i class="fa fa-envelope"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -60,5 +60,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection

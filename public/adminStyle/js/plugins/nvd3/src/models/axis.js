@@ -12,7 +12,7 @@ nv.models.axis = function() {
     , height = 60 //only used for tickLabel currently
     , scale = d3.scale.linear()
     , axisLabelText = null
-    , showMaxMin = true //TODO: showMaxMin should be disabled on all ordinal scaled axes
+    , showMaxMin = true //TD: showMaxMin should be disabled on all ordinal scaled axes
     , highlightZero = true
     , rotateLabels = 0
     , rotateYLabel = true
@@ -62,7 +62,7 @@ nv.models.axis = function() {
         axis.ticks(Math.abs(scale.range()[1] - scale.range()[0]) / 100);
 
 
-      //TODO: consider calculating width/height based on whether or not label is added, for reference in charts using this component
+      //TD: consider calculating width/height based on whether or not label is added, for reference in charts using this component
 
 
       g.transition().call(axis);
@@ -169,7 +169,7 @@ nv.models.axis = function() {
           axisLabel
               .style('text-anchor', rotateYLabel ? 'middle' : 'begin')
               .attr('transform', rotateYLabel ? 'rotate(90)' : '')
-              .attr('y', rotateYLabel ? (-Math.max(margin.right,width) + 12) : -10) //TODO: consider calculating this based on largest tick width... OR at least expose this on chart
+              .attr('y', rotateYLabel ? (-Math.max(margin.right,width) + 12) : -10) //TD: consider calculating this based on largest tick width... OR at least expose this on chart
               .attr('x', rotateYLabel ? (scale.range()[0] / 2) : axis.tickPadding());
           if (showMaxMin) {
             var axisMaxMin = wrap.selectAll('g.nv-axisMaxMin')
@@ -211,7 +211,7 @@ nv.models.axis = function() {
           axisLabel
               .style('text-anchor', rotateYLabel ? 'middle' : 'end')
               .attr('transform', rotateYLabel ? 'rotate(-90)' : '')
-              .attr('y', rotateYLabel ? (-Math.max(margin.left,width) + axisLabelDistance) : -10) //TODO: consider calculating this based on largest tick width... OR at least expose this on chart
+              .attr('y', rotateYLabel ? (-Math.max(margin.left,width) + axisLabelDistance) : -10) //TD: consider calculating this based on largest tick width... OR at least expose this on chart
               .attr('x', rotateYLabel ? (-scale.range()[0] / 2) : -axis.tickPadding());
           if (showMaxMin) {
             var axisMaxMin = wrap.selectAll('g.nv-axisMaxMin')
@@ -296,7 +296,7 @@ nv.models.axis = function() {
       //highlight zero line ... Maybe should not be an option and should just be in CSS?
       if (highlightZero)
         g.selectAll('.tick')
-          .filter(function(d) { return !parseFloat(Math.round(d.__data__*100000)/1000000) && (d.__data__ !== undefined) }) //this is because sometimes the 0 tick is a very small fraction, TODO: think of cleaner technique
+          .filter(function(d) { return !parseFloat(Math.round(d.__data__*100000)/1000000) && (d.__data__ !== undefined) }) //this is because sometimes the 0 tick is a very small fraction, TD: think of cleaner technique
             .classed('zero', true);
 
       //store old scales for use in transitions on update

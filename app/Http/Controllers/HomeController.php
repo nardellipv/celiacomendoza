@@ -13,17 +13,20 @@ class HomeController extends Controller
 {
     public function list()
     {
-        $commerces = Commerce::join('users', 'users.id', 'commerces.user_id')
-            ->where('users.status', 'ACTIVE')
-            ->paginate(18);
+        $commerces = Commerce::with('region')
+            ->paginate(12);
 
-        $regions = Region::all();
-
-        $posts = Blog::orderBy('created_at', 'DESC')
-            ->take(4)
+        $regions = Region::orderBy('name', 'ASC')
             ->get();
 
-        return view('layouts.main', compact('commerces', 'regions', 'posts'));
+        $posts = Blog::orderBy('created_at', 'DESC')
+            ->skip(1)
+            ->take(2)
+            ->get();
+
+        $postLast = Blog::latest()->first();
+
+        return view('layouts.main', compact('commerces', 'regions', 'posts', 'postLast'));
     }
 
     public function region($slug)
@@ -32,15 +35,17 @@ class HomeController extends Controller
         $region = Region::where('slug', $slug)
             ->first();
 
-        $commerces = Commerce::where('about', '!=', 'NULL')
+        $commerces = Commerce::with('region')
+            ->where('about', '!=', 'NULL')
             ->where('logo', '!=', 'NULL')
             ->where('region_id', $region->id)
             ->paginate(10);
 
 
-        $allRegion = Region::all();
+        $regions = Region::orderBy('name', 'ASC')
+            ->get();
 
-        return view('web.parts._searchRegion', compact('region', 'allRegion', 'commerces'));
+        return view('web.parts._searchRegion', compact('regions', 'region', 'commerces'));
     }
 
     public function MailClient(MailCustomerRequest $request)

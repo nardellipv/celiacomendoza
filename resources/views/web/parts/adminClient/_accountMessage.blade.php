@@ -1,6 +1,6 @@
 @extends('web.adminClient')
 @section('content')
-    <div class="main-container">
+    <section id="profile" class="p_b70 p_t70 bg_lightgry">
         <div class="container">
             @include('web.parts.alerts.success')
             <div class="row">
@@ -39,7 +39,7 @@
                                                             <button type="submit" data-toggle="tooltip"
                                                                     data-placement="top"
                                                                     title="Borrar Mensaje" class="btn btn-link">
-                                                                <i class=" fas fa-trash"></i></button>
+                                                                <i class="fa fa-trash fa-2x"></i></button>
                                                             {!! Form::Close() !!}
                                                         </div>
                                                     </div>
@@ -59,5 +59,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection

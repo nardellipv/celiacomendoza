@@ -1,6 +1,6 @@
 @extends('web.adminClient')
 @section('content')
-    <div class="main-container">
+    <section id="profile" class="p_b70 p_t70 bg_lightgry">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 page-sidebar">
@@ -9,13 +9,13 @@
                 <!--/.page-sidebar-->
                 <div class="col-md-9 page-content">
                     <div class="inner-box">
-                        <h2 class="title-2"><i class="fas fa-envelope-open"></i> Leer Mensaje </h2>
+                        <h2 class="title-2"><i class="fa fa-envelope-open"></i> Leer Mensaje </h2>
                         <div class="inbox-wrapper">
                             <div class="row">
                                 <div class="col-md-3 col-lg-2">
                                     <div class="btn-group hidden-sm">
                                         <a href="{{ url('cliente-perfil/responder-mensaje', $message->id) }}" class="btn btn-primary text-uppercase"
-                                        ><i class="fas fa-plus"></i> Responder
+                                        ><i class="fa fa-plus"></i> Responder
                                         </a>
                                     </div>
                                 </div>
@@ -64,5 +64,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection

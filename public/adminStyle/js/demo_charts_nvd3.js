@@ -306,7 +306,7 @@ var nvd3Charts = function() {
 
 				d3.select('#chart-7 svg').datum(data).call(chart);
 
-				//TODO: Figure out a good way to do this automatically
+				//TD: Figure out a good way to do this automatically
 				nv.utils.windowResize(chart.update);
 
 				return chart;

@@ -16,16 +16,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view::composer('auth.register', function ($view){
+        view::composer('auth.login', function ($view){
            $regions = Region::all();
            $view->with('regions', $regions);
+        });
+
+        view::composer('auth.register', function ($view){
+            $regions = Region::all();
+            $view->with('regions', $regions);
         });
 
         view::composer('web.parts._asideBlog', function ($view) {
             $lastPosts = Blog::orderBy('created_at', 'DESC')
                 ->take(5)
                 ->get();
-
             $view->with('lastPosts', $lastPosts);
         });
     }

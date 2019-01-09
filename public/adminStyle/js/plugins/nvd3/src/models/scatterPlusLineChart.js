@@ -71,7 +71,7 @@ nv.models.scatterPlusLineChart = function() {
   var x0, y0;
 
   var showTooltip = function(e, offsetElement) {
-    //TODO: make tooltip style an option between single or dual on axes (maybe on all charts with axes?)
+    //TD: make tooltip style an option between single or dual on axes (maybe on all charts with axes?)
 
     var left = e.pos[0] + ( offsetElement.offsetLeft || 0 ),
         top = e.pos[1] + ( offsetElement.offsetTop || 0),

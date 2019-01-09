@@ -41,7 +41,7 @@ nv.models.legend = function() {
           .data(function(d) { return d });
       var seriesEnter = series.enter().append('g').attr('class', 'nv-series')
           .on('mouseover', function(d,i) {
-            dispatch.legendMouseover(d,i);  //TODO: Make consistent with other event objects
+            dispatch.legendMouseover(d,i);  //TD: Make consistent with other event objects
           })
           .on('mouseout', function(d,i) {
             dispatch.legendMouseout(d,i);
@@ -99,9 +99,9 @@ nv.models.legend = function() {
       series.select('text').text(getKey);
 
 
-      //TODO: implement fixed-width and max-width options (max-width is especially useful with the align option)
+      //TD: implement fixed-width and max-width options (max-width is especially useful with the align option)
 
-      // NEW ALIGNING CODE, TODO: clean up
+      // NEW ALIGNING CODE, TD: clean up
       if (align) {
 
         var seriesWidths = [];

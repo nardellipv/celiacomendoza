@@ -2,6 +2,7 @@
 
 namespace celiacomendoza;
 
+use Faker\Provider\Payment;
 use Illuminate\Database\Eloquent\Model;
 
 class Commerce extends Model
@@ -28,5 +29,15 @@ class Commerce extends Model
     public function Region()
     {
         return $this->belongsTo(Region::class);
+    }
+
+    public function payment()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    public function Characteristic()
+    {
+        return $this->belongsToMany(Characteristic::class);
     }
 }

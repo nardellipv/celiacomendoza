@@ -1,54 +1,30 @@
-<aside>
-    <div class="inner-box">
-        <!--/.categories-list-->
-        <div class="categories-list  list-filter">
-            <h5 class="list-title uppercase"><strong><a href="#"> Últimas Entradas</a></strong></h5>
+<div class="right-bar bg_white">
+    <h4>Últimas <span>Entradas</span></h4>
 
-
-            <div class="blog-popular-content">
-                @foreach($lastPosts as $lastPost)
-                    <div class="item-list">
-
-
-                        <div class="col-sm-4 col-xs-4 no-padding photobox">
-                            <div class="add-image"><a href="{{ url('blog', $lastPost->slug) }}">
-                                    <img class="no-margin" src="{{ asset('images/blog/thumbnail/' .$lastPost->photo) }}" alt="img"></a>
-                            </div>
-                        </div>
-                        <!--/.photobox-->
-                        <div class="col-sm-8 col-xs-8 add-desc-box">
-                            <div class="ads-details">
-                                <h5 class="add-title"><a href="{{ url('blog', $lastPost->slug) }}">{{ $lastPost->title }}</a></h5>
-                                <span class="info-row">  <span class="date"><i
-                                                class=" icon-clock"> </i> {{ Date::parse($lastPost->created_at)->format('d/m/Y H:m') }}  </span> </span>
-                            </div>
-                        </div>
-                        <!--/.add-desc-box-->
-
-
-                    </div>
-                @endforeach
-
+    @foreach($lastPosts as $lastPost)
+        <div class="places-list">
+            <h5><a href="{{ url('blog', $lastPost->slug) }}">{{ $lastPost->title }}</a></h5>
+            <div class="media">
+                <div class="media-left">
+                    <a href="{{ url('blog', $lastPost->slug) }}">
+                        <img class="media-object" src="{{ asset('images/blog/thumbnail/' .$lastPost->photo) }}"
+                             alt="{{ $lastPost->title }}">
+                    </a>
+                </div>
             </div>
-
-            <div class="categories-list  list-filter">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- IndexUP -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-7543412924958320"
-                     data-ad-slot="3230632682"
-                     data-ad-format="link"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-
-            </div>
-
-            <div style="clear:both"></div>
-
         </div>
-
-    </div>
-</aside>
+    @endforeach
+</div>
+<div class="right-bar bg_white">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- regionsCeliacos -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7543412924958320"
+         data-ad-slot="4444645960"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>

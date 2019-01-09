@@ -27,13 +27,6 @@ class ClientCommerceRequest extends FormRequest
             'region_id' => 'required',
             'file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'about' => 'required',
-            'facebook' => 'regex:/^[a-zA-Z]+$/u',
-        ];
-    }
-    public function messages()
-    {
-        return [
-            'facebook.regex' => 'Error en el campo facebook, solo tienes que poner el nombre de tu usuario.',
         ];
     }
 }

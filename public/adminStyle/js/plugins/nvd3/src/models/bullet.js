@@ -10,7 +10,7 @@ nv.models.bullet = function() {
   //------------------------------------------------------------
 
   var margin = {top: 0, right: 0, bottom: 0, left: 0}
-    , orient = 'left' // TODO top & bottom
+    , orient = 'left' //TD top & bottom
     , reverse = false
     , ranges = function(d) { return d.ranges }
     , markers = function(d) { return d.markers }
@@ -87,7 +87,7 @@ nv.models.bullet = function() {
 
 
 
-      var w0 = function(d) { return Math.abs(x0(d) - x0(0)) }, // TODO: could optimize by precalculating x0(0) and x1(0)
+      var w0 = function(d) { return Math.abs(x0(d) - x0(0)) }, //TD: could optimize by precalculating x0(0) and x1(0)
           w1 = function(d) { return Math.abs(x1(d) - x1(0)) };
       var xp0 = function(d) { return d < 0 ? x0(d) : x0(0) },
           xp1 = function(d) { return d < 0 ? x1(d) : x1(0) };
@@ -213,14 +213,14 @@ nv.models.bullet = function() {
           .on('mouseover', function(d,i) { 
               dispatch.elementMouseover({
                 value: d,
-                label: (i <= 0) ? 'Maximum' : (i > 1) ? 'Minimum' : 'Mean', //TODO: make these labels a variable
+                label: (i <= 0) ? 'Maximum' : (i > 1) ? 'Minimum' : 'Mean', //TD: make these labels a variable
                 pos: [x1(d), availableHeight/2]
               })
           })
           .on('mouseout', function(d,i) { 
               dispatch.elementMouseout({
                 value: d,
-                label: (i <= 0) ? 'Minimum' : (i >=1) ? 'Maximum' : 'Mean' //TODO: make these labels a variable
+                label: (i <= 0) ? 'Minimum' : (i >=1) ? 'Maximum' : 'Mean' //TD: make these labels a variable
               })
           })
 
@@ -244,14 +244,14 @@ nv.models.bullet = function() {
           .on('mouseover', function(d) { 
               dispatch.elementMouseover({
                 value: d,
-                label: 'Current', //TODO: make these labels a variable
+                label: 'Current', //TD: make these labels a variable
                 pos: [x1(d), availableHeight/2]
               })
           })
           .on('mouseout', function(d) { 
               dispatch.elementMouseout({
                 value: d,
-                label: 'Current' //TODO: make these labels a variable
+                label: 'Current' //TD: make these labels a variable
               })
           })
 

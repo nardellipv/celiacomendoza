@@ -11,6 +11,6 @@ class MessageSeeder extends Seeder
      */
     public function run()
     {
-        factory(\celiacomendoza\Message::class, 1000)->create();
+        factory(\celiacomendoza\Message::class, 100)->create();
     }
 }

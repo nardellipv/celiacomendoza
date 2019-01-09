@@ -11,7 +11,7 @@ nv.models.bulletChart = function() {
   var bullet = nv.models.bullet()
     ;
 
-  var orient = 'left' // TODO top & bottom
+  var orient = 'left' //TD top & bottom
     , reverse = false
     , margin = {top: 5, right: 40, bottom: 20, left: 120}
     , ranges = function(d) { return d.ranges }
@@ -108,7 +108,7 @@ nv.models.bulletChart = function() {
 
       // Compute the new x-scale.
       var x1 = d3.scale.linear()
-          .domain([0, Math.max(rangez[0], markerz[0], measurez[0])])  // TODO: need to allow forceX and forceY, and xDomain, yDomain
+          .domain([0, Math.max(rangez[0], markerz[0], measurez[0])])  //TD: need to allow forceX and forceY, and xDomain, yDomain
           .range(reverse ? [availableWidth, 0] : [0, availableWidth]);
 
       // Retrieve the old x-scale, if this is an update.
@@ -138,7 +138,7 @@ nv.models.bulletChart = function() {
       }
       */
 
-      var w0 = function(d) { return Math.abs(x0(d) - x0(0)) }, // TODO: could optimize by precalculating x0(0) and x1(0)
+      var w0 = function(d) { return Math.abs(x0(d) - x0(0)) }, //TD: could optimize by precalculating x0(0) and x1(0)
           w1 = function(d) { return Math.abs(x1(d) - x1(0)) };
 
 
