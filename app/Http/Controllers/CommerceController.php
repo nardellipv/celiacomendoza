@@ -93,6 +93,8 @@ class CommerceController extends Controller
 
     public function positive($slug)
     {
+//        dd(Cookie::get('voto')== $slug);
+
         if(Cookie::get('voto') == $slug){
             Session::flash('message', 'Ya votaste anteriormente a este comercio');
             return back();
@@ -104,7 +106,7 @@ class CommerceController extends Controller
         $commerce->votes_positive = $commerce->votes_positive + 1;
         $commerce->save();
 
-        Cookie::queue('voto', $commerce->name);
+        Cookie::queue('voto', $commerce->slug, '45000');
 
         Session::flash('message', 'Muchas gracias por tu voto');
         return back();
@@ -123,7 +125,7 @@ class CommerceController extends Controller
         $commerce->votes_negative = $commerce->votes_positive + 1;
         $commerce->save();
 
-        Cookie::queue('voto', $commerce->name);
+        Cookie::queue('voto', $commerce->slug);
 
         Session::flash('message', 'Muchas gracias por tu voto');
         return back();
