@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="Locales y vendedores de comida y productos para celíacos en mendoza.
-    Guía práctica y simple para poder comparar precios y productos, y buscar locales cercanos a sus domicilios ">
+    Gran comunidad de vendedores y compradores de productos para celíacos dentro de la provincia de Mendoza.">
     <title>Celiaco Mendoza</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('webStyle/css/master.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('webStyle/css/color-green.css') }}">

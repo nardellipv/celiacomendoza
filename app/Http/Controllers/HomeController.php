@@ -8,6 +8,7 @@ use celiacomendoza\Http\Requests\MailCustomerRequest;
 use celiacomendoza\Region;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use DB;
 
 class HomeController extends Controller
 {
@@ -15,8 +16,8 @@ class HomeController extends Controller
     {
 //        id 3 es el admin o sea YO
         $commerces = Commerce::with('region')
-            ->where('user_id','!=',3)
-            ->orderBy('votes_positive','DESC')
+            ->where('user_id', '!=', 3)
+            ->orderBy('votes_positive', 'DESC')
             ->paginate(12);
 
         $regions = Region::orderBy('name', 'ASC')

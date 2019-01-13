@@ -103,7 +103,7 @@ class CommerceController extends Controller
         $commerce = Commerce::where('slug', $slug)
             ->first();
 
-        $commerce->votes_positive = $commerce->votes_positive + 1;
+        $commerce->increment('votes_positive');
         $commerce->save();
 
         Cookie::queue('voto', $commerce->slug, '45000');
@@ -122,7 +122,7 @@ class CommerceController extends Controller
         $commerce = Commerce::where('slug', $slug)
             ->first();
 
-        $commerce->votes_negative = $commerce->votes_positive + 1;
+        $commerce->increment('votes_negative');
         $commerce->save();
 
         Cookie::queue('voto', $commerce->slug);

@@ -4,12 +4,15 @@
         <div class="details-heading heading">
             <div class="row">
                 <div class="col-md-8">
-                    <h2>{{ $commerce->name }}</h2>
-                    <br>
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-1"><i class="fa fa-thumbs-o-up" style="color:green"></i> {{ $commerce->votes_positive }}</div>
-                            <div class="text-left"><i class="fa fa-thumbs-o-down" style="color:red"></i> {{ $commerce->votes_negative }}</div>
+                            <div class="col-sm-4"><h3 style="color: #1fb7a6">{{ $commerce->name }}</h3></div>
+                            <div class="col-sm-offset-2 col-sm-2" style="font-size: 1.1em;">
+                                <i class="fa fa-thumbs-o-up" style="color:green"></i> {{ $commerce->votes_positive }}
+                                <i class="fa fa-thumbs-o-down" style="color:red"></i> {{ $commerce->votes_negative }}
+                                <i class="fa fa-question-circle-o red-tooltip" data-toggle="tooltip"
+                                   title="Votos de la comunidad" style="font-size: 1.3em;color: black;"></i>
+                            </div>
                         </div>
                     </div>
                     <div class="details-heading-address">
@@ -35,8 +38,10 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-3"><p>¿Comó te fue con <b>{{ $commerce->name }}</b>?</p></div>
-                                <div class="col-sm-1"><a href="{{ route('positive', $commerce->slug) }}"><i class="fa fa-thumbs-o-up fa-2x"></i></a></div>
-                                <div class="text-left"><a href="{{ route('negative', $commerce->slug) }}"><i class="fa fa-thumbs-o-down fa-2x"></i></a></div>
+                                <div class="col-sm-1"><a href="{{ route('positive', $commerce->slug) }}"><i
+                                                class="fa fa-thumbs-o-up fa-2x"></i></a></div>
+                                <div class="text-left"><a href="{{ route('negative', $commerce->slug) }}"><i
+                                                class="fa fa-thumbs-o-down fa-2x"></i></a></div>
                             </div>
                         </div>
                     </div>

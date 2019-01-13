@@ -6,11 +6,10 @@
 
 <!-- LOADER -->
 <div class="loader">
-    <div class="cssload-svg"><img src="{{ asset('webStyle/img/42-3.gif') }}" alt="image">
+    <div class="cssload-svg"><img src="{{ asset('webStyle/img/42-3.gif') }}" alt="loading">
     </div>
 </div>
 <!--LOADER-->
-
 <!-- HEADER -->
 @include('web.parts._header')
 
@@ -19,8 +18,8 @@
 
 <section id="popular-listing" class="p_b70 p_t70">
     <div class="container">
+        <h1>Celíacos Mendoza</h1>
         <div class="row">
-
             <div class="col-md-9 col-sm-9 col-xs-12">
                 <h4>LISTADO DE LOCALES Y VENDEDORES</h4>
                 <br>

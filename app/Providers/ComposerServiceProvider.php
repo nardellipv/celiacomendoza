@@ -14,7 +14,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view::composer(['layouts.company','layouts.main','web.parts._cart'], 'celiacomendoza\Http\CounterView\CounterCart');
+//        view::composer(['layouts.company','layouts.main','web.parts._cart'], 'celiacomendoza\Http\CounterView\CounterCart');
         view::composer(['web.parts.adminClient._aside'], 'celiacomendoza\Http\CounterView\CounterAside');
         view::composer(['admin.parts._widget'], 'celiacomendoza\Http\CounterView\CounterAdmin');
     }

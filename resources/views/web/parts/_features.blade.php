@@ -1,4 +1,4 @@
-<section id="counter-section" style="background-color: snow">
+<section id="counter-section">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center heading">
