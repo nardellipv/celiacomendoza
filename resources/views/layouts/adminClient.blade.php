@@ -25,7 +25,6 @@
     @include('external.analitycs')
 
     @include('external.pixelFace')
-
 </head>
 <body>
 

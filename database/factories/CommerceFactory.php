@@ -10,6 +10,8 @@ $factory->define(\celiacomendoza\Commerce::class, function (Faker $faker) {
         'phone' => $faker->phoneNumber,
         'web' => $faker->url,
         'about' => $faker->text($maxNbChars = 500),
+        'votes_positive' => rand(0, 100),
+        'votes_negative' => rand(0, 100),
         'facebook' => 'todofraseslive',
         'logo' => $faker->imageUrl(),
         'slug' => $title,

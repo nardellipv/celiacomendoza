@@ -12,6 +12,7 @@ use celiacomendoza\Message;
 use celiacomendoza\Payment;
 use celiacomendoza\Product;
 use celiacomendoza\Region;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
@@ -88,5 +89,43 @@ class CommerceController extends Controller
 
         return view('web.shopChooseCategory', compact('commerce', 'lastProducts',
             'listCategories', 'products'));
+    }
+
+    public function positive($slug)
+    {
+        if(Cookie::get('voto') == $slug){
+            Session::flash('message', 'Ya votaste anteriormente a este comercio');
+            return back();
+        }
+
+        $commerce = Commerce::where('slug', $slug)
+            ->first();
+
+        $commerce->votes_positive = $commerce->votes_positive + 1;
+        $commerce->save();
+
+        Cookie::queue('voto', $commerce->name);
+
+        Session::flash('message', 'Muchas gracias por tu voto');
+        return back();
+    }
+
+    public function negative($slug)
+    {
+        if(Cookie::get('voto') == $slug){
+            Session::flash('message', 'Ya votaste anteriormente a este comercio');
+            return back();
+        }
+
+        $commerce = Commerce::where('slug', $slug)
+            ->first();
+
+        $commerce->votes_negative = $commerce->votes_positive + 1;
+        $commerce->save();
+
+        Cookie::queue('voto', $commerce->name);
+
+        Session::flash('message', 'Muchas gracias por tu voto');
+        return back();
     }
 }

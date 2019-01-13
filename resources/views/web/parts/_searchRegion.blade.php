@@ -1,6 +1,8 @@
 @extends('layouts.company')
 
 @section('content')
+    <h4>Locales en <b>{{ $region->name }}</b></h4>
+    <br>
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade  in active">
             <div class="row">

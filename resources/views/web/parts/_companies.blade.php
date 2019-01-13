@@ -24,6 +24,8 @@
                             @else
                                 <p>Local sin dirección</p>
                             @endif
+                            <p class="text text-center"><i class="fa fa-thumbs-o-up" style="color:green"></i> {{ $commerce->votes_positive }}
+                                &nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-o-down" style="color:red"></i> {{ $commerce->votes_negative }}</p>
                         </div>
                         @if(!empty($commerce->region->name))
                             <div class="popular-listing-add"><span><i class="fa fa-map-marker"

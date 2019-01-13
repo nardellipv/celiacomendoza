@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Commerce extends Model
 {
+
     protected $fillable = [
         'name','address', 'phone', 'web', 'twitter', 'facebook', 'logo', 'slug', 'about','user_id', 'region_id'
     ];

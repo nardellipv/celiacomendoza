@@ -21,6 +21,8 @@ class CreateCommercesTable extends Migration
             $table->string('phone')->nullable();
             $table->string('web')->nullable();
             $table->mediumText('about')->nullable();
+            $table->integer('votes_positive')->default(0)->nullable();
+            $table->integer('votes_negative')->default(0)->nullable();
             $table->string('facebook')->nullable();
             $table->string('logo')->nullable();
             $table->string('slug', 150)->unique();

@@ -13,7 +13,9 @@ class HomeController extends Controller
 {
     public function list()
     {
+//        id 3 es el admin o sea YO
         $commerces = Commerce::with('region')
+            ->where('user_id','!=',3)
             ->paginate(12);
 
         $regions = Region::orderBy('name', 'ASC')

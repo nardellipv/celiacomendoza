@@ -22,6 +22,8 @@ Route::get('borrar/{id}/{idProduct}', 'ProductController@delItems');
 Route::post('checkout', 'ProductController@checkout');
 Route::get('blog', 'BlogController@index');
 Route::get('blog/{slug}', 'BlogController@post');
+Route::get('votes_positive/{slug}', 'CommerceController@positive')->name('positive');
+Route::get('votes_negative/{slug}', 'CommerceController@negative')->name('negative');
 
 Route::post('mailcustomers/{id}', 'CommerceController@MailCustomer')->name('mailcustomers');
 Route::post('mailclient', 'HomeController@MailClient')->name('mailclient');
