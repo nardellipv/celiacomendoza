@@ -9,7 +9,6 @@
         @endforeach
     </ul>
 </div>
-{{--
 <div class="right-bar">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- regionsCeliacos -->
@@ -22,4 +21,4 @@
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-</div>--}}
+</div>

@@ -18,7 +18,7 @@
             <p><i class="fa fa-phone" aria-hidden="true"></i> {{ $commerce->phone }}</p>
         @endif
         @if($commerce->web)
-            <p><i class="fa fa-globe" aria-hidden="true"></i> <a href="#">{{ $commerce->web }}</a></p>
+            <p><i class="fa fa-globe" aria-hidden="true"></i> <a href="{{ $commerce->web }}" target="_blank">{{ $commerce->web }}</a></p>
         @endif
     </div>
 </div>

@@ -16,5 +16,12 @@
             </div>
         </div>
     @endforeach
-    {{ $posts->render() }}
+
+    <div class="bs-example" data-example-id="disabled-active-pagination">
+        <nav aria-label="...">
+            <ul class="pagination">
+                {{ $posts->render() }}
+            </ul>
+        </nav>
+    </div>
 @endsection
