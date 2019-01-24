@@ -11,12 +11,14 @@ Route::get('/', function () {
 //web
 Route::get('/', 'HomeController@list')->name('list');
 Route::get('catalogo/{slug}', 'CommerceController@commerce');
+Route::get('listado', 'AbleProductController@listProduct')->name('listProduct');
+    Route::post('listado/busqueda', 'AbleProductController@searchAble')->name('searchAble');
 Route::get('region/{name}', 'HomeController@region');
 Route::get('contacto/{slug}', 'CommerceController@contact');
-Route::get('listado/{slug}', 'CommerceController@shop');
+//Route::get('listado/{slug}', 'CommerceController@shop');
 Route::get('listado-categoria/{slug}/{category_id}', 'CommerceController@shopCategory');
 Route::get('producto/{slug}/{product_id}', 'ProductController@product');
-Route::post('add/{product_id}', 'ProductController@addcart');
+//Route::post('add/{product_id}', 'ProductController@addcart');
 //Route::get('compra/{slug}', 'ProductController@cart');
 Route::get('borrar/{id}/{idProduct}', 'ProductController@delItems');
 Route::post('checkout', 'ProductController@checkout');

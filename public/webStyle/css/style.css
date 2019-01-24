@@ -517,7 +517,7 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu > li a{
   color: #fff;
 }
 .search-btn {
-  float: right;
+  /*float: right;*/
   width: 17%;
 }
 .dir-search {

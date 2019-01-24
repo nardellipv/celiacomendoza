@@ -14,18 +14,21 @@
                                         <figure class="effect-ming"><img src="{{ asset('images/nodisp.png') }}"
                                                                          alt="sin logo">
                                         </figure>
+                                </figure>
                             @endif
                         </div>
                         <div class="popular-listing-detail">
-                            <h3><a href="{{url('catalogo', $commerce->slug)}}">{{ str_limit($commerce->name,15) }}</a>
+                            <h3><a href="{{url('catalogo', $commerce->slug)}}">{{ ucfirst(str_limit($commerce->name,15)) }}</a>
                             </h3>
                             @if($commerce->address)
-                                <p>{{ str_limit($commerce->address, 25) }}</p>
+                                <p>{{ str_limit($commerce->address, 20) }}</p>
                             @else
                                 <p>Local sin dirección</p>
                             @endif
-                            <p class="text text-center"><i class="fa fa-thumbs-o-up" style="color:green"></i> {{ $commerce->votes_positive }}
-                                &nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-o-down" style="color:red"></i> {{ $commerce->votes_negative }}</p>
+                            <p class="text text-center"><i class="fa fa-thumbs-o-up"
+                                                           style="color:green"></i> {{ $commerce->votes_positive }}
+                                &nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-o-down"
+                                                     style="color:red"></i> {{ $commerce->votes_negative }}</p>
                         </div>
                         @if(!empty($commerce->region->name))
                             <div class="popular-listing-add"><span><i class="fa fa-map-marker"

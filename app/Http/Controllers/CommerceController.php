@@ -70,7 +70,26 @@ class CommerceController extends Controller
         return back();
     }
 
-    public function shopCategory($slug, $category_id)
+    /*public function shop($slug)
+    {
+        $commerce = Commerce::where('slug', $slug)
+            ->first();
+
+        $products = Product::where('commerce_id', $commerce->id)
+            ->where('available', 'YES')
+            ->paginate(10);
+
+        $listCategories = Category::all();
+
+        $lastProducts = Product::where('commerce_id', $commerce->id)
+            ->orderBy('updated_at', 'DESC')
+            ->take(3)
+            ->get();
+
+        return view('web.shop', compact('commerce', 'products', 'listCategories', 'lastProducts'));
+    }*/
+
+    /*public function shopCategory($slug, $category_id)
     {
         $commerce = Commerce::where('slug', $slug)
             ->first();
@@ -89,24 +108,24 @@ class CommerceController extends Controller
 
         return view('web.shopChooseCategory', compact('commerce', 'lastProducts',
             'listCategories', 'products'));
-    }
+    }*/
 
     public function positive($slug)
     {
-//        dd(Cookie::get('voto')== $slug);
 
-        if(Cookie::get('voto') == $slug){
-            Session::flash('message', 'Ya votaste anteriormente a este comercio');
-            return back();
-        }
 
         $commerce = Commerce::where('slug', $slug)
             ->first();
 
+        if(Cookie::get('voto'.$commerce->slug) == $slug){
+            Session::flash('message', 'Ya votaste anteriormente a este comercio');
+            return back();
+        }
+
         $commerce->increment('votes_positive');
         $commerce->save();
 
-        Cookie::queue('voto', $commerce->slug, '45000');
+        Cookie::queue('voto'.$commerce->slug, $commerce->slug, '2628000');
 
         Session::flash('message', 'Muchas gracias por tu voto');
         return back();
@@ -114,13 +133,13 @@ class CommerceController extends Controller
 
     public function negative($slug)
     {
-        if(Cookie::get('voto') == $slug){
+        $commerce = Commerce::where('slug', $slug)
+            ->first();
+
+        if(Cookie::get('voto'.$commerce->slug) == $slug){
             Session::flash('message', 'Ya votaste anteriormente a este comercio');
             return back();
         }
-
-        $commerce = Commerce::where('slug', $slug)
-            ->first();
 
         $commerce->increment('votes_negative');
         $commerce->save();
