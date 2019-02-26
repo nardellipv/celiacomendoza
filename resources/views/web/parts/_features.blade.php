@@ -7,6 +7,11 @@
                     productos, y buscar locales cercanos a sus domicilios, como también dar la posibilidad a los
                     distintos comercios y productores particulares de darse a conocer, llegar a mucha más gente y dar
                     visibilidad a sus productos y comercios.</p>
+                <p>Si tiene un almacén del celíaco o vende comidas sin harinas, lo invitamos a que se registre en nuestra web,
+                así podrá llegar a muchas más personas celiacas en Mendoza. Dentro de nuestra guía podrá encontrar comidas para celíacos,
+                comidas sin harina, tortas para celíacos, etc.</p>
+                <p>Nuestra web es GRATIS y siempre lo va a ser, solo buscamos queremos facilitar solo un poco la vida a la persona con
+                sintomas de celíaco.</p>
             </div>
         </div>
 
@@ -15,8 +20,8 @@
                 <div class="how-to-find-box">
                     <i class="fa fa-exclamation-triangle fa-3x"></i>
                     <h3>Características</h3>
-                    <p>Queremos facilitar la compra de productos para celiacos como también dar a conocer todos los
-                        locales que existen en nuestra provincia.</p>
+                    <p>Simplemente queremos facilitar la comunicación entre el almacen del celiaco en Mendoza y la persona que necesita productos
+                    sin gluten.</p>
                 </div>
             </div>
 
@@ -24,7 +29,8 @@
                 <div class="how-to-find-box">
                     <i class="fa fa-cutlery fa-3x"></i>
                     <h3>Locales Comerciales</h3>
-                    <p>Facilitar y llegar a mucha más gente con los productos, precios y variedad de cada comercio.</p>
+                    <p>Locales para celíacos, delivery para celíacos o cualquier productor para personas celiacas pueden registrarse en nuestra
+                        web y poder llegar a toda la provincia.</p>
                 </div>
             </div>
 
@@ -32,7 +38,8 @@
                 <div class="how-to-find-box">
                     <i class="fa fa-bullhorn fa-3x"></i>
                     <h3>Comunicación</h3>
-                    <p>Comunicación directa con el dueño del local, sin intermediarios y mucho mas ágil.</p>
+                    <p>Ofrecemos una plataforma para la comunicación entre los locales de comida celíaca y los clientes finales, es totalmente
+                        gratis para ambas partes y siempre lo será.</p>
                 </div>
             </div>
         </div>

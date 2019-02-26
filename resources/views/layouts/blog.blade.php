@@ -23,7 +23,7 @@
 
             <div class="col-md-12 text-center">
                 <div class="inner_banner_2_detail">
-                    <h2>Mercados para celiacos en Mendoza</h2>
+                    <h1>Almacen del Celíaco</h1>
                 </div>
             </div>
 

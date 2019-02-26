@@ -19,8 +19,7 @@
     <meta property="og:title" content="Comunidad de celiacos mendocinos dentro de la provincia."/>
     <meta property="og:description" content="Locales y vendedores de comida y productos para celíacos en mendoza.
     Guía práctica y simple para poder comparar precios y productos, y buscar locales cercanos a sus domicilios"/>
-    <meta property="og:image"
-          content="https://www.celiacosmendoza.com/webStyle/img/img-logo.png"/>
+    <meta property="og:image" content="https://www.celiacosmendoza.com/webStyle/img/img-logo.png"/>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

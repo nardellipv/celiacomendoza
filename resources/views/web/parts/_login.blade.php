@@ -63,10 +63,10 @@
                             <div class="col-sm-6 col-xs-12">
                                 <h2>Registrarte como vendedor</h2>
                                 <br>
-                                <h5>Si vendes alimentos sin Tacc o sos proveedor de productos sin gluten o solamente
-                                    haces viandas para
-                                    celíacos, en toda la provincia
-                                    de Mendoza y queres llegar a más clientes, te invitamos a registrarte en nuestra
+                                <h5>Si vendes alimentos <b>sin tacc</b> o sos proveedor de productos <b>sin gluten</b> o
+                                    solamente
+                                    haces viandas para celíacos, en toda la provincia de Mendoza y queres llegar a más
+                                    clientes, te invitamos a registrarte en nuestra
                                     web.</h5>
                                 <h5>Es simple, llega a todo Mendoza y lo más importante es GRATIS!!!</h5>
                                 <h4>Registrate y empeza a vender</h4><br>
