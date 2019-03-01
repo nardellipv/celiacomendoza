@@ -14,6 +14,28 @@
             </div>
         </div>
     @endforeach
+
+
+    <div class="places-list">
+        <span>También vista:</span>
+        <br>
+        <h5><a href="{{url('catalogo', $randomCommerce->slug)}}">{{ ucfirst(str_limit($randomCommerce->name,20)) }}</a></h5>
+        <div class="media">
+            <div class="media-left">
+                @if($randomCommerce->logo)
+                <a href="#">
+                    <img class="media-object img-responsive" src="{{ asset('images/thumbnail/logo/'.($randomCommerce->logo)) }}"
+                         alt="{{ $randomCommerce->name }}">
+                </a>
+                    @else
+                    <a href="#">
+                        <img class="media-object img-responsive" src="{{ asset('images/nodisp.png') }}"
+                             alt="{{ $randomCommerce->name }}">
+                    </a>
+                    @endif
+            </div>
+        </div>
+    </div>
 </div>
 <div class="right-bar bg_white">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
