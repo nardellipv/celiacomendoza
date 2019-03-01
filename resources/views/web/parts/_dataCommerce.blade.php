@@ -58,3 +58,12 @@
         </div>
     </div>
 </div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- CeliacosCommerce -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:970px;height:90px"
+     data-ad-client="ca-pub-7543412924958320"
+     data-ad-slot="2008790249"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

@@ -17,7 +17,7 @@
                 <div class="col-md-4">
                     <button class="btn btn-success btn-block">Actualizar</button>
                 </div>
-                {!! Form:Close()) !!}
+                {!! Form:Close() !!}
             </div>
         </div>
     </div>

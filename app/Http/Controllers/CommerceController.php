@@ -35,7 +35,8 @@ class CommerceController extends Controller
             ->where('commerce_id', $commerce->id)
             ->get();
 
-        return view('web.catalog', compact('commerce', 'products', 'commercePayment', 'characteristicCommerces'));
+        return view('web.catalog', compact('commerce', 'products', 'commercePayment',
+            'characteristicCommerces'));
     }
 
     public function contact($slug)
@@ -117,7 +118,7 @@ class CommerceController extends Controller
         $commerce = Commerce::where('slug', $slug)
             ->first();
 
-        if(Cookie::get('voto'.$commerce->slug) == $slug){
+        if (Cookie::get('voto' . $commerce->slug) == $slug) {
             Session::flash('message', 'Ya votaste anteriormente a este comercio');
             return back();
         }
@@ -125,7 +126,7 @@ class CommerceController extends Controller
         $commerce->increment('votes_positive');
         $commerce->save();
 
-        Cookie::queue('voto'.$commerce->slug, $commerce->slug, '2628000');
+        Cookie::queue('voto' . $commerce->slug, $commerce->slug, '2628000');
 
         Session::flash('message', 'Muchas gracias por tu voto');
         return back();
@@ -136,7 +137,7 @@ class CommerceController extends Controller
         $commerce = Commerce::where('slug', $slug)
             ->first();
 
-        if(Cookie::get('voto'.$commerce->slug) == $slug){
+        if (Cookie::get('voto' . $commerce->slug) == $slug) {
             Session::flash('message', 'Ya votaste anteriormente a este comercio');
             return back();
         }

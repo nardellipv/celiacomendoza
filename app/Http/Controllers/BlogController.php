@@ -42,6 +42,7 @@ class BlogController extends Controller
         $post = new Blog;
         $post->user_id = auth()->user()->id;
         $post->slug = str_slug($request['title']);
+        $post->body_plain = strip_tags($request['body']);
         $post->fill($request->all())->save();
 
         if ($request->photo) {

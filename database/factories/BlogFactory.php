@@ -7,6 +7,7 @@ $factory->define(\celiacomendoza\Blog::class, function (Faker $faker) {
     return [
         'title' => $title,
         'body' => $faker->paragraph($nbSentences = 10, $variableNbSentences = true),
+        'body_plain' => $faker->paragraph($nbSentences = 10, $variableNbSentences = true),
         'photo' => $faker->imageUrl($width = 640, $height = 480),
         'status' => $faker->randomElement($array = array('ACTIVE', 'DESACTIVE')),
         'slug' => $title,

@@ -40,7 +40,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    <p>&copy; 2018 Design by <a href="https://mikant.com">MikAnt</a>
+                    <p>&copy; 2019 Design by <a href="https://mikant.com" target="_blank">MikAnt</a>
                     </p>
                 </div>
             </div>

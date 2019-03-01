@@ -9,7 +9,7 @@
                 allowfullscreen>
         </iframe>
         @if($commerce->region)
-        <p><i class="fa fa-map-o" aria-hidden="true"></i> {{ $commerce->region->name }}</p>
+            <p><i class="fa fa-map-o" aria-hidden="true"></i> {{ $commerce->region->name }}</p>
         @endif
         @if($commerce->address)
             <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ $commerce->address }}</p>
@@ -18,7 +18,8 @@
             <p><i class="fa fa-phone" aria-hidden="true"></i> {{ $commerce->phone }}</p>
         @endif
         @if($commerce->web)
-            <p><i class="fa fa-globe" aria-hidden="true"></i> <a href="{{ $commerce->web }}" target="_blank">{{ $commerce->web }}</a></p>
+            <p><i class="fa fa-globe" aria-hidden="true"></i> <a href="{{ $commerce->web }}"
+                                                                 target="_blank">{{ $commerce->web }}</a></p>
         @endif
     </div>
 </div>

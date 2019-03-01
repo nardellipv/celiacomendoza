@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center heading">
-                <h2>Como <span>Trabajamos</span></h2>
+                <h2>Sobre <span>Nosotros</span></h2>
                 <p>Queremos poder ofrecerle a personas celíacas una guía práctica y simple para poder comparar precios y
                     productos, y buscar locales cercanos a sus domicilios, como también dar la posibilidad a los
                     distintos comercios y productores particulares de darse a conocer, llegar a mucha más gente y dar
