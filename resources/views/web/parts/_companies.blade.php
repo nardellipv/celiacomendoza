@@ -8,17 +8,17 @@
                             @if($commerce->logo)
                                 <figure class="effect-ming"><img
                                             src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}"
-                                            class="img-responsive"
-                                            alt="{{ $commerce->name }}">
-                                    @else
-                                        <figure class="effect-ming"><img src="{{ asset('images/nodisp.png') }}"
-                                                                         alt="sin logo">
-                                        </figure>
+                                            class="img-responsive" alt="{{ $commerce->name }}">
+                                </figure>
+                            @else
+                                <figure class="effect-ming"><img src="{{ asset('images/nodisp.png') }}"
+                                                                 alt="{{ $commerce->name }}">
                                 </figure>
                             @endif
                         </div>
                         <div class="popular-listing-detail">
-                            <h3><a href="{{url('catalogo', $commerce->slug)}}">{{ ucfirst(str_limit($commerce->name,15)) }}</a>
+                            <h3>
+                                <a href="{{url('catalogo', $commerce->slug)}}">{{ ucfirst(str_limit($commerce->name,15)) }}</a>
                             </h3>
                             @if($commerce->address)
                                 <p>{{ str_limit($commerce->address, 20) }}</p>
@@ -51,4 +51,17 @@
             {!! $commerces->render() !!}
         </ul>
     </nav>
+</div>
+<div id="call-to-action2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6 call-to-action-text">
+                <p>Realizas comidas para celíacos sin tacc ¡No esperes más y registrate! Ofrece tus productos a todos
+                    los celíacos mendocinos.</p>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-12 call-to-action-bttn">
+                <a href="{{ url('login') }}">Registrate</a>
+            </div>
+        </div>
+    </div>
 </div>

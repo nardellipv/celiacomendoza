@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="Locales y vendedores de comida y productos para celíacos en mendoza.
     Gran comunidad de vendedores y compradores de productos para celíacos dentro de la provincia de Mendoza.">
-    <title>Celiaco Mendoza</title>
+    <title>Celiaco Mendoza | Comercios en Mendoza 2019</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('webStyle/css/master.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('webStyle/css/color-green.css') }}">
 

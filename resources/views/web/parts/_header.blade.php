@@ -5,7 +5,7 @@
 
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="top-contact">
-                        <p>Para más información: <span>info@celiacosmendoza.com</span>
+                        <p>Para más información: <span itemprop="email">info@celiacosmendoza.com</span>
                         </p>
                     </div>
                 </div>
@@ -33,7 +33,6 @@
                     </div>
                 </div>
                 <div class="top_right_links2-bg"></div>
-
             </div>
         </div>
     </div>
