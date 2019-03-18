@@ -56,8 +56,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6 call-to-action-text">
-                <p>Realizas comidas para celíacos sin tacc ¡No esperes más y registrate! Ofrece tus productos a todos
-                    los celíacos mendocinos.</p>
+                <p>Realizas comidas sin tacc ¡No esperes más y registrate! Ofrece tus productos a todos
+                    los mendocinos que posee la <b>celiaquía</b>.</p>
             </div>
             <div class="col-md-2 col-sm-3 col-xs-12 call-to-action-bttn">
                 <a href="{{ url('login') }}">Registrate</a>
