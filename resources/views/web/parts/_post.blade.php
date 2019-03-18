@@ -1,5 +1,8 @@
 @extends('layouts.blog')
 
+@section('title', 'Post ' . $post->title)
+@section('meta-description', '✍ Noticia sobre ' . $post->title)
+
 @section('content')
     <div class="container">
         <div class="row">

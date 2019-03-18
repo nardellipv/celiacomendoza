@@ -1,5 +1,8 @@
 @extends('layouts.company')
 
+@section('title',' ⚠ ' . $commerce->name . ' local para celiacos')
+@section('meta-description','💪 Local de comida sin TACC '.$commerce->name .' ubicado en '.$commerce->region->name .' ingresa y conoce más sobre este local')
+
 @section('contentAbout')
     @include('web.parts._dataCommerce')
 @endsection

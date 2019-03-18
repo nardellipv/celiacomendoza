@@ -1,5 +1,8 @@
 @extends('layouts.company')
 
+@section('title', 'Ubicación ' . $region->name)
+@section('meta-description', '🚗 Locales sin gluten en ' . $region->name . ' entra e informate sobre los comercios que se encuentra en tu zona')
+
 @section('content')
     <h4>Locales en <b>{{ $region->name }}</b></h4>
     <br>

@@ -1,5 +1,7 @@
 @extends('layouts.blog')
 
+@section('meta-description','👉 Enterate de lo último en temas de celiaquia. Publicamos contenido semanalmente para que celíacos Mendocinos este actualizados constantemente.')
+
 @section('content')
     @foreach($posts as $post)
         <div class="blog heading">
