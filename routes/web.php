@@ -15,11 +15,6 @@ Route::get('listado', 'AbleProductController@listProduct')->name('listProduct');
     Route::post('listado/busqueda', 'AbleProductController@searchAble')->name('searchAble');
 Route::get('region/{name}', 'HomeController@region');
 Route::get('contacto/{slug}', 'CommerceController@contact');
-//Route::get('listado/{slug}', 'CommerceController@shop');
-Route::get('listado-categoria/{slug}/{category_id}', 'CommerceController@shopCategory');
-Route::get('producto/{slug}/{product_id}', 'ProductController@product');
-//Route::post('add/{product_id}', 'ProductController@addcart');
-//Route::get('compra/{slug}', 'ProductController@cart');
 Route::get('borrar/{id}/{idProduct}', 'ProductController@delItems');
 Route::post('checkout', 'ProductController@checkout');
 Route::get('blog', 'BlogController@index');
@@ -57,7 +52,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('cliente-perfil/product', 'AdminClient\ProductController', ['except' => ['show']]);
         Route::get('cliente-perfil/available/{id}', 'AdminClient\ProductController@available')->name('available');
         Route::get('cliente-perfil/unavailable/{id}', 'AdminClient\ProductController@unavailable')->name('unavailable');
-//    Route::get('cliente-perfil/ventas', 'AdminClient\PurchaseController@list');
     Route::get('cliente-perfil/mensajes', 'AdminClient\MessageController@listMessage');
     Route::get('cliente-perfil/leer-mensaje/{id}', 'AdminClient\MessageController@readMessage');
     Route::get('cliente-perfil/responder-mensaje/{id}', 'AdminClient\MessageController@responsMessage');
@@ -68,8 +62,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/blog/list', 'BlogController@list')->name('blog.list');
     Route::get('admin/blog/create', 'BlogController@create')->name('blog.create');
     Route::post('admin/blog/store', 'BlogController@store')->name('blog.store');
-/*    Route::post('admin/blog/edit/{id}', 'BlogController@edit')->name('blog.edit');
-    Route::post('admin/blog/delete/{id}', 'BlogController@delete')->name('blog.delete');*/
 });
 //---------------------
 

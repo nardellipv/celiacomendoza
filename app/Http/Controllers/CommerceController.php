@@ -71,46 +71,6 @@ class CommerceController extends Controller
         return back();
     }
 
-    /*public function shop($slug)
-    {
-        $commerce = Commerce::where('slug', $slug)
-            ->first();
-
-        $products = Product::where('commerce_id', $commerce->id)
-            ->where('available', 'YES')
-            ->paginate(10);
-
-        $listCategories = Category::all();
-
-        $lastProducts = Product::where('commerce_id', $commerce->id)
-            ->orderBy('updated_at', 'DESC')
-            ->take(3)
-            ->get();
-
-        return view('web.shop', compact('commerce', 'products', 'listCategories', 'lastProducts'));
-    }*/
-
-    /*public function shopCategory($slug, $category_id)
-    {
-        $commerce = Commerce::where('slug', $slug)
-            ->first();
-
-        $listCategories = Category::all();
-
-        $products = Product::where('commerce_id', $commerce->id)
-            ->where('available', 'YES')
-            ->where('category_id', $category_id)
-            ->paginate(10);
-
-        $lastProducts = Product::where('commerce_id', $commerce->id)
-            ->orderBy('updated_at', 'DESC')
-            ->take(3)
-            ->get();
-
-        return view('web.shopChooseCategory', compact('commerce', 'lastProducts',
-            'listCategories', 'products'));
-    }*/
-
     public function positive($slug)
     {
 
