@@ -5,9 +5,9 @@
 @section('content')
     @foreach($posts as $post)
         <div class="blog heading">
-            <h2><a href="{{ url('blog', $post->slug) }}">{{ $post->title }}</a></h2>
+            <h1 style="color: black;font-size: 30px;"><a href="{{ url('blog', $post->slug) }}">{{ $post->title }}</a></h1>
             <div class="blog-img">
-                <img src="{{ asset('images/blog/'.$post->photo) }}" alt="image">
+                <img src="{{ asset('images/blog/'.$post->photo) }}" alt="$post->title">
             </div>
             <div class="blog-detail">
                 <ul class="blog-admin">

@@ -17,6 +17,7 @@ class HomeController extends Controller
 //        id 3 es el admin o sea YO
         $commerces = Commerce::with('region')
             ->where('user_id', '!=', 3)
+            ->where('region_id','!=','NULL')
             ->orderBy('votes_positive', 'DESC')
             ->paginate(12);
 
