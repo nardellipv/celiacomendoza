@@ -1,8 +1,8 @@
 <div class="right-bar">
-    <h4>Filtar por <span>Regiones</span></h4>
+    <h4>Filtar por <span>Localidades</span></h4>
     <ul class="right-bar-listing">
         @foreach($regions as $region)
-            <li><a href="{{ url('region', $region->slug) }}" title="{{ $region->name }}"><i class="fa fa-map-marker"
+            <li><a href="{{ url('region', $region->id) }}" title="{{ $region->name }}"><i class="fa fa-map-marker"
                                                                                             aria-hidden="true"></i> {{ $region->name }}
                 </a>
             </li>

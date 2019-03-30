@@ -16,6 +16,7 @@ $factory->define(\celiacomendoza\Commerce::class, function (Faker $faker) {
         'logo' => $faker->imageUrl(),
         'slug' => $title,
         'user_id' => rand(1, 100),
-        'region_id' => rand(1, 18),
+        'province_id' => rand(1, 24),
+        'region_id' => rand(1, 500),
     ];
 });

@@ -14,14 +14,14 @@ class HomeController extends Controller
 {
     public function list()
     {
-//        id 3 es el admin o sea YO
         $commerces = Commerce::with('region')
-            ->where('user_id', '!=', 3)
             ->where('region_id','!=','NULL')
+            ->where('province_id', 50)
             ->orderBy('votes_positive', 'DESC')
             ->paginate(12);
 
         $regions = Region::orderBy('name', 'ASC')
+            ->where('province_id', 50)
             ->get();
 
         $posts = Blog::orderBy('created_at', 'DESC')
@@ -31,13 +31,13 @@ class HomeController extends Controller
 
         $postLast = Blog::latest()->first();
 
-        return view('layouts.main', compact('commerces', 'regions', 'posts', 'postLast'));
+        return view('web.parts._companies', compact('commerces', 'regions', 'posts', 'postLast'));
     }
 
-    public function region($slug)
+    public function region($id)
     {
 
-        $region = Region::where('slug', $slug)
+        $region = Region::where('id', $id)
             ->first();
 
         $commerces = Commerce::with('region')
@@ -48,6 +48,7 @@ class HomeController extends Controller
 
 
         $regions = Region::orderBy('name', 'ASC')
+            ->where('province_id', 50)
             ->get();
 
         return view('web.parts._searchRegion', compact('regions', 'region', 'commerces'));

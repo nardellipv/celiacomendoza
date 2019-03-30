@@ -22,7 +22,8 @@ class DashboardController extends Controller
         $commerce = Commerce::where('user_id', $user->id)
             ->first();
 
-        $regions = Region::all();
+        $regions = Region::where('province_id', $commerce->province_id)
+            ->get();
 
         $productsAvailable = Product::where('commerce_id', $user->id)
             ->where('available', 'YES')

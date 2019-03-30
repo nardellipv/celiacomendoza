@@ -180,6 +180,9 @@
                             @foreach($paymentsCommerce as $paymentCommerce)
                                 <div class="col-md-3" style="width: auto">
                                     <img src="{{ $paymentCommerce->payment->photo }}">
+                                    <a href="{{ route('deletePayment', [$paymentCommerce->payment_id, $paymentCommerce->commerce_id]) }}">
+                                    <img src="{{ asset('webStyle/img/cross.png') }}" style="width: 20%;position: absolute;top: -6px;z-index: 1;">
+                                    </a>
                                 </div>
                             @endforeach
                         </div>
@@ -207,6 +210,9 @@
                             @foreach($characteristicsCommerce as $characteristicCommerce)
                                 <div class="col-md-3" style="width: auto">
                                     <img src="{{ $characteristicCommerce->characteristic->photo }}">
+                                    <a href="{{ route('deleteService', [$characteristicCommerce->characteristic_id, $characteristicCommerce->commerce_id]) }}">
+                                        <img src="{{ asset('webStyle/img/cross.png') }}" style="width: 20%;position: absolute;top: -6px;z-index: 1;">
+                                    </a>
                                 </div>
                             @endforeach
                         </div>
@@ -216,7 +222,9 @@
                         <label for="about-me">Logo</label>
                         <div class="form-group">
                             <div class="col-lg-12" style="width: 13%;margin-right: 30%;">
-                                <img src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}">
+                                @if($commerce->logo)
+                                    <img src="{{ asset('images/thumbnail/logo/'.($commerce->logo)) }}">
+                                @endif
                                 <div class="mb10">
                                     <input id="input-upload-img1" name="file" type="file" class="file">
                                 </div>

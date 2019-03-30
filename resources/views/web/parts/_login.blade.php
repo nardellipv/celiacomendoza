@@ -1,6 +1,6 @@
 @if (Auth::guest())
     <section id="call-to-action"
-             style="background-image: url(webStyle/img/fondoLogin.jpg);background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;">
+             style="background-image: url({{ asset('webStyle/img/fondoLogin.jpg') }});background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -97,6 +97,13 @@
                     mientras que otra puede estar irritable o deprimida. La irritabilidad es uno de los síntomas más
                     comunes en los niños. Algunas personas no tienen síntomas y de no ser diagnosticados pueden tener
                     complicaciones de salud a largo plazo.</p>
+            </div>
+            <div class="col-md-12 text-center heading">
+                <h3>¡Ahora en toda la Argentina!</h3>
+                <p>Creemos que podemos ayudar a muchos más celíacos a encontrar lugares y productos cerca de sus domicilios,
+                por ese motivo decidimos que CeliacosMendoza amplíe sus horizontes y este en todo el país.</p>
+                <p>Deseamos poder empezar a ayudar a todos los negocios y personas que elaboran productos si TACC como lo hemos
+                venido haciendo hasta ahora.</p>
             </div>
         </div>
     </div>

@@ -1,5 +1,9 @@
 <div class="profile-leftbar">
+    @if($commerce->logo)
     <img src="{{ asset('images/'.$commerce->name.'-'.$commerce->id.'/logo/'.($commerce->logo)) }}" class="img-responsive">
+        @else
+        <img src="{{ asset('images/nodisp.png') }}">
+    @endif
 </div>
 
 <div class="profile-list">

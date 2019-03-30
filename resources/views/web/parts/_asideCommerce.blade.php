@@ -5,7 +5,7 @@
                 width="100%"
                 {{--height="300px"--}}
                 frameborder="0" style="border:0"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyALYXInVytihQDVFo-eCCB1h3iq59whY0g&q={{ $commerce->address .','. $commerce->location }}, Mendoza"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyALYXInVytihQDVFo-eCCB1h3iq59whY0g&q={{ $commerce->address .','. $commerce->location . $commerce->province->name}}"
                 allowfullscreen>
         </iframe>
         @if($commerce->region)

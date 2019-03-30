@@ -65,7 +65,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
         $user = User::create([
             'name' => $data['name'],
             'lastname' => $data['lastname'],
@@ -81,14 +80,14 @@ class RegisterController extends Controller
         if ($slugCount == 0) {
             $commerce = Commerce::create([
                 'name' => $data['nameCommerce'],
-                'region_id' => $data['region_id'],
+                'province_id' => $data['province_id'],
                 'user_id' => $user->id,
                 'slug' => str_slug($data['nameCommerce']),
             ]);
         } else {
             $commerce = Commerce::create([
                 'name' => $data['nameCommerce'],
-                'region_id' => $data['region_id'],
+                'province_id' => $data['province_id'],
                 'user_id' => $user->id,
                 'slug' => str_slug($data['nameCommerce'] . rand(0,100)),
             ]);

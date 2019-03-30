@@ -4,6 +4,7 @@ namespace celiacomendoza\Providers;
 
 use celiacomendoza\Blog;
 use celiacomendoza\Commerce;
+use celiacomendoza\Province;
 use celiacomendoza\Region;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
@@ -18,8 +19,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view::composer('auth.login', function ($view){
-           $regions = Region::all();
-           $view->with('regions', $regions);
+           $provinces = Province::all();
+           $view->with('provinces', $provinces);
         });
 
         view::composer('auth.register', function ($view){
@@ -28,7 +29,6 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view::composer('web.parts._asideBlog', function ($view) {
-
             $lastPosts = Blog::orderBy('created_at', 'DESC')
                 ->take(5)
                 ->get();

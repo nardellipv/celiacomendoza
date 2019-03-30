@@ -28,6 +28,7 @@ class CreateCommercesTable extends Migration
             $table->string('slug', 150)->unique();
 
             $table->integer('user_id')->unsigned();
+            $table->integer('province_id')->unsigned()->nullable();
             $table->integer('region_id')->unsigned()->nullable();
 
             $table->timestamps();

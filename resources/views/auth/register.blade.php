@@ -129,12 +129,12 @@
                                             <label class="col-md-4 control-label">Lugar del negocio
                                                 <sup>*</sup></label>
                                             <div class="col-sm-6">
-                                                <select id="inputState" class="form-control" name="region_id" required>
-                                                    <option selected value="">Elegir región...</option>
+                                                <select id="inputState" class="form-control" name="province_id" required>
+                                                    <option selected value="">Elegir provincia...</option>
                                                     <option disabled>---------------------------------------------
                                                     </option>
-                                                    @foreach($regions as $region)
-                                                        <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                                    @foreach($provinces as $province)
+                                                        <option value="{{ $province->id }}">{{ $province->name }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>

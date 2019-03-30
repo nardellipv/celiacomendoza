@@ -9,7 +9,7 @@ class Commerce extends Model
 {
 
     protected $fillable = [
-        'name','address', 'phone', 'web', 'twitter', 'facebook', 'logo', 'slug', 'about','user_id', 'region_id'
+        'name','address', 'phone', 'web', 'twitter', 'facebook', 'logo', 'slug', 'about','user_id', 'province_id','region_id'
     ];
 
     public function User()
@@ -30,6 +30,11 @@ class Commerce extends Model
     public function Region()
     {
         return $this->belongsTo(Region::class);
+    }
+
+    public function Province()
+    {
+        return $this->belongsTo(Province::class);
     }
 
     public function payment()
