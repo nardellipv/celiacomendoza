@@ -33,7 +33,7 @@
                                                          style="color:red"></i> {{ $commerce->votes_negative }}</p>
                             </div>
                             <div class="popular-listing-add"><span><i class="fa fa-map-marker"
-                                                                      aria-hidden="true"></i> {{ $commerce->region->name }}</span>
+                                                                      aria-hidden="true"></i> {{ $commerce->region->name }} - {{ $commerce->province->name }}</span>
                             </div>
                         </div>
                     </div>

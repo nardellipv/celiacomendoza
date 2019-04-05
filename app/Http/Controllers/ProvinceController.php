@@ -12,7 +12,7 @@ class ProvinceController extends Controller
 {
     public function listArgentina()
     {
-        $commerces = Commerce::with('region')
+        $commerces = Commerce::with(['region','province'])
             ->where('region_id','!=','NULL')
             ->orderBy('votes_positive', 'DESC')
             ->paginate(12);

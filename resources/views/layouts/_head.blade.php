@@ -1,9 +1,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Celiaco Mendoza | @yield('title','Comercios en Mendoza 2019')</title>
+    <title>Celiaco Mendoza | @yield('title','Comercios en Argentina 2019')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="description" content="@yield('meta-description','Locales y vendedores de comida y productos para celíacos en mendoza.
+    <meta name="description" content="@yield('meta-description','Locales y vendedores de comida y productos para celíacos en toda Argentina.
     Guía práctica y simple para poder comparar precios y productos, y buscar locales cercanos a sus domicilios')">
     <link rel="stylesheet" type="text/css" href="{{ asset('webStyle/css/master.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('webStyle/css/color-green.css') }}">
@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://www.celiacosmendoza.com"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Comunidad de celiacos mendocinos dentro de la provincia."/>
-    <meta property="og:description" content="Locales y vendedores de comida y productos para celíacos en mendoza.
+    <meta property="og:description" content="Locales y vendedores de comida y productos para celíacos en Argentina.
     Guía práctica y simple para poder comparar precios y productos, y buscar locales cercanos a sus domicilios"/>
     <meta property="og:image" content="https://www.celiacosmendoza.com/webStyle/img/img-logo.png"/>
 

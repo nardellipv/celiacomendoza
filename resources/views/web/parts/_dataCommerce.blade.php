@@ -38,9 +38,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-3"><p>¿Comó te fue con <b>{{ $commerce->name }}</b>?</p></div>
-                                <div class="col-sm-1"><a href="{{ route('positive', $commerce->slug) }}"><i
+                                <div class="col-sm-1"><a href="{{ route('positive', $commerce->slug) }}" rel="nofollow"><i
                                                 class="fa fa-thumbs-o-up fa-2x"></i></a></div>
-                                <div class="text-left"><a href="{{ route('negative', $commerce->slug) }}"><i
+                                <div class="text-left"><a href="{{ route('negative', $commerce->slug) }}" rel="nofollow"><i
                                                 class="fa fa-thumbs-o-down fa-2x"></i></a></div>
                             </div>
                         </div>

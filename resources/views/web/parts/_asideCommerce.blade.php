@@ -19,7 +19,7 @@
         @endif
         @if($commerce->web)
             <p><i class="fa fa-globe" aria-hidden="true"></i> <a href="{{ $commerce->web }}"
-                                                                 target="_blank">{{ $commerce->web }}</a></p>
+                                                                 target="_blank" rel="nofollow">{{ $commerce->web }}</a></p>
         @endif
     </div>
 </div>

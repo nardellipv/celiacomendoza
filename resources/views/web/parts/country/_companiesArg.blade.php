@@ -34,7 +34,7 @@
                             </div>
                             @if(!empty($commerce->region->name))
                                 <div class="popular-listing-add"><span><i class="fa fa-map-marker"
-                                                                          aria-hidden="true"></i> {{ $commerce->region->name }}</span>
+                                                                          aria-hidden="true"></i> {{ $commerce->region->name }} - {{ $commerce->province->name< }}</span>
                                 </div>
                             @else
                                 <div class="popular-listing-add"><span><i class="fa fa-map-marker"

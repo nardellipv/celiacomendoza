@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
     public function list()
     {
-        $commerces = Commerce::with('region')
+        $commerces = Commerce::with(['region','province'])
             ->where('region_id','!=','NULL')
             ->where('province_id', 50)
             ->orderBy('votes_positive', 'DESC')
