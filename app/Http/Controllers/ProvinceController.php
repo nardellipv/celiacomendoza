@@ -36,11 +36,11 @@ class ProvinceController extends Controller
         $province = Province::where('slug', $slug)
             ->first();
 
-        $commerces = Commerce::with('region')
+        $commerces = Commerce::with(['region','province'])
             ->where('region_id','!=','NULL')
             ->where('province_id', $province->id)
             ->orderBy('votes_positive', 'DESC')
-            ->paginate(12);
+            ->paginate(6);
 
         $provinces = Province::orderBy('name', 'ASC')
             ->get();
@@ -49,13 +49,15 @@ class ProvinceController extends Controller
             ->get();
 
         $posts = Blog::orderBy('created_at', 'DESC')
-            ->skip(1)
-            ->take(2)
+            ->take(3)
             ->get();
 
-        $postLast = Blog::latest()->first();
+        $countCommerce = Commerce::where('region_id','!=','NULL')
+            ->where('province_id', $province->id)
+            ->count();
 
-        return view('web.parts.country._searchRegionArg', compact('commerces','provinces','province','postLast','posts','regions'));
+        return view('web.parts.country._searchRegionArg', compact('commerces','provinces','province','posts',
+            'regions','countCommerce'));
     }
 
     public function listSearchProvince(Request $request, $slug)
@@ -63,11 +65,11 @@ class ProvinceController extends Controller
         $region = Region::where('id', $request['region'])
             ->first();
 
-        $commerces = Commerce::with('region')
+        $commerces = Commerce::with(['region','province'])
             ->where('region_id','!=','NULL')
             ->where('region_id', $region->id)
             ->orderBy('votes_positive', 'DESC')
-            ->paginate(12);
+            ->paginate(6);
 
         $province = Province::where('slug', $slug)
             ->first();
@@ -79,13 +81,14 @@ class ProvinceController extends Controller
             ->get();
 
         $posts = Blog::orderBy('created_at', 'DESC')
-            ->skip(1)
-            ->take(2)
+            ->take(3)
             ->get();
 
-        $postLast = Blog::latest()->first();
+        $countCommerce = Commerce::where('region_id','!=','NULL')
+            ->where('province_id', $province->id)
+            ->count();
 
-        return view('web.parts.country._searchRegionArg', compact('commerces','provinces','region','postLast','posts','regions',
-            'province'));
+        return view('web.parts.country._searchRegionArg', compact('commerces','provinces','region','posts','regions',
+            'province','countCommerce'));
     }
 }

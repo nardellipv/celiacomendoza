@@ -29,6 +29,9 @@ Route::get('votes_negative/{slug}', 'CommerceController@negative')->name('negati
 Route::post('mailcustomers/{id}', 'CommerceController@MailCustomer')->name('mailcustomers');
 Route::post('mailclient', 'HomeController@MailClient')->name('mailclient');
 
+Route::post('buscar-local', 'SearchCommerceController@searchCommerce')->name('searchCommerce');
+Route::post('buscar-local/local', 'SearchCommerceController@searchOnlyCommerce')->name('searchOnlyCommerce');
+
 Route::get('terminos', function () {
     return view('web.parts._term');
 });

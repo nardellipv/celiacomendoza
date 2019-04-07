@@ -4,7 +4,9 @@ namespace celiacomendoza\Http\Controllers;
 
 use celiacomendoza\Blog;
 use celiacomendoza\Commerce;
+use celiacomendoza\CommercePayment;
 use celiacomendoza\Http\Requests\MailCustomerRequest;
+use celiacomendoza\Province;
 use celiacomendoza\Region;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -15,23 +17,22 @@ class HomeController extends Controller
     public function list()
     {
         $commerces = Commerce::with(['region','province'])
-            ->where('region_id','!=','NULL')
-            ->where('province_id', 50)
-            ->orderBy('votes_positive', 'DESC')
-            ->paginate(12);
-
-        $regions = Region::orderBy('name', 'ASC')
-            ->where('province_id', 50)
+            ->orderby('created_at', 'DESC')
+            ->take(6)
             ->get();
+
+        /*$regions = Region::orderBy('name', 'ASC')
+            ->where('province_id', 50)
+            ->get();*/
 
         $posts = Blog::orderBy('created_at', 'DESC')
-            ->skip(1)
-            ->take(2)
+            ->take(3)
             ->get();
 
-        $postLast = Blog::latest()->first();
+        $provinces = Province::orderBy('name', 'ASC')
+            ->get();
 
-        return view('web.parts._companies', compact('commerces', 'regions', 'posts', 'postLast'));
+        return view('web.parts._companies', compact('commerces', 'regions', 'posts','provinces'));
     }
 
     public function region($id)
