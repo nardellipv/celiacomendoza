@@ -2,6 +2,7 @@
 
 namespace celiacomendoza\Http\Controllers;
 
+use celiacomendoza\Blog;
 use celiacomendoza\Category;
 use celiacomendoza\CharacteristicCommerce;
 use celiacomendoza\Commerce;
@@ -11,6 +12,7 @@ use celiacomendoza\Http\Requests\MailCustomerRequest;
 use celiacomendoza\Message;
 use celiacomendoza\Payment;
 use celiacomendoza\Product;
+use celiacomendoza\Province;
 use celiacomendoza\Region;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
@@ -21,9 +23,10 @@ class CommerceController extends Controller
     public function commerce($slug)
     {
         $commerce = Commerce::where('slug', $slug)
-            ->first();
+            ->firstOrFail();
 
-        $products = Product::where('commerce_id', $commerce->id)
+        $products = Product::with(['category'])
+            ->where('commerce_id', $commerce->id)
             ->where('available', 'YES')
             ->paginate(10);
 
@@ -35,21 +38,25 @@ class CommerceController extends Controller
             ->where('commerce_id', $commerce->id)
             ->get();
 
-        return view('web.catalog', compact('commerce', 'products', 'commercePayment',
-            'characteristicCommerces'));
-    }
-
-    public function contact($slug)
-    {
-        $commerce = Commerce::where('slug', $slug)
+        $province = Province::where('id', $commerce->province_id)
             ->first();
 
-        return view('web.contact', compact('commerce'));
+        $provinces = Province::orderBy('name', 'ASC')
+            ->get();
+
+        $relateds = Commerce::with(['region', 'province'])
+            ->where('province_id', $commerce->province_id)
+            ->where('region_id', '!=', NULL)
+            ->orderByRaw('RAND()')
+            ->take(3)
+            ->get();
+
+        return view('web.parts._dataCommerce', compact('commerce', 'products', 'commercePayment',
+            'characteristicCommerces', 'province', 'provinces', 'relateds'));
     }
 
     public function MailCustomer(MailCustomerRequest $request, $id)
     {
-
         $commerce = Commerce::where('id', $id)
             ->first();
 
@@ -70,46 +77,6 @@ class CommerceController extends Controller
         Session::flash('message', 'Su mensaje fue enviado correctamente. Muchas gracias!!!');
         return back();
     }
-
-    /*public function shop($slug)
-    {
-        $commerce = Commerce::where('slug', $slug)
-            ->first();
-
-        $products = Product::where('commerce_id', $commerce->id)
-            ->where('available', 'YES')
-            ->paginate(10);
-
-        $listCategories = Category::all();
-
-        $lastProducts = Product::where('commerce_id', $commerce->id)
-            ->orderBy('updated_at', 'DESC')
-            ->take(3)
-            ->get();
-
-        return view('web.shop', compact('commerce', 'products', 'listCategories', 'lastProducts'));
-    }*/
-
-    /*public function shopCategory($slug, $category_id)
-    {
-        $commerce = Commerce::where('slug', $slug)
-            ->first();
-
-        $listCategories = Category::all();
-
-        $products = Product::where('commerce_id', $commerce->id)
-            ->where('available', 'YES')
-            ->where('category_id', $category_id)
-            ->paginate(10);
-
-        $lastProducts = Product::where('commerce_id', $commerce->id)
-            ->orderBy('updated_at', 'DESC')
-            ->take(3)
-            ->get();
-
-        return view('web.shopChooseCategory', compact('commerce', 'lastProducts',
-            'listCategories', 'products'));
-    }*/
 
     public function positive($slug)
     {

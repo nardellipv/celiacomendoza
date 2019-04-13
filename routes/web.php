@@ -10,17 +10,14 @@ Route::get('/', function () {
 
 //web
 Route::get('/', 'HomeController@list')->name('list');
-Route::get('region/{id}', 'HomeController@region');
 Route::get('/argentina', 'ProvinceController@listArgentina')->name('listArgentina');
 Route::get('/argentina/{name}', 'ProvinceController@listProvince')->name('listProvince');
 Route::post('/argentina/busqueda/{slug}', 'ProvinceController@listSearchProvince')->name('listSearchProvince');
 Route::get('catalogo/{slug}', 'CommerceController@commerce');
 Route::get('listado', 'AbleProductController@listProduct')->name('listProduct');
     Route::post('listado/busqueda', 'AbleProductController@searchAble')->name('searchAble');
-Route::get('contacto/{slug}', 'CommerceController@contact');
-Route::get('listado-categoria/{slug}/{category_id}', 'CommerceController@shopCategory');
+//Route::get('contacto/{slug}', 'CommerceController@contact');
 Route::get('producto/{slug}/{product_id}', 'ProductController@product');
-Route::get('borrar/{id}/{idProduct}', 'ProductController@delItems');
 Route::get('blog', 'BlogController@index');
 Route::get('blog/{slug}', 'BlogController@post');
 Route::get('votes_positive/{slug}', 'CommerceController@positive')->name('positive');
@@ -37,6 +34,9 @@ Route::get('terminos', function () {
 });
 Route::get('politicas', function () {
     return view('web.parts._politices');
+});
+Route::get('contacto', function () {
+    return view('web.parts._contactClient');
 });
 //---------------------
 
@@ -61,7 +61,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('cliente-perfil/product', 'AdminClient\ProductController', ['except' => ['show']]);
         Route::get('cliente-perfil/available/{id}', 'AdminClient\ProductController@available')->name('available');
         Route::get('cliente-perfil/unavailable/{id}', 'AdminClient\ProductController@unavailable')->name('unavailable');
-//    Route::get('cliente-perfil/ventas', 'AdminClient\PurchaseController@list');
     Route::get('cliente-perfil/mensajes', 'AdminClient\MessageController@listMessage');
     Route::get('cliente-perfil/leer-mensaje/{id}', 'AdminClient\MessageController@readMessage');
     Route::get('cliente-perfil/responder-mensaje/{id}', 'AdminClient\MessageController@responsMessage');

@@ -1,29 +1,40 @@
-@extends('layouts.blog')
+@extends('layouts.main')
 
 @section('meta-description','👉 Enterate de lo último en temas de celiaquia. Publicamos contenido semanalmente para que celíacos Mendocinos este actualizados constantemente.')
 
 @section('content')
-    @foreach($posts as $post)
-        <div class="blog heading">
-            <h1 style="color: black;font-size: 30px;"><a href="{{ url('blog', $post->slug) }}">{{ $post->title }}</a></h1>
-            <div class="blog-img">
-                <img src="{{ asset('images/blog/'.$post->photo) }}" alt="$post->title">
-            </div>
-            <div class="blog-detail">
-                <ul class="blog-admin">
-                    <li><i class="fa fa-clock-o"></i><a href="#"> {{ Date::parse($post->created_at)->diffForHumans() }}</a></li>
-                </ul>
-                <p>{!! str_limit($post->body, 200) !!} </p>
-                <a href="{{ url('blog', $post->slug) }}" class="blog-btn">Leer mas</a>
-            </div>
-        </div>
-    @endforeach
+    <div class="content">
+        <section class="food-grid-view">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        @include('web.parts._asideBlog')
+                    </div>
+                    <div class="col-md-8">
+                        @foreach($posts as $post)
+                            <div class="food-blog-01-columns only-hover">
+                                <figure>
+                                    <div class="img-angles">
+                                        <img src="{{ asset('images/blog/'.$post->photo) }}" alt="{{ $post->title }}">
+                                    </div>
+                                </figure>
+                                <div class="caption-style-v1 ">
+                                    <h6>{{ str_limit($post->title,50) }}</h6>
+                                    <p>{!! str_limit($post->body, 150) !!}</p>
+                                    <span><i class="fa fa-calendar-o" aria-hidden="true"></i>{{ Date::parse($post->created_at)->diffForHumans() }}</span>
+                                    <a href="{{ url('blog', $post->slug) }}">leer más</a>
+                                </div>
+                            </div>
+                        @endforeach
 
-    <div class="bs-example" data-example-id="disabled-active-pagination">
-        <nav aria-label="...">
-            <ul class="pagination">
-                {{ $posts->render() }}
-            </ul>
-        </nav>
+                        <div class="pagination-list">
+                            <ul>
+                                {{ $posts->render() }}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 @endsection

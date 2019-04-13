@@ -34,7 +34,7 @@ class ProvinceController extends Controller
     {
 
         $province = Province::where('slug', $slug)
-            ->first();
+            ->firstOrFail();
 
         $commerces = Commerce::with(['region','province'])
             ->where('region_id','!=','NULL')
@@ -63,7 +63,7 @@ class ProvinceController extends Controller
     public function listSearchProvince(Request $request, $slug)
     {
         $region = Region::where('id', $request['region'])
-            ->first();
+            ->firstOrFail();
 
         $commerces = Commerce::with(['region','province'])
             ->where('region_id','!=','NULL')

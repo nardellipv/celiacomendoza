@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="footer_logo">
-                    <img src="{{ asset('webStyle/img/img-logo-footer.png') }}" alt="logo"/>
+                    <img src="{{ asset('webStyle/styleLogin/img/img-logo.png') }}" alt="logo celiacos"/>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12 text-center">
@@ -40,7 +40,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    <p>&copy; 2019 Design by <a href="https://mikant.com" target="_blank">MikAnt</a>
+                    <p>&copy; 2019 Design by denarMA
                     </p>
                 </div>
             </div>

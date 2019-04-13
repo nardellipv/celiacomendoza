@@ -3,7 +3,10 @@
 namespace celiacomendoza\Http\Controllers;
 
 use celiacomendoza\Blog;
+use celiacomendoza\CharacteristicCommerce;
 use celiacomendoza\Commerce;
+use celiacomendoza\CommercePayment;
+use celiacomendoza\Product;
 use celiacomendoza\Province;
 use celiacomendoza\Region;
 use foo\bar;
@@ -14,7 +17,7 @@ class SearchCommerceController extends Controller
 {
     public function searchCommerce(Request $request)
     {
-        $searchCommerce = Commerce::with(['region','province'])
+        $commerces  = Commerce::with(['region','province'])
             ->where('region_id','!=','NULL')
             ->where('province_id', $request->provinceSearch)
             ->where('name','LIKE',"%$request->commerceSearch%")
@@ -41,19 +44,47 @@ class SearchCommerceController extends Controller
             ->take(3)
             ->get();
 
-        return view('web.parts._searchCommerce', compact('searchCommerce','countCommerce','regions', 'province','provinces',
+        return view('web.parts._companies', compact('commerces','countCommerce','regions', 'province','provinces',
             'posts'));
     }
 
     public function searchOnlyCommerce(Request $request)
     {
-        $commerce = Commerce::with(['region','province'])
-            ->where('name','LIKE',"%$request->searchCommerce%")
-            ->first();
+        $commerce = Commerce::where('name','LIKE',"%$request->searchCommerce%")
+            ->firstOrFail();
 
         if (!$commerce){
             return back()->with('messageSearch', 'No econtramos ningun local con ese nombre');
         }
-        return view('web.parts._dataCommerce', compact('commerce'));
+
+        $province = Province::where('id', $commerce->province_id)
+            ->first();
+
+        $products = Product::with(['category'])
+            ->where('commerce_id', $commerce->id)
+            ->where('available', 'YES')
+            ->paginate(10);
+
+        $commercePayment = CommercePayment::with(['payment'])
+            ->where('commerce_id', $commerce->id)
+            ->get();
+
+        $characteristicCommerces = CharacteristicCommerce::with('characteristic')
+            ->where('commerce_id', $commerce->id)
+            ->get();
+
+        $relateds = Commerce::with(['region', 'province'])
+            ->where('province_id', $commerce->province_id)
+            ->where('region_id','!=', NULL)
+            ->orderByRaw('RAND()')
+            ->take(3)
+            ->get();
+
+        $provinces = Province::orderBy('name', 'ASC')
+            ->get();
+
+
+        return view('web.parts._dataCommerce', compact('commerce','province','posts','characteristicCommerces',
+            'commercePayment','relateds','provinces','products'));
     }
 }

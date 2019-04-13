@@ -36,16 +36,25 @@
                                         @endif
                                         <div class="food-caption-static">
                                             <h4>{{ ucfirst($commerce->name) }}</h4>
-                                            <span>Nuevo Negocio</span>
+                                            @if($commerce->created_at > Date::parse('-30 days')->format('Y-m-d H:m:s'))
+                                                <span>Nuevo Negocio</span>
+                                            @endif
                                             <small>{{ $commerce->region->name }}
                                                 - {{ $commerce->province->name }}</small>
-                                            <h6 class="text text-center"><i class="fa fa-thumbs-o-up"
-                                                                            style="color:green"></i> {{ $commerce->votes_positive }}
-                                                &nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-o-down"
-                                                                     style="color:red"></i> {{ $commerce->votes_negative }}
-                                            </h6>
+                                            @if($commerce->votes_positive)
+                                                <div class="rateing-starts">
+                                                <span class="rateing-star-img"
+                                                      style="width:{{($commerce->votes_positive * 100)/ ($commerce->votes_positive + $commerce->votes_negative)}}%;"></span>
+                                                </div>
+                                            @else
+                                                <div class="rateing-starts">
+                                                <span class="rateing-star-img"
+                                                      style="width:0%;"></span>
+                                                </div>
+                                            @endif
+                                            <h6>{{$commerce->votes_positive + $commerce->votes_negative}} Votos</h6>
                                             @if($commerce->about)
-                                                <p>{{ $commerce->about }}</p>
+                                                <p>{{ str_limit($commerce->about,200) }}</p>
                                             @else
                                                 <p>El negocio <b>{{ $commerce->name }}</b> ubicado
                                                     en {{ $commerce->province->name }},
@@ -58,6 +67,9 @@
                                     </div>
                                 @endforeach
                             </div>
+                        </div>
+                        <div class="pagination-list">
+                            {!! $commerces->render() !!}
                         </div>
                     </div>
                 </div>

@@ -2255,9 +2255,9 @@ body{
 }
 .rateing-showside li {
 	float: left;
-    width: 33.3333%;
+    /*width: 33.3333%;*/
     padding: 18px 25px 8px;
-    border-right:1px solid #e3e3e3;
+    /*border-right:1px solid #e3e3e3;*/
 }
 .rateing-showside li:last-child{
 	border-right:none;

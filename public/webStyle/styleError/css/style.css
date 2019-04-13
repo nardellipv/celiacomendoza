@@ -173,6 +173,7 @@ p.copyright a:hover{
 /* Header */
 .w3layouts-bg {
     background: #3398af;
+	margin-top: -180px;
 }
 
 @media screen and (max-width: 1920px){

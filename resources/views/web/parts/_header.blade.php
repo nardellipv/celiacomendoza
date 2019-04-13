@@ -13,8 +13,8 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="top_right_links2">
                         <ul class="top_links">
-                            <li><a href="{{ url('cliente-perfil') }}"><i class="fa fa-user-o" aria-hidden="true"></i>
-                                    Perfíl</a></li>
+                            <li><a href="{{ url('/') }}"><i class="fa fa-home" aria-hidden="true"></i>
+                                    Home</a></li>
                             @if (Auth::check())
                                 <li>Bienvenido {{ Auth::user()->name }}</li>
                             @else
@@ -36,5 +36,4 @@
             </div>
         </div>
     </div>
-    @include('web.parts._menu')
 </header>

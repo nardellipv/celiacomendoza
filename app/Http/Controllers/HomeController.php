@@ -16,14 +16,10 @@ class HomeController extends Controller
 {
     public function list()
     {
-        $commerces = Commerce::with(['region','province'])
-            ->orderby('created_at', 'DESC')
-            ->take(6)
-            ->get();
-
-        /*$regions = Region::orderBy('name', 'ASC')
-            ->where('province_id', 50)
-            ->get();*/
+        $commerces = Commerce::with(['region', 'province'])
+            ->where('region_id','!=', NULL)
+            ->orderby('votes_positive', 'DESC')
+            ->paginate(6);
 
         $posts = Blog::orderBy('created_at', 'DESC')
             ->take(3)
@@ -32,27 +28,7 @@ class HomeController extends Controller
         $provinces = Province::orderBy('name', 'ASC')
             ->get();
 
-        return view('web.parts._companies', compact('commerces', 'regions', 'posts','provinces'));
-    }
-
-    public function region($id)
-    {
-
-        $region = Region::where('id', $id)
-            ->first();
-
-        $commerces = Commerce::with('region')
-            ->where('about', '!=', 'NULL')
-            ->where('logo', '!=', 'NULL')
-            ->where('region_id', $region->id)
-            ->paginate(10);
-
-
-        $regions = Region::orderBy('name', 'ASC')
-            ->where('province_id', 50)
-            ->get();
-
-        return view('web.parts._searchRegion', compact('regions', 'region', 'commerces'));
+        return view('web.parts._companies', compact('commerces', 'regions', 'posts', 'provinces'));
     }
 
     public function MailClient(MailCustomerRequest $request)

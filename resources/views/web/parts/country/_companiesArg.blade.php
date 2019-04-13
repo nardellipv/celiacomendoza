@@ -27,10 +27,11 @@
                                 @else
                                     <p>Local sin dirección</p>
                                 @endif
-                                <p class="text text-center"><i class="fa fa-thumbs-o-up"
-                                                               style="color:green"></i> {{ $commerce->votes_positive }}
-                                    &nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-o-down"
-                                                         style="color:red"></i> {{ $commerce->votes_negative }}</p>
+                                <div class="rateing-starts">
+                                                <span class="rateing-star-img"
+                                                      style="width:{{($commerce->votes_positive * 100)/ ($commerce->votes_positive + $commerce->votes_negative)}}%;"></span>
+                                </div>
+                                <h6>{{$commerce->votes_positive + $commerce->votes_negative}} Votos</h6>
                             </div>
                             @if(!empty($commerce->region->name))
                                 <div class="popular-listing-add"><span><i class="fa fa-map-marker"

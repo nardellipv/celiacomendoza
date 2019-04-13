@@ -39,8 +39,22 @@
     <link href="{{ asset('webStyle/css/colors.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ asset('webStyle/style.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ asset('webStyle/css/responsive.css')}}" rel="stylesheet" type="text/css">
+
+    @yield('style')
+
+    @include('external.analitycs')
+    @include('external.pixelFace')
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 <div class="wrapper">
     @include('web.parts._menu')
 
@@ -55,19 +69,23 @@
                 <div class="services-options">
                     {!! Form::open(['method' => 'POST','route' => ['searchCommerce'],'style'=>'find-search-engine']) !!}
                     {{ csrf_field() }}
-                        <div class="select">
-                            <span><i class="fa fa-bars" aria-hidden="true"></i></span>
-                            <select name="provinceSearch" class="chosen-select">
-                                @foreach($provinces as $province)
-                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="food-textfelid">
-                            <label><a href="#"><button type="submit" style="background: none;color: white;"><i class="fa icon-search-1" aria-hidden="true"></i></button></a>
-                                <input type="text" name="commerceSearch" placeholder="Nombre del local...">
-                            </label>
-                        </div>
+                    <div class="select">
+                        <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+                        <select name="provinceSearch" class="chosen-select">
+                            @foreach($provinces as $province)
+                                <option value="{{ $province->id }}">{{ $province->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="food-textfelid">
+                        <label><a href="#">
+                                <button type="submit" style="background: none;color: white;"><i class="fa icon-search-1"
+                                                                                                aria-hidden="true"></i>
+                                </button>
+                            </a>
+                            <input type="text" name="commerceSearch" placeholder="Nombre del local..." required>
+                        </label>
+                    </div>
                     {!! Form::Close() !!}
                 </div>
                 <div class="food-services-restaurant">
@@ -86,7 +104,24 @@
     @else
         <div class=" inner-velue">
             <div class="innner-page-title">
-                <h2>{{ $province->name }} {{ Request::is('argentina/busqueda/*') ? ' - '. $region->name : '' }}</h2>
+                @switch(Request::segment(1))
+                    @case('blog')
+                        <h2>Nuestro blog del celíaco</h2>
+                        @break
+                    @case('argentina')
+                        <h2>{{ $province->name }} {{ Request::is('argentina/busqueda/*') ? ' - '. $region->name : '' }}</h2>
+                        @break
+                    @case('listado')
+                        <h2>Listado ANMART</h2>
+                        @break
+                    @case('contacto')
+                        <h2>Contacto con CeliacosMendoza.com</h2>
+                        @break
+                    @default
+                        <h2>
+                            Celíacos Mendoza
+                        </h2>
+                @endswitch
             </div>
         </div>
     @endif
@@ -99,7 +134,9 @@
         @section('features')
         @show
 
-        @include('web.parts._lastBlog')
+        @if(!Request::is('catalogo/*') AND !Request::segment(1) == 'blog')
+            @include('web.parts._lastBlog')
+        @endif
     </div>
     <footer class="footer-sec">
         <div class="restrurent-footer-sections">
@@ -159,5 +196,6 @@
 <script type="text/javascript" src="{{ asset('webStyle/js/responsive-menu/modernizr.custom.js')}}"></script>
 <script type="text/javascript" src="{{ asset('webStyle/js/responsive-menu/jquery.dlmenu.js')}}"></script>
 <script type="text/javascript" src="{{ asset('webStyle/js/functions.js')}}"></script>
+@yield('script')
 </body>
 </html>

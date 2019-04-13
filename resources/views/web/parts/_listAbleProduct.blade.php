@@ -1,44 +1,38 @@
-@extends('layouts.login')
+@extends('layouts.main')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <br>
-                <h2>Listado de ANMAT 2018.</h2>
-                <p>Listado ANMAT con toda la información de Alimentos libres de gluten registrados en el país. Este listado se extrajo
-                directamente desde el sitio de ANMAT y así es como lo exponemos en nuestro sitio.</p>
-                <br>
+    <div class="content">
+        <section>
+            <div class="container">
                 <div class="call-to-action">
                     {!! Form::open(['method' => 'POST','route' => ['searchAble']]) !!}
                     {{ csrf_field() }}
                     <div class="row">
-                        <div class="col-sm-12">
-                            <div class="single-query form-group">
-                                <input type="text" name="search" class="keyword-input"
+                        <div class="col-sm-6">
+                            <div class="form-input">
+                                <input type="text" name="search"
                                        placeholder="Ingrese el producto a buscar...">
                             </div>
                         </div>
-                        <div class="col-sm-7 left-block">
-                            <div class="search-btn">
-                                <button>Buscar <i class="fa fa-search" aria-hidden="true"></i>
-                                </button>
+                        <div class="col-sm-6 left-block">
+                            <div class="form-textarea">
+                                <button type="submit">Buscar</button>
                             </div>
                         </div>
                     </div>
                     {!! Form::Close() !!}
                     <div class="row">
                         <div class="col-sm-12 col-xs-12">
-                            <table class="table datatable">
+                            <table class="table datatable" style="background-color: #ffbb00;">
                                 <thead>
-                                <tr style="color: aqua">
+                                <tr style="color: black">
                                     <th style="text-align: center">Marca</th>
                                     <th style="text-align: center">Nombre Comercial</th>
                                     <th style="text-align: center">Denominación Venta</th>
                                     <th style="text-align: center">RNPA</th>
                                 </tr>
                                 </thead>
-                                <tbody style="color: azure">
+                                <tbody style="color: black">
                                 @foreach($lists as $list)
                                     <tr>
                                         <td>{{ $list->marca }}</td>
@@ -49,11 +43,15 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            {{ $lists->render() }}
+                            <div class="pagination-list">
+                                <ul>
+                                    {{ $lists->render() }}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 @endsection

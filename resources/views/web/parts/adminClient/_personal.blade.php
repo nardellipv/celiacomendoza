@@ -33,9 +33,9 @@
     }
 </style>
 <section id="profile" class="p_b70 p_t70 bg_lightgry">
-    @include('web.parts.alerts.success')
-    @include('web.parts.alerts.error')
     <div class="container">
+        @include('web.parts.alerts.success')
+        @include('web.parts.alerts.error')
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12">
                 @include('web.parts.adminClient._aside')
@@ -106,6 +106,14 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-group">
+                                <label for="street">Provincia</label>
+                                <input type="text" class="form-control"
+                                       id="province"
+                                       value="{{ $commerce->province->name }}" placeholder="Provincia" disabled/>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
                                 <label for="city">Localidad</label>
                                 <select id="inputState" class="form-control" name="region_id" required>
                                     @if($commerce->region_id)
@@ -121,7 +129,10 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
                             <div class="form-group">
                                 <label for="street">Teléfono</label>
                                 <input type="text" class="form-control" name="phone"
@@ -129,10 +140,7 @@
                                        value="{{ $commerce->phone }}" placeholder="Teléfono"/>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
+                        <div class="col-md-4 col-sm-4">
                             <div class="form-group">
                                 <label for="city">Usuario Facebook</label>
                                 <input type="text" pattern="[A-Za-z0-9_-]+" name="facebook" class="form-control"
@@ -140,7 +148,7 @@
                                        value="{{ $commerce->facebook }}" placeholder="USUARIO">
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
+                        <div class="col-md-4 col-sm-4">
                             <div class="form-group">
                                 <label for="street">Sitio Web</label>
                                 <input type="text" class="form-control" name="web" id="web"

@@ -223,7 +223,7 @@
 	height: 13px;
 	width:70px;
 	position: relative;
-	background-image: url(../extra-images/rate.png);
+	background-image: url(../../webStyle/img/rate.png);
 	background-repeat: repeat-x;
 	background-position: 0 0;
 	text-align: left;
@@ -239,7 +239,7 @@
     margin-top: 0px;
 }
 .rateing-star-img{
-	background-image: url(../extra-images/rate02.png);
+	background-image: url(../../webStyle/img/rate02.png);
     background-position: 0 0;
     background-repeat: repeat-x;
     height: 13px;

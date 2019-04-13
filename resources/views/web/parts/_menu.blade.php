@@ -8,13 +8,13 @@
                 <div id="kode-responsive-navigation" class="dl-menuwrapper">
                     <button class="dl-trigger">Menu</button>
                     <ul class="dl-menu">
-                        <li><a href="{{ url('/') }}" class="dropdown-toggle" data-toggle="dropdown">Inicio</a></li>
-                        <li><a href="{{ url('blog') }}" class="dropdown-toggle" data-toggle="dropdown">Blog</a></li>
-                        <li><a href="{{ url('listado') }}" class="dropdown-toggle" data-toggle="dropdown">
+                        <li><a href="{{ url('/') }}">Inicio</a></li>
+                        <li><a href="{{ url('blog') }}">Blog</a></li>
+                        <li><a href="{{ url('listado') }}">
                                 Productos ANMAT</a></li>
-                        <li><a href="#contact-us" class="dropdown-toggle" data-toggle="dropdown">Contacto</a></li>
+                        <li><a href="{{ url('contacto') }}">Contacto</a></li>
                         <li>
-                            <a href="listing-grid.html">Ayuda</a>
+                            <a href="#">Ayuda</a>
                             <ul class="children">
                                 <li><a href="{{ url('terminos') }}">Términos y Condiciones</a>
                                 </li>
@@ -30,13 +30,13 @@
                 {{--menu destop--}}
                 <nav class="food-navigaion">
                     <ul class="nav-menu">
-                        <li><a href="{{ url('/') }}" class="dropdown-toggle" data-toggle="dropdown">Inicio</a></li>
-                        <li><a href="{{ url('blog') }}" class="dropdown-toggle" data-toggle="dropdown">Blog</a></li>
-                        <li><a href="{{ url('listado') }}" class="dropdown-toggle" data-toggle="dropdown">
+                        <li><a href="{{ url('/') }}">Inicio</a></li>
+                        <li><a href="{{ url('blog') }}">Blog</a></li>
+                        <li><a href="{{ url('listado') }}">
                                 Productos ANMAT</a></li>
-                        <li><a href="#contact-us" class="dropdown-toggle" data-toggle="dropdown">Contacto</a></li>
+                        <li><a href="{{ url('contacto') }}">Contacto</a></li>
                         <li>
-                            <a href="listing-grid.html">Ayuda</a>
+                            <a href="#">Ayuda</a>
                             <ul class="children">
                                 <li><a href="{{ url('terminos') }}">Términos y Condiciones</a>
                                 </li>
@@ -51,23 +51,31 @@
 
                 <div class="food-right-template">
                     <ul>
-                        <li><a href="{{ __('Login') }}" class="dropdown-toggle" data-toggle="dropdown" style="margin-top: 7px;font-size: 15px;color: red;">Registrarme</a></li>
-                        <li>
-                            <button class="login-account"><i
-                                        class="fa icon-user" aria-hidden="true"></i></button>
-                        </li>
+                        @if (Auth::guest())
+                            <li><a href="{{ __('login') }}"
+                                   style="margin-top: 7px;font-size: 15px;color: red;">Registrarme</a></li>
+                            <li>
+                                <a href="{{ url('login') }}" class="login-account" style="margin-top: 3px; color: red"><i class="fa icon-user" aria-hidden="true"></i></a>
+                            </li>
+                        @endif
+                        @if(Auth::check())
+                                <li>
+                                    <a href="{{ url('cliente-perfil') }}" class="login-account" style="margin-top: 3px; color: red"><i class="fa icon-user" aria-hidden="true"></i></a>
+                                </li>
+                        @endif
                         <li>
                             {!! Form::open(['method' => 'POST','route' => ['searchOnlyCommerce'],'style'=>'find-search-engine']) !!}
                             {{ csrf_field() }}
-                                <button class="mein-search fa icon-search-1" type="button"
-                                        title="Buscar local"></button>
-                                <div class="hide-class-o">
-                                    <div class="hide-text-holder">
-                                        <input type="text" name="searchCommerce" data-toggle="toggle" placeholder="Buscar Local"/>
-                                        <button type="submit" title="Buscar"><i class="fa fa-search"
-                                                                               aria-hidden="true"></i></button>
-                                    </div>
+                            <button class="mein-search fa icon-search-1" type="button"
+                                    title="Buscar local"></button>
+                            <div class="hide-class-o">
+                                <div class="hide-text-holder">
+                                    <input type="text" name="searchCommerce" data-toggle="toggle"
+                                           placeholder="Buscar Local"/>
+                                    <button type="submit" title="Buscar"><i class="fa fa-search"
+                                                                            aria-hidden="true"></i></button>
                                 </div>
+                            </div>
                             {!! Form::Close() !!}
                         </li>
                     </ul>
@@ -119,6 +127,16 @@
                         </a>
                     </h3>
                 </form>
+            </div>
+        </div>
+    @endif
+    @if(Auth::check())
+        <div class="header-serach-food">
+            <div class="container-fluid">
+                <div class="food-title">
+                    <h4>Bienvenido <b>{{ Auth::user()->name }}</b></h4>
+                </div>
+                <a href="{{ url('cliente-perfil') }}"><h5>Ir al panel de control</h5></a>
             </div>
         </div>
     @endif
