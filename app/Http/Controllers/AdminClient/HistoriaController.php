@@ -1,50 +1,32 @@
 <?php
 
-namespace celiacomendoza\Http\Controllers;
+namespace celiacomendoza\Http\Controllers\AdminClient;
 
 use celiacomendoza\Blog;
+use celiacomendoza\Commerce;
+use celiacomendoza\User;
 use Illuminate\Http\Request;
+use celiacomendoza\Http\Controllers\Controller;
 use Image;
 
-class BlogController extends Controller
+class HistoriaController extends Controller
 {
-    public function index()
-    {
-        $posts = Blog::orderBy('created_at', 'DESC')
-            ->where('type', 'Blog')
-            ->paginate(5);
 
-        return view('web.parts._blog', compact('posts'));
-    }
-
-    public function post($slug)
+    public function show()
     {
-        $post = Blog::where('slug', $slug)
-            ->where('type', 'Blog')
+        $commerce = Commerce::where('user_id', auth()->user()->id)
             ->first();
 
-        return view('web.parts._post', compact('post'));
+        return view('web.parts.adminClient._addHistoria', compact('commerce'));
     }
 
-/*    public function list()
+    public function create(Request $request)
     {
-        $posts = Blog::all();
-
-        return view('admin.parts._listBlog', compact('posts'));
-    }*/
-
-    public function create()
-    {
-        return view('admin.parts._createPost');
-    }
-
-    public function store(Request $request)
-    {
-
         $post = new Blog;
         $post->user_id = auth()->user()->id;
         $post->slug = str_slug($request['title']);
         $post->body_plain = strip_tags($request['body']);
+        $post->type = 'Personal';
         $post->fill($request->all())->save();
 
         if ($request->photo) {
@@ -60,10 +42,17 @@ class BlogController extends Controller
             $image->move($destinationPath, $input['photo']);
 
             $post->photo = $input['photo'];
+        }else{
+            $post->photo = 'nodispHistoria.png';
         }
 
         $post->update();
 
         return back();
     }
+
+/*    public function create(Request $request)
+    {
+        dd('entro');
+    }*/
 }

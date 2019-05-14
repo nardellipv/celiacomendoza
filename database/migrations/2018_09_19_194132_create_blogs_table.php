@@ -21,6 +21,7 @@ class CreateBlogsTable extends Migration
             $table->mediumText('body_plain');
             $table->text('photo');
             $table->enum('status',['ACTIVE', 'DESACTIVE'])->default('ACTIVE');
+            $table->enum('type',['Personal', 'Blog'])->default('Blog');
             $table->string('slug', 150)->unique();
 
             $table->integer('user_id')->unsigned();

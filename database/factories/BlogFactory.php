@@ -10,6 +10,7 @@ $factory->define(\celiacomendoza\Blog::class, function (Faker $faker) {
         'body_plain' => $faker->paragraph($nbSentences = 10, $variableNbSentences = true),
         'photo' => $faker->imageUrl($width = 640, $height = 480),
         'status' => $faker->randomElement($array = array('ACTIVE', 'DESACTIVE')),
+        'type' => $faker->randomElement($array = array('Personal', 'Blog')),
         'slug' => $title,
         'user_id' => rand(1, 10),
     ];
