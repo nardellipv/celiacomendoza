@@ -26,12 +26,12 @@ class BlogController extends Controller
         return view('web.parts._post', compact('post'));
     }
 
-/*    public function list()
+    public function list()
     {
         $posts = Blog::all();
 
         return view('admin.parts._listBlog', compact('posts'));
-    }*/
+    }
 
     public function create()
     {
