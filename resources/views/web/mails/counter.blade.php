@@ -589,7 +589,8 @@
 
                                             <div style="font-size:12px;line-height:14px;color:#333333;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                                 <p style="margin: 0;font-size: 18px;line-height: 22px;text-align: center">
-                                                    <span style="font-size: 24px; line-height: 28px;"><strong>Hola {!! $user->name !!}, tienes mensajes sin leer en la plataforma<br></strong></span>
+                                                    <span style="font-size: 24px; line-height: 28px;"><strong>Hola {!! $commerce->name !!}, han visitado {!! $counter !!} veces tu local en
+                                                            celiacosmendoza.com<br></strong></span>
                                                 </p></div>
 
                                         </div>
@@ -623,13 +624,13 @@
                                            style="display: block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #ffffff; background-color: #B2D476; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; max-width: 610px; width: 30%; border-top: 2px solid #B2D476; border-right: 0px solid #B2D476; border-bottom: 6px solid #B2D476; border-left: 0px solid #B2D476; padding-top: 0px; padding-right: 20px; padding-bottom: 0px; padding-left: 20px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif;mso-border-alt: none">
 
                                             <span style="font-size:12px;line-height:24px;"><span
-                                                        style="font-size: 14px; line-height: 40px;">RESPONDER</span></span>
+                                                        style="font-size: 14px; line-height: 40px;">Ir a celiacosmendoza</span></span>
 
                                         </a>
 
                                         <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
 
-                                        <h5>Trata de responder los mensajes y estar en contacto con tus clientes.</h5>
+                                        <h5>Manten actualizado tu local y aumenta tus ventas y clientes.</h5>
                                         <hr>
                                         <h5>Muchas gracias, Atentamente el equipo de CeliacosMendoza</h5>
 
