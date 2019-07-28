@@ -4,6 +4,7 @@ namespace celiacomendoza\Http\Middleware;
 
 use celiacomendoza\User;
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class UserType
 {
@@ -16,7 +17,7 @@ class UserType
      */
     public function handle($request, Closure $next)
     {
-        $userType = User::where('id', Auth()->user()->id)
+        $userType = User::where('id', Auth::user()->id)
             ->first();
 
         if ($userType->type === 'OWNER') {

@@ -8,3 +8,4 @@ Disallow: /checkout
 Disallow: /terminos
 Disallow: /politicas
 Disallow: /listado
+Disallow: /region/*

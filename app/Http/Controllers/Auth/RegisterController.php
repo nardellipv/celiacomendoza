@@ -6,6 +6,7 @@ use celiacomendoza\Commerce;
 use celiacomendoza\User;
 use celiacomendoza\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -69,6 +70,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'lastname' => $data['lastname'],
             'email' => $data['email'],
+            'type' => $data['type'],
             'password' => Hash::make($data['password']),
         ]);
 
@@ -77,23 +79,23 @@ class RegisterController extends Controller
         $slugCount = Commerce::where('slug', $slug)
             ->count();
 
-        if ($slugCount == 0) {
-            $commerce = Commerce::create([
-                'name' => $data['nameCommerce'],
-                'province_id' => $data['province_id'],
-                'user_id' => $user->id,
-                'slug' => str_slug($data['nameCommerce']),
-            ]);
-        } else {
-            $commerce = Commerce::create([
-                'name' => $data['nameCommerce'],
-                'province_id' => $data['province_id'],
-                'user_id' => $user->id,
-                'slug' => str_slug($data['nameCommerce'] . rand(0,100)),
-            ]);
-        }
+            if ($slugCount == 0) {
+                $commerce = Commerce::create([
+                    'name' => $data['nameCommerce'],
+                    'province_id' => $data['province_id'],
+                    'user_id' => $user->id,
+                    'slug' => str_slug($data['nameCommerce']),
+                ]);
+            } else {
+                $commerce = Commerce::create([
+                    'name' => $data['nameCommerce'],
+                    'province_id' => $data['province_id'],
+                    'user_id' => $user->id,
+                    'slug' => str_slug($data['nameCommerce'] . rand(0, 100)),
+                ]);
+            }
 
-
+        Storage::put('public/' . $commerce->user_id .'-'. $commerce->user->name, '0');
         return $user;
     }
 }

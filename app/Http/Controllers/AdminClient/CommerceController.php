@@ -3,16 +3,49 @@
 namespace celiacomendoza\Http\Controllers\AdminClient;
 
 use celiacomendoza\CharacteristicCommerce;
+use celiacomendoza\Comment;
 use celiacomendoza\Commerce;
 use celiacomendoza\CommercePayment;
 use celiacomendoza\Http\Requests\ClientCommerceRequest;
 use celiacomendoza\Http\Controllers\Controller;
+use celiacomendoza\User;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Image;
 
 class CommerceController extends Controller
 {
+    public function commentRead()
+    {
+        $commerce = Commerce::where('user_id', auth()->user()->id)
+            ->first();
+
+        $comments = Comment::where('commerce_id', $commerce->id)
+            ->orderBy('created_at', 'DESC')
+            ->paginate(5);
+
+        return view('web.parts.adminClient._readComment', compact('commerce','comments'));
+    }
+
+    public function denuncia($id)
+    {
+        $comment = Comment::find($id);
+
+        Mail::send('web.mails.denunciaComment', ['comment' => $comment], function ($msj) use ($comment) {
+
+            $msj->from('no-respond@celiacosmendoza.com', 'CeliacosMendoza');
+
+            $msj->subject('Denuncia de comentario');
+
+            $msj->to('info@celiacosmendoza.com', 'Info');
+
+        });
+
+        Session::flash('message', 'Gracias por matener una comunidad segura. Verificaremos tu denuncia dentro de las siguientes 24hs.');
+        return back();
+    }
+
     public function update(ClientCommerceRequest $request, $id)
     {
 
@@ -87,6 +120,16 @@ class CommerceController extends Controller
         $payment->delete();
 
         Session::flash('message', 'La información se actualizó correctamente');
+        return back();
+    }
+
+    public function commerceAvailable($id)
+    {
+        $user = User::find($id);
+        $user->type = 'OWNER';
+        $user->save();
+
+        Session::flash('message', 'Se actualizó su cuenta a Comercio, por favor complete los siguientes datos');
         return back();
     }
 }

@@ -1,7 +1,1 @@
-@if (Session::has('message'))
-    <div class="dorchester-grill-section">
-        <div class="views-locate text-center" style="background-color: #ffbb00;">
-            <strong>¡¡¡Perfecto!!!</strong> {!! Session::get('message') !!}
-        </div>
-    </div>
-@endif
+@if (Session::has('message'))    <div class="dorchester-grill-section">        <div class="views-locate text-center" style="background-color: #1fb7a6;margin: 10px;padding: 10px 10px 10px 10px;color: azure;">            <strong>¡¡¡Perfecto!!!</strong> {!! Session::get('message') !!}        </div>    </div>@endif
