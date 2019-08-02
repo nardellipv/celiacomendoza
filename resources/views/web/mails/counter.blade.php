@@ -1,828 +1,373 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
-      xmlns:o="urn:schemas-microsoft-com:office:office">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
-
-    <!--[if gte mso 9]>
-    <xml>
-
-        <o:OfficeDocumentSettings>
-
-            <o:AllowPNG/>
-
-            <o:PixelsPerInch>96</o:PixelsPerInch>
-
-        </o:OfficeDocumentSettings>
-
-    </xml><![endif]-->
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-    <meta name="viewport" content="width=device-width">
-
+    <!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width" name="viewport"/>
     <!--[if !mso]><!-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--<![endif]-->
-
-    <title></title>
-
-    <!--[if !mso]><!-- -->
-
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
     <!--<![endif]-->
-
-
-    <style type="text/css" id="media-query">
-
+    <title></title>
+    <!--[if !mso]><!-->
+    <!--<![endif]-->
+    <style type="text/css">
         body {
-
             margin: 0;
-
             padding: 0;
         }
 
-        table, tr, td {
-
+        table,
+        td,
+        tr {
             vertical-align: top;
-
             border-collapse: collapse;
         }
 
-        .ie-browser table, .mso-container table {
-
-            table-layout: fixed;
-        }
-
         * {
-
             line-height: inherit;
         }
 
         a[x-apple-data-detectors=true] {
-
             color: inherit !important;
-
             text-decoration: none !important;
         }
-
-        [owa] .img-container div, [owa] .img-container button {
-
-            display: block !important;
-        }
-
-        [owa] .fullwidth button {
-
-            width: 100% !important;
-        }
-
-        [owa] .block-grid .col {
-
-            display: table-cell;
-
-            float: none !important;
-
-            vertical-align: top;
-        }
-
-        .ie-browser .num12, .ie-browser .block-grid, [owa] .num12, [owa] .block-grid {
-
-            width: 650px !important;
-        }
-
-        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
-
-            line-height: 100%;
-        }
-
-        .ie-browser .mixed-two-up .num4, [owa] .mixed-two-up .num4 {
-
-            width: 216px !important;
-        }
-
-        .ie-browser .mixed-two-up .num8, [owa] .mixed-two-up .num8 {
-
-            width: 432px !important;
-        }
-
-        .ie-browser .block-grid.two-up .col, [owa] .block-grid.two-up .col {
-
-            width: 325px !important;
-        }
-
-        .ie-browser .block-grid.three-up .col, [owa] .block-grid.three-up .col {
-
-            width: 216px !important;
-        }
-
-        .ie-browser .block-grid.four-up .col, [owa] .block-grid.four-up .col {
-
-            width: 162px !important;
-        }
-
-        .ie-browser .block-grid.five-up .col, [owa] .block-grid.five-up .col {
-
-            width: 130px !important;
-        }
-
-        .ie-browser .block-grid.six-up .col, [owa] .block-grid.six-up .col {
-
-            width: 108px !important;
-        }
-
-        .ie-browser .block-grid.seven-up .col, [owa] .block-grid.seven-up .col {
-
-            width: 92px !important;
-        }
-
-        .ie-browser .block-grid.eight-up .col, [owa] .block-grid.eight-up .col {
-
-            width: 81px !important;
-        }
-
-        .ie-browser .block-grid.nine-up .col, [owa] .block-grid.nine-up .col {
-
-            width: 72px !important;
-        }
-
-        .ie-browser .block-grid.ten-up .col, [owa] .block-grid.ten-up .col {
-
-            width: 65px !important;
-        }
-
-        .ie-browser .block-grid.eleven-up .col, [owa] .block-grid.eleven-up .col {
-
-            width: 59px !important;
-        }
-
-        .ie-browser .block-grid.twelve-up .col, [owa] .block-grid.twelve-up .col {
-
-            width: 54px !important;
-        }
-
-        @media only screen and (min-width: 670px) {
-
-            .block-grid {
-
-                width: 650px !important;
-            }
-
-            .block-grid .col {
-
-                vertical-align: top;
-            }
-
-            .block-grid .col.num12 {
-
-                width: 650px !important;
-            }
-
-            .block-grid.mixed-two-up .col.num4 {
-
-                width: 216px !important;
-            }
-
-            .block-grid.mixed-two-up .col.num8 {
-
-                width: 432px !important;
-            }
-
-            .block-grid.two-up .col {
-
-                width: 325px !important;
-            }
-
-            .block-grid.three-up .col {
-
-                width: 216px !important;
-            }
-
-            .block-grid.four-up .col {
-
-                width: 162px !important;
-            }
-
-            .block-grid.five-up .col {
-
-                width: 130px !important;
-            }
-
-            .block-grid.six-up .col {
-
-                width: 108px !important;
-            }
-
-            .block-grid.seven-up .col {
-
-                width: 92px !important;
-            }
-
-            .block-grid.eight-up .col {
-
-                width: 81px !important;
-            }
-
-            .block-grid.nine-up .col {
-
-                width: 72px !important;
-            }
-
-            .block-grid.ten-up .col {
-
-                width: 65px !important;
-            }
-
-            .block-grid.eleven-up .col {
-
-                width: 59px !important;
-            }
-
-            .block-grid.twelve-up .col {
-
-                width: 54px !important;
-            }
-        }
-
-        @media (max-width: 670px) {
-
-            .block-grid, .col {
-
+    </style>
+    <style id="media-query" type="text/css">
+        @media (max-width: 610px) {
+
+            .block-grid,
+            .col {
                 min-width: 320px !important;
-
                 max-width: 100% !important;
-
                 display: block !important;
             }
 
             .block-grid {
-
-                width: calc(100% - 40px) !important;
-            }
-
-            .col {
-
                 width: 100% !important;
             }
 
-            .col > div {
+            .col {
+                width: 100% !important;
+            }
 
+            .col>div {
                 margin: 0 auto;
             }
 
-            img.fullwidth, img.fullwidthOnMobile {
-
+            img.fullwidth,
+            img.fullwidthOnMobile {
                 max-width: 100% !important;
             }
 
             .no-stack .col {
-
                 min-width: 0 !important;
-
                 display: table-cell !important;
             }
 
             .no-stack.two-up .col {
-
                 width: 50% !important;
             }
 
-            .no-stack.mixed-two-up .col.num4 {
-
+            .no-stack .col.num4 {
                 width: 33% !important;
             }
 
-            .no-stack.mixed-two-up .col.num8 {
-
+            .no-stack .col.num8 {
                 width: 66% !important;
             }
 
-            .no-stack.three-up .col.num4 {
-
+            .no-stack .col.num4 {
                 width: 33% !important;
             }
 
-            .no-stack.four-up .col.num3 {
-
+            .no-stack .col.num3 {
                 width: 25% !important;
             }
 
+            .no-stack .col.num6 {
+                width: 50% !important;
+            }
+
+            .no-stack .col.num9 {
+                width: 75% !important;
+            }
+
+            .video-block {
+                max-width: none !important;
+            }
+
             .mobile_hide {
-
                 min-height: 0px;
-
                 max-height: 0px;
-
                 max-width: 0px;
-
                 display: none;
-
                 overflow: hidden;
-
                 font-size: 0px;
             }
+
+            .desktop_hide {
+                display: block !important;
+                max-height: none !important;
+            }
         }
-
-
     </style>
-
 </head>
-
-<body class="clean-body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #FFFFFF">
-
-<style type="text/css" id="media-query-bodytag">
-
-    @media (max-width: 520px) {
-
-        .block-grid {
-
-            min-width: 320px !important;
-
-            max-width: 100% !important;
-
-            width: 100% !important;
-
-            display: block !important;
-
-        }
-
-        .col {
-
-            min-width: 320px !important;
-
-            max-width: 100% !important;
-
-            width: 100% !important;
-
-            display: block !important;
-
-        }
-
-        .col > div {
-
-            margin: 0 auto;
-
-        }
-
-        img.fullwidth {
-
-            max-width: 100% !important;
-
-        }
-
-        img.fullwidthOnMobile {
-
-            max-width: 100% !important;
-
-        }
-
-        .no-stack .col {
-
-            min-width: 0 !important;
-
-            display: table-cell !important;
-
-        }
-
-        .no-stack.two-up .col {
-
-            width: 50% !important;
-
-        }
-
-        .no-stack.mixed-two-up .col.num4 {
-
-            width: 33% !important;
-
-        }
-
-        .no-stack.mixed-two-up .col.num8 {
-
-            width: 66% !important;
-
-        }
-
-        .no-stack.three-up .col.num4 {
-
-            width: 33% !important;
-
-        }
-
-        .no-stack.four-up .col.num3 {
-
-            width: 25% !important;
-
-        }
-
-        .mobile_hide {
-
-            min-height: 0px !important;
-
-            max-height: 0px !important;
-
-            max-width: 0px !important;
-
-            display: none !important;
-
-            overflow: hidden !important;
-
-            font-size: 0px !important;
-
-        }
-
-    }
-
-</style>
-
-<!--[if IE]>
-<div class="ie-browser"><![endif]-->
-
-<!--[if mso]>
-<div class="mso-container"><![endif]-->
-
-<table class="nl-container"
-       style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #FFFFFF;width: 100%"
-       cellpadding="0" cellspacing="0">
-
+<body class="clean-body" style="margin: 0; padding: 0; -webkit-text-size-adjust: 100%; background-color: #B8CCE2;">
+<!--[if IE]><div class="ie-browser"><![endif]-->
+<table bgcolor="#B8CCE2" cellpadding="0" cellspacing="0" class="nl-container" role="presentation" style="table-layout: fixed; vertical-align: top; min-width: 320px; Margin: 0 auto; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #B8CCE2; width: 100%;" valign="top" width="100%">
     <tbody>
-
-    <tr style="vertical-align: top">
-
-        <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-
-            <!--[if (mso)|(IE)]>
-            <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                    <td align="center" style="background-color: #FFFFFF;"><![endif]-->
-
-
-            <div style="background-color:#FFFFFF;">
-
-                <div style="Margin: 0 auto;min-width: 320px;max-width: 650px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
-                     class="block-grid two-up ">
-
+    <tr style="vertical-align: top;" valign="top">
+        <td style="word-break: break-word; vertical-align: top;" valign="top">
+            <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color:#B8CCE2"><![endif]-->
+            <div style="background-color:transparent;">
+                <div class="block-grid" style="Margin: 0 auto; min-width: 320px; max-width: 590px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
                     <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
-
-                        <!--[if (mso)|(IE)]>
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                            <tr>
-                                <td style="background-color:#FFFFFF;" align="center">
-                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 650px;">
-                                        <tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
-
-
-                        <!--[if (mso)|(IE)]>
-                        <td align="center" width="325"
-                            style=" width:325px; padding-right: 0px; padding-left: 0px; padding-top:20px; padding-bottom:0px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
-                            valign="top"><![endif]-->
-
-                        <div class="col num6"
-                             style="min-width: 320px;max-width: 325px;display: table-cell;vertical-align: top;">
-
-                            <div style="background-color: transparent; width: 100% !important;">
-
+                        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:590px"><tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                        <!--[if (mso)|(IE)]><td align="center" width="590" style="background-color:transparent;width:590px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;"><![endif]-->
+                        <div class="col num12" style="min-width: 320px; max-width: 590px; display: table-cell; vertical-align: top; width: 590px;">
+                            <div style="width:100% !important;">
                                 <!--[if (!mso)&(!IE)]><!-->
-                                <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:20px; padding-bottom:0px; padding-right: 0px; padding-left: 0px;">
+                                <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:0px; padding-bottom:0px; padding-right: 0px; padding-left: 0px;">
                                     <!--<![endif]-->
-
-
-                                    <div align="center" class="img-container center fixedwidth "
-                                         style="padding-right: 0px;  padding-left: 0px;">
-
-                                        <!--[if mso]>
-                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                            <tr style="line-height:0px;line-height:0px;">
-                                                <td style="padding-right: 0px; padding-left: 0px;" align="center">
-                                        <![endif]-->
-
-                                        <a href="https://www.celiacosmendoza.com" target="_blank">
-
-                                            <img class="center fixedwidth" align="center" border="0"
-                                                 src="https://www.celiacosmendoza.com/webStyle/img/img-logo.png"
-                                                 alt="Image" title="Image"
-                                                 style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;width: 100%;max-width: 97.5px"
-                                                 width="97.5">
-
-                                        </a>
-
-                                        <!--[if mso]></td></tr></table><![endif]-->
-
+                                    <div class="mobile_hide">
+                                        <table border="0" cellpadding="0" cellspacing="0" class="divider" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top" width="100%">
+                                            <tbody>
+                                            <tr style="vertical-align: top;" valign="top">
+                                                <td class="divider_inner" style="word-break: break-word; vertical-align: top; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;" valign="top">
+                                                    <table align="center" border="0" cellpadding="0" cellspacing="0" class="divider_content" height="40" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-top: 0px solid transparent; height: 40px;" valign="top" width="100%">
+                                                        <tbody>
+                                                        <tr style="vertical-align: top;" valign="top">
+                                                            <td height="40" style="word-break: break-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top"><span></span></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
-
-
-                                    <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
-
+                                    <!--[if (!mso)&(!IE)]><!-->
+                                </div>
+                                <!--<![endif]-->
                             </div>
-
                         </div>
-
-                        <!--[if (mso)|(IE)]></td>
-                        <td align="center" width="325"
-                            style=" width:325px; padding-right: 0px; padding-left: 0px; padding-top:20px; padding-bottom:20px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
-                            valign="top"><![endif]-->
-
-                        <div class="col num6"
-                             style="min-width: 320px;max-width: 325px;display: table-cell;vertical-align: top;">
-
-                            <div style="background-color: transparent; width: 100% !important;">
-
-                                <!--[if (!mso)&(!IE)]><!-->
-                                <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:20px; padding-bottom:20px; padding-right: 0px; padding-left: 0px;">
-                                    <!--<![endif]-->
-
-
-                                    &#160;
-
-
-                                    <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
-
-                            </div>
-
-                        </div>
-
+                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
                         <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-
                     </div>
-
                 </div>
-
             </div>
-
-            <div style="background-color:#f0f0f0;">
-
-                <div style="Margin: 0 auto;min-width: 320px;max-width: 650px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
-                     class="block-grid ">
-
-                    <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
-
-                        <!--[if (mso)|(IE)]>
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                            <tr>
-                                <td style="background-color:#f0f0f0;" align="center">
-                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 650px;">
-                                        <tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
-
-
-                        <!--[if (mso)|(IE)]>
-                        <td align="center" width="650"
-                            style=" width:650px; padding-right: 0px; padding-left: 0px; padding-top:30px; padding-bottom:30px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
-                            valign="top"><![endif]-->
-
-                        <div class="col num12"
-                             style="min-width: 320px;max-width: 650px;display: table-cell;vertical-align: top;">
-
-                            <div style="background-color: transparent; width: 100% !important;">
-
+            <div style="background-color:transparent;">
+                <div class="block-grid mixed-two-up" style="Margin: 0 auto; min-width: 320px; max-width: 590px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: #FFD500;">
+                    <div style="border-collapse: collapse;display: table;width: 100%;background-color:#FFD500;">
+                        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:590px"><tr class="layout-full-width" style="background-color:#FFD500"><![endif]-->
+                        <!--[if (mso)|(IE)]><td align="center" width="147" style="background-color:#FFD500;width:147px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
+                        <div class="col num3" style="display: table-cell; vertical-align: top; max-width: 320px; min-width: 147px; width: 147px;">
+                            <div style="width:100% !important;">
                                 <!--[if (!mso)&(!IE)]><!-->
-                                <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:30px; padding-bottom:30px; padding-right: 0px; padding-left: 0px;">
+                                <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
                                     <!--<![endif]-->
-
-
-                                    <div class="">
-
-                                        <!--[if mso]>
-                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                            <tr>
-                                                <td style="padding-right: 10px; padding-left: 10px; padding-top: 25px; padding-bottom: 10px;">
-                                        <![endif]-->
-
-                                        <div style="color:#333333;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;line-height:120%; padding-right: 10px; padding-left: 10px; padding-top: 25px; padding-bottom: 10px;">
-
-                                            <div style="font-size:12px;line-height:14px;color:#333333;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-                                                <p style="margin: 0;font-size: 18px;line-height: 22px;text-align: center">
-                                                    <span style="font-size: 24px; line-height: 28px;"><strong>Hola {!! $commerce->name !!}, han visitado {!! $counter !!} veces tu local en
-                                                            celiacosmendoza.com<br></strong></span>
-                                                </p></div>
-
-                                        </div>
-
+                                    <div align="center" class="img-container center autowidth" style="padding-right: 0px;padding-left: 0px;">
+                                        <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img align="center" alt="Image" border="0" class="center autowidth" src="https://www.celiacosmendoza.com/webStyle/img/img-logo.png" style="text-decoration: none; -ms-interpolation-mode: bicubic; border: 0; height: auto; width: 100%; max-width: 100px; display: block;" title="Image" width="100"/>
                                         <!--[if mso]></td></tr></table><![endif]-->
-
                                     </div>
-
-
-                                    <div align="center" class="button-container center "
-                                         style="padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;">
-
-                                        <!--[if mso]>
-                                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
-                                               style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
-                                            <tr>
-                                                <td style="padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px;"
-                                                    align="center">
-                                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
-                                                                 xmlns:w="urn:schemas-microsoft-com:office:word"
-                                                                 href="www.celiacosmendoza.com/cliente-perfil"
-                                                                 style="height:27pt; v-text-anchor:middle; width:165pt;"
-                                                                 arcsize="12%" strokecolor="#B2D476"
-                                                                 fillcolor="#B2D476">
-                                                        <w:anchorlock/>
-                                                        <v:textbox inset="0,0,0,0">
-                                                            <center style="color:#ffffff; font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif; font-size:14px;">
-                                        <![endif]-->
-
-                                        <a href="https://www.celiacosmendoza.com/cliente-perfil" target="_blank"
-                                           style="display: block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #ffffff; background-color: #B2D476; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; max-width: 610px; width: 30%; border-top: 2px solid #B2D476; border-right: 0px solid #B2D476; border-bottom: 6px solid #B2D476; border-left: 0px solid #B2D476; padding-top: 0px; padding-right: 20px; padding-bottom: 0px; padding-left: 20px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif;mso-border-alt: none">
-
-                                            <span style="font-size:12px;line-height:24px;"><span
-                                                        style="font-size: 14px; line-height: 40px;">Ir a celiacosmendoza</span></span>
-
-                                        </a>
-
+                                    <!--[if (!mso)&(!IE)]><!-->
+                                </div>
+                                <!--<![endif]-->
+                            </div>
+                        </div>
+                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                        <!--[if (mso)|(IE)]></td><td align="center" width="442" style="background-color:#FFD500;width:442px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
+                        <div class="col num9" style="display: table-cell; vertical-align: top; min-width: 320px; max-width: 441px; width: 442px;">
+                            <div style="width:100% !important;">
+                                <!--[if (!mso)&(!IE)]><!-->
+                                <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                    <!--<![endif]-->
+                                    <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif"><![endif]-->
+                                    <div style="color:#555555;font-family:'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height:180%;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+                                        <div style="font-family: 'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 21px; color: #555555;">
+                                            <p style="font-size: 14px; line-height: 46px; margin: 0;"><span style="font-size: 26px; color: #808080;"><strong>CeliacosMendoza</strong></span></p>
+                                            <p style="font-size: 14px; line-height: 25px; margin: 0;"><span style="color: #808080; font-size: 14px; line-height: 25px;">Encuentra tu comida sin TACC</span></p>
+                                        </div>
+                                    </div>
+                                    <!--[if mso]></td></tr></table><![endif]-->
+                                    <!--[if (!mso)&(!IE)]><!-->
+                                </div>
+                                <!--<![endif]-->
+                            </div>
+                        </div>
+                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:transparent;">
+                <div class="block-grid" style="Margin: 0 auto; min-width: 320px; max-width: 590px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: #FFFFFF;">
+                    <div style="border-collapse: collapse;display: table;width: 100%;background-color:#FFFFFF;">
+                        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:590px"><tr class="layout-full-width" style="background-color:#FFFFFF"><![endif]-->
+                        <!--[if (mso)|(IE)]><td align="center" width="590" style="background-color:#FFFFFF;width:590px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 35px; padding-left: 35px; padding-top:35px; padding-bottom:40px;"><![endif]-->
+                        <div class="col num12" style="min-width: 320px; max-width: 590px; display: table-cell; vertical-align: top; width: 590px;">
+                            <div style="width:100% !important;">
+                                <!--[if (!mso)&(!IE)]><!-->
+                                <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:35px; padding-bottom:40px; padding-right: 35px; padding-left: 35px;">
+                                    <!--<![endif]-->
+                                    <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif"><![endif]-->
+                                    <div style="color:#132F40;font-family:'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height:120%;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+                                        <div style="font-size: 12px; line-height: 14px; font-family: 'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #132F40;">
+                                            <p style="font-size: 14px; line-height: 26px; margin: 0;"><span style="font-size: 22px;">Hola <strong>{!! $commerce->name !!}</strong>, </span></p>
+                                        </div>
+                                    </div>
+                                    <!--[if mso]></td></tr></table><![endif]-->
+                                    <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 30px; font-family: Arial, sans-serif"><![endif]-->
+                                    <div style="color:#555555;font-family:'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height:150%;padding-top:5px;padding-right:10px;padding-bottom:30px;padding-left:10px;">
+                                        <div style="font-size: 12px; line-height: 18px; font-family: 'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #555555;">
+                                            <p style="font-size: 14px; line-height: 21px; margin: 0;">Has tenido <strong>{!! $counter !!}</strong> visitas a tu local dentro de <strong>www.celiacosmendoza.com.</strong></p>
+                                            <p style="font-size: 14px; line-height: 21px; margin: 0;">Te recomendamos que mantengas actualizado tu local dentro de la plataforma para poder llegar a más clientes potenciales.</p>
+                                        </div>
+                                    </div>
+                                    <!--[if mso]></td></tr></table><![endif]-->
+                                    <div align="center" class="img-container center fixedwidth" style="padding-right: 0px;padding-left: 0px;">
+                                        <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img align="center" alt="Image" border="0" class="center fixedwidth" src="https://cdn.pixabay.com/photo/2014/05/18/11/25/pizza-346985_960_720.jpg" style="text-decoration: none; -ms-interpolation-mode: bicubic; border: 0; height: auto; width: 100%; max-width: 520px; display: block;" title="Image" width="520"/>
+                                        <!--[if mso]></td></tr></table><![endif]-->
+                                    </div>
+                                    <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 20px; padding-bottom: 10px; font-family: Arial, sans-serif"><![endif]-->
+                                    <div style="color:#555555;font-family:'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height:120%;padding-top:20px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+                                        <div style="font-size: 12px; line-height: 14px; font-family: 'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #555555;">
+                                            <p style="font-size: 14px; line-height: 19px; margin: 0;"><span style="font-size: 16px;">Muchas gracias por utilizar la plataforma de celiacosmendoza.com</span></p>
+                                        </div>
+                                    </div>
+                                    <!--[if mso]></td></tr></table><![endif]-->
+                                    <!--[if (!mso)&(!IE)]><!-->
+                                </div>
+                                <!--<![endif]-->
+                            </div>
+                        </div>
+                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:transparent;">
+                <div class="block-grid no-stack" style="Margin: 0 auto; min-width: 320px; max-width: 590px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
+                    <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;background-image:url('https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_960_720.jpg');background-position:top left;background-repeat:no-repeat">
+                        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:590px"><tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                        <!--[if (mso)|(IE)]><td align="center" width="590" style="background-color:transparent;width:590px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 25px; padding-left: 30px; padding-top:10px; padding-bottom:0px;"><![endif]-->
+                        <div class="col num12" style="min-width: 320px; max-width: 590px; display: table-cell; vertical-align: top; width: 590px;">
+                            <div style="width:100% !important;">
+                                <!--[if (!mso)&(!IE)]><!-->
+                                <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:10px; padding-bottom:0px; padding-right: 25px; padding-left: 30px;">
+                                    <!--<![endif]-->
+                                    <div align="left" class="button-container" style="padding-top:5px;padding-right:10px;padding-bottom:35px;padding-left:10px;">
+                                        <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 5px; padding-right: 10px; padding-bottom: 35px; padding-left: 10px" align="left"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.celiacosmendoza.com" style="height:31.5pt; width:147.75pt; v-text-anchor:middle;" arcsize="120%" stroke="false" fillcolor="#FFD500"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#132F40; font-family:Arial, sans-serif; font-size:15px"><![endif]--><a href="https://www.celiacosmendoza.com" style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #132F40; background-color: #FFD500; border-radius: 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px; width: auto; width: auto; border-top: 1px solid #FFD500; border-right: 1px solid #FFD500; border-bottom: 1px solid #FFD500; border-left: 1px solid #FFD500; padding-top: 5px; padding-bottom: 5px; font-family: 'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;" target="_blank"><span style="padding-left:20px;padding-right:20px;font-size:15px;display:inline-block;">
+<span style="font-size: 16px; line-height: 32px;"><span style="font-size: 15px; line-height: 30px;"><strong><span style="line-height: 30px; font-size: 15px;">Ir a celiacosmendoza</span></strong></span></span>
+</span></a>
                                         <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
-
-                                        <h5>Manten actualizado tu local y aumenta tus ventas y clientes.</h5>
-                                        <hr>
-                                        <h5>Muchas gracias, Atentamente el equipo de CeliacosMendoza</h5>
-
                                     </div>
-
-
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="divider "
-                                           style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-
-                                        <tbody>
-
-                                        <tr style="vertical-align: top">
-
-                                            <td class="divider_inner"
-                                                style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 10px;padding-bottom: 10px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-
-                                                <table class="divider_content" align="center" border="0" cellpadding="0"
-                                                       cellspacing="0" width="100%"
-                                                       style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 0px solid transparent;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-
-                                                    <tbody>
-
-                                                    <tr style="vertical-align: top">
-
-                                                        <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-
-                                                            <span></span>
-
-                                                        </td>
-
-                                                    </tr>
-
-                                                    </tbody>
-
-                                                </table>
-
-                                            </td>
-
-                                        </tr>
-
-                                        </tbody>
-
-                                    </table>
-
-
-                                    <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
-
+                                    <!--[if (!mso)&(!IE)]><!-->
+                                </div>
+                                <!--<![endif]-->
                             </div>
-
                         </div>
-
+                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
                         <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-
                     </div>
-
                 </div>
-
             </div>
-
-            <div style="background-color:#ffffff;">
-
-                <div style="Margin: 0 auto;min-width: 320px;max-width: 650px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
-                     class="block-grid ">
-
-                    <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
-
-                        <!--[if (mso)|(IE)]>
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                            <tr>
-                                <td style="background-color:#ffffff;" align="center">
-                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 650px;">
-                                        <tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
-
-
-                        <!--[if (mso)|(IE)]>
-                        <td align="center" width="650"
-                            style=" width:650px; padding-right: 0px; padding-left: 0px; padding-top:30px; padding-bottom:30px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
-                            valign="top"><![endif]-->
-
-                        <div class="col num12"
-                             style="min-width: 320px;max-width: 650px;display: table-cell;vertical-align: top;">
-
-                            <div style="background-color: transparent; width: 100% !important;">
-
+            <div style="background-color:transparent;">
+                <div class="block-grid two-up no-stack" style="Margin: 0 auto; min-width: 320px; max-width: 590px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: #132f40;">
+                    <div style="border-collapse: collapse;display: table;width: 100%;background-color:#132f40;">
+                        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:590px"><tr class="layout-full-width" style="background-color:#132f40"><![endif]-->
+                        <!--[if (mso)|(IE)]><td align="center" width="295" style="background-color:#132f40;width:295px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 25px; padding-top:15px; padding-bottom:15px;"><![endif]-->
+                        <div class="col num6" style="max-width: 320px; min-width: 295px; display: table-cell; vertical-align: top; width: 295px;">
+                            <div style="width:100% !important;">
                                 <!--[if (!mso)&(!IE)]><!-->
-                                <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:30px; padding-bottom:30px; padding-right: 0px; padding-left: 0px;">
+                                <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:15px; padding-bottom:15px; padding-right: 0px; padding-left: 25px;">
                                     <!--<![endif]-->
-
-
-                                    <div align="center"
-                                         style="padding-right: 10px; padding-left: 10px; padding-bottom: 10px;"
-                                         class="">
-
-                                        <div style="line-height:10px;font-size:1px">&#160;</div>
-
-                                        <div style="display: table; max-width:151px;">
-
-                                            <!--[if (mso)|(IE)]>
-                                            <table width="131" cellpadding="0" cellspacing="0" border="0">
-                                                <tr>
-                                                    <td style="border-collapse:collapse; padding-right: 10px; padding-left: 10px; padding-bottom: 10px;"
-                                                        align="center">
-                                                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
-                                                               style="border-collapse:collapse; mso-table-lspace: 0pt;mso-table-rspace: 0pt; width:131px;">
-                                                            <tr>
-                                                                <td width="32" style="width:32px; padding-right: 5px;"
-                                                                    valign="top"><![endif]-->
-
-                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="32"
-                                                   height="32"
-                                                   style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;Margin-right: 0">
-
-                                                <tbody>
-                                                <tr style="vertical-align: top">
-                                                    <td align="left" valign="middle"
-                                                        style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-
-                                                        <a href="https://www.facebook.com/celiacosmendozaOK"
-                                                           title="Facebook" target="_blank">
-
-                                                            <img src="https://cdn.icon-icons.com/icons2/1645/PNG/128/facebook_109862.png"
-                                                                 alt="Facebook" title="Facebook" width="32"
-                                                                 style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
-
-                                                        </a>
-
-                                                        <div style="line-height:5px;font-size:1px">&#160;</div>
-
-                                                    </td>
-                                                </tr>
-
-                                                </tbody>
-                                            </table>
-
-                                            <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-
+                                    <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif"><![endif]-->
+                                    <div style="color:#F8F8F8;font-family:'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height:120%;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
+                                        <div style="font-size: 12px; line-height: 14px; font-family: 'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #F8F8F8;">
+                                            <p style="font-size: 14px; line-height: 16px; margin: 0;"><strong>celiacosmendoza</strong></p>
+                                            <p style="font-size: 14px; line-height: 16px; margin: 0;">Las Heras, Mendoza, Argentina</p>
                                         </div>
-
                                     </div>
-
-
-                                    <div class="">
-
-                                        <!--[if mso]>
-                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                            <tr>
-                                                <td style="padding-right: 10px; padding-left: 10px; padding-top: 15px; padding-bottom: 10px;">
-                                        <![endif]-->
-
-                                        <div style="color:#959595;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;line-height:150%; padding-right: 10px; padding-left: 10px; padding-top: 15px; padding-bottom: 10px;">
-
-                                            <div style="font-size:12px;line-height:18px;color:#959595;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-                                                <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center">
-                                                    <span style="font-size: 14px; line-height: 21px;">Mensaje enviado desde www.celiacosmendoza.com</span>
-                                                </p>
-                                                <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center">
-                                                    <span style="font-size: 14px; line-height: 21px;">Por favor no responder este mensaje.</span>
-                                                </p></div>
-
-                                        </div>
-
-                                        <!--[if mso]></td></tr></table><![endif]-->
-
-                                    </div>
-
-
-                                    <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
-
+                                    <!--[if mso]></td></tr></table><![endif]-->
+                                    <!--[if (!mso)&(!IE)]><!-->
+                                </div>
+                                <!--<![endif]-->
                             </div>
-
                         </div>
-
+                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                        <!--[if (mso)|(IE)]></td><td align="center" width="295" style="background-color:#132f40;width:295px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
+                        <div class="col num6" style="max-width: 320px; min-width: 295px; display: table-cell; vertical-align: top; width: 295px;">
+                            <div style="width:100% !important;">
+                                <!--[if (!mso)&(!IE)]><!-->
+                                <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                    <!--<![endif]-->
+                                    <table cellpadding="0" cellspacing="0" class="social_icons" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" valign="top" width="100%">
+                                        <tbody>
+                                        <tr style="vertical-align: top;" valign="top">
+                                            <td style="word-break: break-word; vertical-align: top; padding-top: 20px; padding-right: 35px; padding-bottom: 10px; padding-left: 10px;" valign="top">
+                                                <table activate="activate" align="right" alignment="alignment" cellpadding="0" cellspacing="0" class="social_table" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: undefined; mso-table-tspace: 0; mso-table-rspace: 0; mso-table-bspace: 0; mso-table-lspace: 0;" to="to" valign="top">
+                                                    <tbody>
+                                                    <tr align="right" style="vertical-align: top; display: inline-block; text-align: right;" valign="top">
+                                                        <td style="word-break: break-word; vertical-align: top; padding-bottom: 5px; padding-right: 0px; padding-left: 10px;" valign="top"><a href="https://www.facebook.com/celiacosmendozaOK" target="_blank"><img alt="Facebook" height="32" src="https://cdn.icon-icons.com/icons2/1645/PNG/128/facebook_109862.png" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: none; display: block;" title="Facebook" width="32"/></a></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--[if (!mso)&(!IE)]><!-->
+                                </div>
+                                <!--<![endif]-->
+                            </div>
+                        </div>
+                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
                         <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-
                     </div>
-
                 </div>
-
             </div>
-
+            <div style="background-color:transparent;">
+                <div class="block-grid" style="Margin: 0 auto; min-width: 320px; max-width: 590px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; background-color: transparent;">
+                    <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;"><tr><td align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:590px"><tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                        <!--[if (mso)|(IE)]><td align="center" width="590" style="background-color:transparent;width:590px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]-->
+                        <div class="col num12" style="min-width: 320px; max-width: 590px; display: table-cell; vertical-align: top; width: 590px;">
+                            <div style="width:100% !important;">
+                                <!--[if (!mso)&(!IE)]><!-->
+                                <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                    <!--<![endif]-->
+                                    <table border="0" cellpadding="0" cellspacing="0" class="divider" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top" width="100%">
+                                        <tbody>
+                                        <tr style="vertical-align: top;" valign="top">
+                                            <td class="divider_inner" style="word-break: break-word; vertical-align: top; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;" valign="top">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" class="divider_content" height="30" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; border-top: 0px solid transparent; height: 30px;" valign="top" width="100%">
+                                                    <tbody>
+                                                    <tr style="vertical-align: top;" valign="top">
+                                                        <td height="30" style="word-break: break-word; vertical-align: top; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top"><span></span></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--[if (!mso)&(!IE)]><!-->
+                                </div>
+                                <!--<![endif]-->
+                            </div>
+                        </div>
+                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                    </div>
+                </div>
+            </div>
             <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-
         </td>
-
     </tr>
-
     </tbody>
-
 </table>
-
-<!--[if (mso)|(IE)]></div><![endif]-->
-
-
+<!--[if (IE)]></div><![endif]-->
 </body>
 </html>

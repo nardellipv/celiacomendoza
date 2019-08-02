@@ -11,8 +11,8 @@ class JobController extends Controller
 {
     public function noReadMail()
     {
-        $users = Message::join('commerces','messages.commerce_id','commerces.id')
-            ->join('users','commerces.user_id','users.id')
+        $users = Message::join('commerces', 'messages.commerce_id', 'commerces.id')
+            ->join('users', 'commerces.user_id', 'users.id')
             ->where('messages.read', "NO")
             ->get();
 
@@ -31,14 +31,14 @@ class JobController extends Controller
 
     public function counter()
     {
-        $commerces = Commerce::join('users','commerces.user_id','users.id')
+        $commerces = Commerce::join('users', 'commerces.user_id', 'users.id')
             ->where('commerces.region_id', '!=', NULL)
             ->get();
 
         foreach ($commerces as $commerce) {
-            if(Storage::exists('public/' . $commerce->name)) {
-                $counter = Storage::get('public/' . $commerce->name);
 
+            if (Storage::exists('public/' . $commerce->id .'-'.$commerce->name)) {
+                $counter = Storage::get('public/' . $commerce->id .'-'. $commerce->name);
                 Mail::send('web.mails.counter', ['commerce' => $commerce, 'counter' => $counter], function ($msj) use ($commerce) {
 
                     $msj->from('no-respond@celiacosmendoza.com', 'CeliacosMendoza');
@@ -48,9 +48,9 @@ class JobController extends Controller
                     $msj->to($commerce->email, $commerce->name);
 
                 });
-            }else{
-                $countRand = rand('135','278');
-                Storage::put('public/' . $commerce->user_id .'-'. $commerce->name, $countRand);
+            } else {
+                $countRand = rand('135', '278');
+                Storage::put('public/' . $commerce->user_id . '-' . $commerce->name, $countRand);
             }
         }
     }
