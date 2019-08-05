@@ -15,15 +15,17 @@ class RecipeController extends Controller
 {
     public function show()
     {
+        $commerce = Commerce::where('user_id', auth()->user()->id)
+            ->first();
+
         $categories = Category::all();
 
-        return view('web.parts.adminClient._addReceta', compact('categories'));
+        return view('web.parts.adminClient._addReceta', compact('categories','commerce'));
     }
 
     public function create(ClientRecipeRequest $request)
     {
 
-//        dd($request->all());
         $commerce = Commerce::where('user_id', auth()->user()->id)
             ->first();
 
