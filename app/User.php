@@ -22,4 +22,9 @@ class User extends Authenticatable
     {
         $this->notify(new CustomResetPasswordNotification($token));
     }
+
+    public function Recipes()
+    {
+        return $this->hasMany(Recipes::class);
+    }
 }

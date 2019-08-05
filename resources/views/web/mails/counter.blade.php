@@ -221,7 +221,7 @@
                                     <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 30px; font-family: Arial, sans-serif"><![endif]-->
                                     <div style="color:#555555;font-family:'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height:150%;padding-top:5px;padding-right:10px;padding-bottom:30px;padding-left:10px;">
                                         <div style="font-size: 12px; line-height: 18px; font-family: 'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #555555;">
-                                            <p style="font-size: 14px; line-height: 21px; margin: 0;">Has tenido <strong>{!! $counter !!}</strong> visitas a tu local dentro de <strong>www.celiacosmendoza.com.</strong></p>
+                                            <p style="font-size: 14px; line-height: 21px; margin: 0;">Has tenido <strong>{!! $commerce->visit !!}</strong> visitas a tu local dentro de <strong>www.celiacosmendoza.com.</strong></p>
                                             <p style="font-size: 14px; line-height: 21px; margin: 0;">Te recomendamos que mantengas actualizado tu local dentro de la plataforma para poder llegar a más clientes potenciales.</p>
                                         </div>
                                     </div>

@@ -5,6 +5,7 @@ namespace celiacomendoza\Providers;
 use celiacomendoza\Blog;
 use celiacomendoza\Commerce;
 use celiacomendoza\Province;
+use celiacomendoza\Recipes;
 use celiacomendoza\Region;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
@@ -28,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('regions', $regions);
         });
 
+//        asideHistorias
         view::composer('web.parts._asideHistorias', function ($view) {
             $lastPersonals = Blog::orderBy('created_at', 'DESC')
                 ->where('type', 'Personal')
@@ -39,12 +41,30 @@ class AppServiceProvider extends ServiceProvider
                 ->first();
 
 
-                $view->with([
-                    'lastPersonals' => $lastPersonals,
-                    'randomCommerce' => $randomCommerce
-                ]);
+            $view->with([
+                'lastPersonals' => $lastPersonals,
+                'randomCommerce' => $randomCommerce
+            ]);
         });
 
+        //asideRecetas
+        view::composer('web.parts._asideRecipe', function ($view) {
+            $lastRecipes = Recipes::orderBy('created_at', 'DESC')
+                ->take(4)
+                ->get();
+
+            $randomCommerce = Commerce::where('logo', '!=', NULL)
+                ->orderByRaw("RAND()")
+                ->first();
+
+
+            $view->with([
+                'lastRecipes' => $lastRecipes,
+                'randomCommerce' => $randomCommerce
+            ]);
+        });
+
+//        asideBlog
         view::composer('web.parts._asideBlog', function ($view) {
             $lastPosts = Blog::orderBy('created_at', 'DESC')
                 ->where('type', 'Blog')

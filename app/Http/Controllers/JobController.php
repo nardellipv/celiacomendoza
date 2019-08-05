@@ -37,21 +37,15 @@ class JobController extends Controller
 
         foreach ($commerces as $commerce) {
 
-            if (Storage::exists('public/' . $commerce->id .'-'.$commerce->name)) {
-                $counter = Storage::get('public/' . $commerce->id .'-'. $commerce->name);
-                Mail::send('web.mails.counter', ['commerce' => $commerce, 'counter' => $counter], function ($msj) use ($commerce) {
+            Mail::send('web.mails.counter', ['commerce' => $commerce], function ($msj) use ($commerce) {
 
-                    $msj->from('no-respond@celiacosmendoza.com', 'CeliacosMendoza');
+                $msj->from('no-respond@celiacosmendoza.com', 'CeliacosMendoza');
 
-                    $msj->subject('Mensaje desde celiacomendoza');
+                $msj->subject('Mensaje desde celiacomendoza');
 
-                    $msj->to($commerce->email, $commerce->name);
+                $msj->to($commerce->email, $commerce->name);
 
-                });
-            } else {
-                $countRand = rand('135', '278');
-                Storage::put('public/' . $commerce->user_id . '-' . $commerce->name, $countRand);
-            }
+            });
         }
     }
 }
