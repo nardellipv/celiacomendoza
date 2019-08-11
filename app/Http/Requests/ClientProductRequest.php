@@ -29,6 +29,7 @@ class ClientProductRequest extends FormRequest
             'price' => 'required | numeric',
             'category_id' => 'required',
             'available' => 'required',
+            'file' => 'mimes:jpeg,jpg,png,gif|max:1000',
         ];
     }
 }

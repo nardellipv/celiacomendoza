@@ -1621,7 +1621,7 @@ body{
     padding: 0 28px;
     position: absolute;
     top: 0;
-    transform: rotate(-46deg) translateY(-10px) translateX(-29px);
+    transform: rotate(-46deg) translateY(0px) translateX(-46px);
     z-index: 99999;
 }
 .center-slider-caption .cover-flg-title:before{

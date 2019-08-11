@@ -19,21 +19,19 @@ class DashboardController extends Controller
         $user = User::where('id', auth()->user()->id)
             ->first();
 
-        $commerce = Commerce::where('user_id', $user->id)
+        $productAvailable = Product::where('commerce_id', $user->id)
+            ->where('available', 'YES')
+            ->count();
+
+        $productUnAvailable = Product::where('commerce_id', $user->id)
+            ->where('available', 'NO')
+            ->count();
+
+        $commerce = Commerce::where('user_id', auth()->user()->id)
             ->first();
 
         $regions = Region::where('province_id', $commerce->province_id)
             ->get();
-
-        $productsAvailable = Product::where('commerce_id', $user->id)
-            ->where('available', 'YES')
-            ->orderBy('created_at', 'DESC')
-            ->paginate(10);
-
-        $productsDisable = Product::where('commerce_id', $user->id)
-            ->where('available', 'NO')
-            ->orderBy('created_at', 'DESC')
-            ->paginate(10);
 
         $payments = Payment::all();
 
@@ -47,7 +45,52 @@ class DashboardController extends Controller
             ->where('commerce_id', $commerce->id)
             ->get();
 
-        return view('web.adminClient', compact('user', 'commerce', 'productsAvailable', 'productsDisable',
-            'regions', 'payments', 'characteristics', 'paymentsCommerce', 'characteristicsCommerce'));
+        return view('web.parts.adminClient.dashboard._dashboard', compact('productAvailable', 'productUnAvailable', 'commerce',
+            'payments', 'paymentsCommerce', 'characteristics', 'characteristicsCommerce', 'regions', 'user'));
+    }
+
+    public function profile()
+    {
+        $user = User::where('id', auth()->user()->id)
+            ->first();
+
+        $commerce = Commerce::where('user_id', auth()->user()->id)
+            ->first();
+
+        return view('web.parts.adminClient._profile', compact('user', 'commerce'));
+    }
+
+    public function available()
+    {
+
+        $user = User::where('id', auth()->user()->id)
+            ->first();
+
+        $commerce = Commerce::where('user_id', $user->id)
+            ->first();
+
+        $productsAvailable = Product::where('commerce_id', $user->id)
+            ->where('available', 'YES')
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
+
+
+        return view('web.parts.adminClient._productsAvailable', compact('user', 'commerce', 'productsAvailable'));
+    }
+
+    public function unAvailable()
+    {
+        $user = User::where('id', auth()->user()->id)
+            ->first();
+
+        $commerce = Commerce::where('user_id', $user->id)
+            ->first();
+
+        $productsDisable = Product::where('commerce_id', $user->id)
+            ->where('available', 'NO')
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
+
+        return view('web.parts.adminClient._productsDisable', compact('user', 'commerce', 'productsDisable'));
     }
 }

@@ -43,7 +43,7 @@ class ProductController extends Controller
 
             $destinationPath = 'images/thumbnail/products/';
             $img = Image::make($image->getRealPath());
-            $img->resize(250, 250)->save($destinationPath . $input['file']);
+            $img->resize(110, 118)->save($destinationPath . $input['file']);
 
             $destinationPath = 'images/' . $commerce->name . '-' . $commerce->id . '/products';
             $image->move($destinationPath, $input['file']);
@@ -88,7 +88,7 @@ class ProductController extends Controller
 
             $destinationPath = 'images/thumbnail/products/';
             $img = Image::make($image->getRealPath());
-            $img->resize(250, 250)->save($destinationPath . $input['file']);
+            $img->resize(110, 118)->save($destinationPath . $input['file']);
 
             $destinationPath = 'images/' . $product->commerce->name . '-' . $product->commerce->id . '/products';
             $image->move($destinationPath, $input['file']);

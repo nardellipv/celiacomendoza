@@ -1,63 +1,1 @@
-@extends('web.adminClient')
-@section('content')
-    <section id="profile" class="p_b70 p_t70 bg_lightgry">
-        <div class="container">
-            @include('web.parts.alerts.success')
-            <div class="row">
-                <div class="col-md-3 page-sidebar">
-                    @include('web.parts.adminClient._aside')
-                </div>
-                <div class="col-md-9 page-content">
-                    <div class="inner-box">
-                        <h2 class="title-2"><i class="icon-mail"></i> Mensajes </h2>
-                        <div class="inbox-wrapper">
-                            <div class="row">
-                                <div class="col-md-12 col-lg-12">
-                                    <div class="message-list">
-                                        <div id="home">
-                                            <div class="list-group">
-                                                @foreach($messages as $message)
-                                                    <div class="list-group-item">
-                                                        <a href="{{ url('cliente-perfil/leer-mensaje', $message->id) }}" class="list-box-user">
-                                                <span class="name"> <i
-                                                            class="fa fa-circle online"></i>{{ $message->name }}</span>
-                                                        </a>
-                                                        <a href="{{ url('cliente-perfil/leer-mensaje', $message->id) }}" class="list-box-content">
-                                                            @if($message->read == 'YES')
-                                                                <div class="message-text-read">
-                                                            @else
-                                                                <div class="message-text">
-                                                            @endif
-                                                                {{ str_limit($message->message,100) }}
-                                                                </div>
-                                                                <div class="time text-muted">{{ Date::parse($message->created_at)->format('d/m/Y H:m') }}</div>
-                                                        </a>
-                                                        <div class="list-box-action">
-
-                                                            {!! Form::open(['method' => 'DELETE','route' => ['deletemessage', $message->id],'style'=>'display:inline']) !!}
-                                                            {{Form::token() }}
-                                                            <button type="submit" data-toggle="tooltip"
-                                                                    data-placement="top"
-                                                                    title="Borrar Mensaje" class="btn btn-link">
-                                                                <i class="fa fa-trash fa-2x"></i></button>
-                                                            {!! Form::Close() !!}
-                                                        </div>
-                                                    </div>
-                                                @endforeach
-                                                    <div class="pagination-bar">
-                                                        <nav aria-label="Page navigation " class="d-inline-b">
-                                                            {!! $messages->render() !!}
-                                                        </nav>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-@endsection
+@extends('web.adminClient')@section('content')    <div class="container-fluid">        @include('web.parts.alerts.success')        <div class="row">            <div class="index-lcontent col-xl-6 offset-2">                <h4 class="tittle-w3-agileits mb-4">Mensajes Recibidos</h4>                <div class="text-center">                @if(count($messages) == 0)                    <h5 class="card-title">Sin Mensajes</h5>                @endif                </div>                <div class="container-fluid">                    <div class="row">                        <div class="email-list col-12">                            <ul class="collection">                                @foreach($messages as $message)                                    <li class="collection-item d-flex">                                        <span class="circle mr-3">{{ mb_substr($message->name, 0,1) }}</span>                                        <a href="{{ url('cliente-perfil/leer-mensaje', $message->id) }}">                                            <div class="mid-cn">                                                @if($message->read == 'NO')                                                    <span class="email-title">{{ $message->name }}</span>                                                @else                                                    <i><p>{{ $message->name }}</p></i>                                                @endif                                                <p class="paragraph-agileits-w3layouts">{{ str_limit($message->message,25) }}</p>                                            </div>                                            <a href="#" class="email-time">                                                <small class="text-primary">{{ Date::parse($message->created_at)->format('d/m/Y H:m') }}</small>                                            </a>                                        </a>                                        <div class="col-4 email-actions d-flex justify-content-end">                                            {!! Form::open(['method' => 'DELETE','route' => ['deletemessage', $message->id],'style'=>'display:inline']) !!}                                            {{ Form::token() }}                                            <button type="submit" class="btn btn-default btn-icon">                                                <i class="fas fa-trash-alt"></i>                                            </button>                                            {!! Form::Close() !!}                                        </div>                                    </li>                                @endforeach                            </ul>                        </div>                        <!-- right-strip -->                    </div>                </div>            </div>        </div>    </div>@endsection

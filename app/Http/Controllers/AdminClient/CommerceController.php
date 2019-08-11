@@ -11,7 +11,6 @@ use celiacomendoza\Http\Controllers\Controller;
 use celiacomendoza\User;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Str;
 use Image;
 
 class CommerceController extends Controller
@@ -87,7 +86,7 @@ class CommerceController extends Controller
 
             $destinationPath = 'images/thumbnail/logo/';
             $img = Image::make($image->getRealPath());
-            $img->resize(300, 300)->save($destinationPath . $input['file']);
+            $img->resize(370, 242)->save($destinationPath . $input['file']);
 
             $destinationPath = 'images/' . $commerce->name . '-' . $commerce->id . '/logo';
             $image->move($destinationPath, $input['file']);

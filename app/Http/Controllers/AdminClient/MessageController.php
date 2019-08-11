@@ -42,6 +42,7 @@ class MessageController extends Controller
 
     public function responsMessage($id)
     {
+
         $message = Message::find($id);
 
         //controlo de que sea el dueño del mensaje
@@ -59,6 +60,13 @@ class MessageController extends Controller
 
         $message = Message::find($id);
 
+        $commerce = Commerce::where('user_id', auth()->user()->id)
+            ->first();
+
+        $messages = Message::where('commerce_id', $commerce->id)
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
+
         //controlo de que sea el dueño del mensaje
         $this->authorize('MessagePass', $message);
 
@@ -70,7 +78,7 @@ class MessageController extends Controller
         });
 
         Session::flash('message', 'Su mensaje fue enviado correctamente. Muchas gracias!!!');
-        return back();
+        return view('web.parts.adminClient._accountMessage', compact('messages'));
     }
 
     public function deleteMessage($id)
