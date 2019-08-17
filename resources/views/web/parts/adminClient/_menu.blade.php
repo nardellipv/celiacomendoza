@@ -21,7 +21,6 @@
         </li>
 
         @if(Auth::user()->type == 'OWNER')
-
             <li>
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
                     <i class="fas fa-coffee"></i>
@@ -60,6 +59,12 @@
                 <a href="{{ url('cliente-perfil/product/create') }}">
                     <i class="fas fa-cart-plus"></i>
                     Agregar Producto
+                </a>
+            </li>
+            <li class="{{ request()->is('cliente-perfil/upgrade') ? 'active' : '' }}">
+                <a href="{{ route('show.upgrade') }}" style="color: yellowgreen">
+                    <i class="fas fa-barcode"></i>
+                    UPGRADE
                 </a>
             </li>
         @endif

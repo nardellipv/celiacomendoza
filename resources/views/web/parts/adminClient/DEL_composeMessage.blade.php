@@ -1,1 +1,0 @@
-@extends('web.adminClient')@section('content')@endsection

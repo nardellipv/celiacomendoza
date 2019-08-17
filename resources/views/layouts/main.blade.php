@@ -335,6 +335,10 @@
 
                                                     class="fa fa-facebook" aria-hidden="true"></i></a></li>
 
+                                    <li><a href="https://www.instagram.com/celiacosmendoza/" target="_blank"><i
+
+                                                    class="fa fa-instagram" aria-hidden="true"></i></a></li>
+
                                 </ul>
 
                             </div>

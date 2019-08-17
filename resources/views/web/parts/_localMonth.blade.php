@@ -18,17 +18,10 @@
                                         <figure>
 
                                             @if($recommended->logo)
-                                                {{--<img src="{{ asset('images/thumbnail/logo/'.($recommended->logo)) }}"--}}
-                                                <img src="{{ $recommended->logo }}"
-
-                                                     class="img-responsive"
-
-                                                     alt="{{ $recommended->name }}">
+                                                <img src="{{ asset('images/thumbnail/logo/'.($recommended->logo)) }}"
+                                                     class="img-responsive" alt="{{ $recommended->name }}">
                                             @else
-                                                <img src="{{ asset('images/nodisp.png') }}"
-
-                                                     class="img-responsive"
-
+                                                <img src="{{ asset('images/nodisp.png') }}" class="img-responsive"
                                                      alt="{{ $recommended->name }}">
                                             @endif
 
@@ -73,8 +66,9 @@
                                         </div>
                                     </div>
                                     <div class="bottom-blog-caption">
-                                        <a href="{{url('catalogo', $recommended->slug)}}" class="readmore-bt">Ir al Negocio <i class="fa fa-angle-right"
-                                                                                    aria-hidden="true"></i></a>
+                                        <a href="{{url('catalogo', $recommended->slug)}}" class="readmore-bt">Ir al
+                                            Negocio <i class="fa fa-angle-right"
+                                                       aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
