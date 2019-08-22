@@ -25,6 +25,11 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view::composer('auth.register', function ($view) {
+            $provinces = Province::all();
+            $view->with('provinces', $provinces);
+        });
+
+        view::composer('auth.register', function ($view) {
             $regions = Region::all();
             $view->with('regions', $regions);
         });
