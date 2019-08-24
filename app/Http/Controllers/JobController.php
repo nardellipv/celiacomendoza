@@ -69,7 +69,7 @@ class JobController extends Controller
 
                 $msj->subject('Últimas entradas ✍ del blog');
 
-                $msj->to('nardellipv@gmail.com', $user->name);
+                $msj->to($user->email, $user->name);
 
             });
         }

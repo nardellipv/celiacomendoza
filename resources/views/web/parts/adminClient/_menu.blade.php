@@ -64,7 +64,7 @@
             <li class="{{ request()->is('cliente-perfil/upgrade') ? 'active' : '' }}">
                 <a href="{{ route('show.upgrade') }}" style="color: yellowgreen">
                     <i class="fas fa-barcode"></i>
-                    UPGRADE
+                    Aumentar Plan
                 </a>
             </li>
         @endif

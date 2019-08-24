@@ -47,9 +47,12 @@
         <button type="submit" class="btn btn-primary">Modificar Perfil</button>
         {!! Form::Close() !!}
 
-        <br><br>
-        <a href="{{ route('commerceAvailable', $user->id) }}" type="submit" class="btn btn-large btn-warning" style="margin-left: auto;margin-right: auto;display: block;">
-            Habilitar cuenta como Comercio
-        </a>
+        @if($user->type != 'OWNER')
+            <br><br>
+            <a href="{{ route('commerceAvailable', $user->id) }}" type="submit" class="btn btn-large btn-warning"
+               style="margin-left: auto;margin-right: auto;display: block;">
+                Habilitar cuenta como Comercio
+            </a>
+        @endif
     </div>
 @endsection
