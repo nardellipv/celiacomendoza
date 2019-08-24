@@ -5,6 +5,7 @@ namespace celiacomendoza\Http\Controllers;
 use celiacomendoza\Blog;
 use celiacomendoza\Commerce;
 use celiacomendoza\Message;
+use celiacomendoza\User;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Jenssegers\Date\Date;
@@ -57,9 +58,7 @@ class JobController extends Controller
         $sendPost = Blog::whereRaw('MONTH(created_at) = ?', [$currentMonth])
             ->get();
 
-        $users = Message::join('commerces', 'messages.commerce_id', 'commerces.id')
-            ->join('users', 'commerces.user_id', 'users.id')
-            ->where('messages.read', "NO")
+        $users = User::where('status', "ACTIVE")
             ->get();
 
         foreach ($users as $user) {
