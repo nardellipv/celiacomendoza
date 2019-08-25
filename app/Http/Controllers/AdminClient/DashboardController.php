@@ -11,9 +11,12 @@ use celiacomendoza\Product;
 use celiacomendoza\Region;
 use celiacomendoza\User;
 use celiacomendoza\Http\Controllers\Controller;
+use Cookie;
+use Illuminate\Support\Facades\Request;
 
 class DashboardController extends Controller
 {
+
     public function dashboard()
     {
         $user = User::where('id', auth()->user()->id)
@@ -44,6 +47,8 @@ class DashboardController extends Controller
         $characteristicsCommerce = CharacteristicCommerce::with('characteristic')
             ->where('commerce_id', $commerce->id)
             ->get();
+
+        Cookie::queue('register','registrado', '60');
 
         return view('web.parts.adminClient.dashboard._dashboard', compact('productAvailable', 'productUnAvailable', 'commerce',
             'payments', 'paymentsCommerce', 'characteristics', 'characteristicsCommerce', 'regions', 'user'));

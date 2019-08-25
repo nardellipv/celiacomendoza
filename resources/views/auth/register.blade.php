@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+    {{ Cookie::queue('register', 'sin_registro', '2628000') }}
     <div class="container">
 
         <div class="row">
