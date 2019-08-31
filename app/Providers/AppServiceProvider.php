@@ -29,6 +29,11 @@ class AppServiceProvider extends ServiceProvider
             $view->with('provinces', $provinces);
         });
 
+        view::composer('web.parts._menu', function ($view) {
+            $provinces = Province::all();
+            $view->with('provinces', $provinces);
+        });
+
         view::composer('auth.register', function ($view) {
             $regions = Region::all();
             $view->with('regions', $regions);

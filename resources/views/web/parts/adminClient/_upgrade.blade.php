@@ -17,7 +17,8 @@
                         <li class="py-2 border-bottom">Subir Productos</li>
                         <li class="py-2 border-bottom">Mensajes de clientes</li>
                         <li class="py-2 border-bottom"">Comentarios en el local</li>
-                        <li class="py-2 border-bottom"><del>Mucha más visibilidad del Negocio</del></li>
+                        <li class="py-2 border-bottom"><del>Más visibilidad dentro de celiacosMendoza</del></li>
+                        <li class="py-2 border-bottom"><del>EMail de productos a usuarios de celiacosMendoza</del></li>
                         <li class="py-2"><del>Sitio Web Propio</del></li>
                     </ul>
                     <a href="{{ route('sendMailUpgrade', 1) }}" class="btn btn-lg btn-block btn-outline-primary py-2">Pedir información</a>
@@ -35,7 +36,8 @@
                         <li class="py-2 border-bottom">Subir Productos</li>
                         <li class="py-2 border-bottom">Mensajes de clientes</li>
                         <li class="py-2 border-bottom">Comentarios en el local</li>
-                        <li class="py-2 border-bottom">Mucha más visibilidad del Negocio</li>
+                        <li class="py-2 border-bottom">Más visibilidad dentro de celiacosMendoza</li>
+                        <li class="py-2 border-bottom"><del>EMail de productos a usuarios de celiacosMendoza</del></li>
                         <li class="py-2"><del>Sitio Web Propio</del></li>
                     </ul>
                     <a href="{{ route('sendMailUpgrade', 2) }}" class="btn btn-lg btn-block btn-outline-primary py-2">Pedir información</a>
@@ -53,7 +55,8 @@
                         <li class="py-2 border-bottom">Subir Productos</li>
                         <li class="py-2 border-bottom">Mensajes de clientes</li>
                         <li class="py-2 border-bottom">Comentarios en el local</li>
-                        <li class="py-2 border-bottom">Mucha más visibilidad del Negocio</li>
+                        <li class="py-2 border-bottom">Más visibilidad dentro de celiacosMendoza</li>
+                        <li class="py-2 border-bottom">EMail de productos a usuarios de celiacosMendoza</li>
                         <li class="py-2">Sitio Web Propio</li>
                     </ul>
                     <a href="{{ route('sendMailUpgrade', 3) }}" class="btn btn-lg btn-block btn-outline-primary py-2">Pedir información</a>

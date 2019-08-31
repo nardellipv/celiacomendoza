@@ -1,9 +1,8 @@
 @extends('layouts.main')
 
+@section('title', '📑 Recetas creadas por otros celíacos')
 
 @section('meta-description','👉 Recetas para celíacos faciles de preparar y creadas totalmente por la comunidad 👍')
-
-
 
 @section('content')
 

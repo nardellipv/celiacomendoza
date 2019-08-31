@@ -73,4 +73,24 @@ class JobController extends Controller
             });
         }
     }
+
+    public function completeData()
+    {
+        $commerce = Commerce::where('about', NULL)
+            ->join('users', 'commerces.user_id', 'users.id')
+            ->where('users.type', 'OWNER')
+            ->get();
+
+        foreach ($commerce as $commerceData) {
+            Mail::send('web.mails.completeData', ['commerce' => $commerceData], function ($msj) use ($commerceData) {
+
+                $msj->from('no-respond@celiacosmendoza.com', 'CeliacosMendoza');
+
+                $msj->subject('Datos Incompletos');
+
+                $msj->to($commerceData->user->email, $commerceData->user->name);
+
+            });
+        }
+    }
 }

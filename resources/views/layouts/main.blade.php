@@ -80,8 +80,6 @@
 
     @yield('style')
 
-
-
     @include('external.analitycs')
 
     {{--@include('external.pixelFace')--}}
@@ -100,6 +98,7 @@
 
 
 
+    {{--slider--}}
     @if(Request::is('/'))
 
         <div class="food-banner-sec">
@@ -261,7 +260,7 @@
         @if(!Request::is('catalogo/*') AND !Request::segment(1) == 'blog')
 
             @include('web.parts._lastBlog')
-            @include('web.parts._lastPersonal')
+{{--            @include('web.parts._lastPersonal')--}}
 
         @endif
 
@@ -322,6 +321,8 @@
                                     <li><a href="{{ url('blog') }}">Blogs</a></li>
 
                                     <li><a href="{{ url('listado') }}"> Productos ANMAT</a></li>
+
+                                    <li><a href="{{ url('historias') }}"> Historias Personales</a></li>
 
                                 </ul>
 
